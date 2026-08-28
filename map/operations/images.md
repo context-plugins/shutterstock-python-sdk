@@ -2,7 +2,7 @@
 
 # Images — operations
 
-Accessor: `client.images` · Source: `shutterstock_api_explorer/apis/images.py` · 21 operations
+Accessor: `client.images` · Source: `shutterstock/apis/images.py` · 21 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -20,9 +20,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CollectionItemRequest` | `shutterstock_api_explorer/models/collection_item_request.py` |
-| `CollectionItemRequestDict` | `shutterstock_api_explorer/models/collection_item_request.py` |
-| `AddImageCollectionItemsErrorBody` | `shutterstock_api_explorer/errors/add_image_collection_items_error.py` |
+| `CollectionItemRequest` | `shutterstock/models/collection_item_request.py` |
+| `CollectionItemRequestDict` | `shutterstock/models/collection_item_request.py` |
+| `AddImageCollectionItemsErrorBody` | `shutterstock/errors/add_image_collection_items_error.py` |
 
 ### client.images.bulk_search_images
 
@@ -38,23 +38,23 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SearchImage` | `shutterstock_api_explorer/models/search_image.py` |
-| `SearchImageDict` | `shutterstock_api_explorer/models/search_image.py` |
-| `ContributorCountryModel` | `shutterstock_api_explorer/models/unions/contributor_country_model.py` |
-| `ContributorCountryModelDict` | `shutterstock_api_explorer/models/unions/contributor_country_model.py` |
-| `ImageType2OrStr` | `shutterstock_api_explorer/models/enums/image_type2.py` |
-| `LanguageOrStr` | `shutterstock_api_explorer/models/enums/language.py` |
-| `LicenseOrStr` | `shutterstock_api_explorer/models/enums/license.py` |
-| `Orientation2OrStr` | `shutterstock_api_explorer/models/enums/orientation2.py` |
-| `PeopleAge2OrStr` | `shutterstock_api_explorer/models/enums/people_age2.py` |
-| `PeopleEthnicity2OrStr` | `shutterstock_api_explorer/models/enums/people_ethnicity2.py` |
-| `PeopleGender2OrStr` | `shutterstock_api_explorer/models/enums/people_gender2.py` |
-| `RegionModel` | `shutterstock_api_explorer/models/unions/region_model.py` |
-| `RegionModelDict` | `shutterstock_api_explorer/models/unions/region_model.py` |
-| `Sort2OrStr` | `shutterstock_api_explorer/models/enums/sort2.py` |
-| `View2OrStr` | `shutterstock_api_explorer/models/enums/view2.py` |
-| `BulkImageSearchResults` | `shutterstock_api_explorer/models/bulk_image_search_results.py` |
-| `BulkSearchImagesErrorBody` | `shutterstock_api_explorer/errors/bulk_search_images_error.py` |
+| `SearchImage` | `shutterstock/models/search_image.py` |
+| `SearchImageDict` | `shutterstock/models/search_image.py` |
+| `ContributorCountryModel` | `shutterstock/models/unions/contributor_country_model.py` |
+| `ContributorCountryModelDict` | `shutterstock/models/unions/contributor_country_model.py` |
+| `ImageType2OrStr` | `shutterstock/models/enums/image_type2.py` |
+| `LanguageOrStr` | `shutterstock/models/enums/language.py` |
+| `LicenseOrStr` | `shutterstock/models/enums/license.py` |
+| `Orientation2OrStr` | `shutterstock/models/enums/orientation2.py` |
+| `PeopleAge2OrStr` | `shutterstock/models/enums/people_age2.py` |
+| `PeopleEthnicity2OrStr` | `shutterstock/models/enums/people_ethnicity2.py` |
+| `PeopleGender2OrStr` | `shutterstock/models/enums/people_gender2.py` |
+| `RegionModel` | `shutterstock/models/unions/region_model.py` |
+| `RegionModelDict` | `shutterstock/models/unions/region_model.py` |
+| `Sort2OrStr` | `shutterstock/models/enums/sort2.py` |
+| `View2OrStr` | `shutterstock/models/enums/view2.py` |
+| `BulkImageSearchResults` | `shutterstock/models/bulk_image_search_results.py` |
+| `BulkSearchImagesErrorBody` | `shutterstock/errors/bulk_search_images_error.py` |
 
 ### client.images.create_image_collection
 
@@ -70,10 +70,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CollectionCreateRequest` | `shutterstock_api_explorer/models/collection_create_request.py` |
-| `CollectionCreateRequestDict` | `shutterstock_api_explorer/models/collection_create_request.py` |
-| `CollectionCreateResponse` | `shutterstock_api_explorer/models/collection_create_response.py` |
-| `CreateImageCollectionErrorBody` | `shutterstock_api_explorer/errors/create_image_collection_error.py` |
+| `CollectionCreateRequest` | `shutterstock/models/collection_create_request.py` |
+| `CollectionCreateRequestDict` | `shutterstock/models/collection_create_request.py` |
+| `CollectionCreateResponse` | `shutterstock/models/collection_create_response.py` |
+| `CreateImageCollectionErrorBody` | `shutterstock/errors/create_image_collection_error.py` |
 
 ### client.images.delete_image_collection
 
@@ -89,7 +89,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `DeleteImageCollectionErrorBody` | `shutterstock_api_explorer/errors/delete_image_collection_error.py` |
+| `DeleteImageCollectionErrorBody` | `shutterstock/errors/delete_image_collection_error.py` |
 
 ### client.images.delete_image_collection_items
 
@@ -105,7 +105,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `DeleteImageCollectionItemsErrorBody` | `shutterstock_api_explorer/errors/delete_image_collection_items_error.py` |
+| `DeleteImageCollectionItemsErrorBody` | `shutterstock/errors/delete_image_collection_items_error.py` |
 
 ### client.images.download_image
 
@@ -121,10 +121,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `RedownloadImage` | `shutterstock_api_explorer/models/redownload_image.py` |
-| `RedownloadImageDict` | `shutterstock_api_explorer/models/redownload_image.py` |
-| `Url` | `shutterstock_api_explorer/models/url.py` |
-| `DownloadImageErrorBody` | `shutterstock_api_explorer/errors/download_image_error.py` |
+| `RedownloadImage` | `shutterstock/models/redownload_image.py` |
+| `RedownloadImageDict` | `shutterstock/models/redownload_image.py` |
+| `Url` | `shutterstock/models/url.py` |
+| `DownloadImageErrorBody` | `shutterstock/errors/download_image_error.py` |
 
 ### client.images.get_image
 
@@ -140,10 +140,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `LanguageOrStr` | `shutterstock_api_explorer/models/enums/language.py` |
-| `View2OrStr` | `shutterstock_api_explorer/models/enums/view2.py` |
-| `Image` | `shutterstock_api_explorer/models/image.py` |
-| `GetImageErrorBody` | `shutterstock_api_explorer/errors/get_image_error.py` |
+| `LanguageOrStr` | `shutterstock/models/enums/language.py` |
+| `View2OrStr` | `shutterstock/models/enums/view2.py` |
+| `Image` | `shutterstock/models/image.py` |
+| `GetImageErrorBody` | `shutterstock/errors/get_image_error.py` |
 
 ### client.images.get_image_collection
 
@@ -159,9 +159,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `EmbedOrStr` | `shutterstock_api_explorer/models/enums/embed.py` |
-| `Collection` | `shutterstock_api_explorer/models/collection.py` |
-| `GetImageCollectionErrorBody` | `shutterstock_api_explorer/errors/get_image_collection_error.py` |
+| `EmbedOrStr` | `shutterstock/models/enums/embed.py` |
+| `Collection` | `shutterstock/models/collection.py` |
+| `GetImageCollectionErrorBody` | `shutterstock/errors/get_image_collection_error.py` |
 
 ### client.images.get_image_collection_items
 
@@ -177,9 +177,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Sort5OrStr` | `shutterstock_api_explorer/models/enums/sort5.py` |
-| `CollectionItemDataList` | `shutterstock_api_explorer/models/collection_item_data_list.py` |
-| `GetImageCollectionItemsErrorBody` | `shutterstock_api_explorer/errors/get_image_collection_items_error.py` |
+| `Sort5OrStr` | `shutterstock/models/enums/sort5.py` |
+| `CollectionItemDataList` | `shutterstock/models/collection_item_data_list.py` |
+| `GetImageCollectionItemsErrorBody` | `shutterstock/errors/get_image_collection_items_error.py` |
 
 ### client.images.get_image_collection_list
 
@@ -194,9 +194,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `EmbedOrStr` | `shutterstock_api_explorer/models/enums/embed.py` |
-| `CollectionDataList` | `shutterstock_api_explorer/models/collection_data_list.py` |
-| `GetImageCollectionListErrorBody` | `shutterstock_api_explorer/errors/get_image_collection_list_error.py` |
+| `EmbedOrStr` | `shutterstock/models/enums/embed.py` |
+| `CollectionDataList` | `shutterstock/models/collection_data_list.py` |
+| `GetImageCollectionListErrorBody` | `shutterstock/errors/get_image_collection_list_error.py` |
 
 ### client.images.get_image_keyword_suggestions
 
@@ -212,10 +212,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SearchEntitiesRequest` | `shutterstock_api_explorer/models/search_entities_request.py` |
-| `SearchEntitiesRequestDict` | `shutterstock_api_explorer/models/search_entities_request.py` |
-| `SearchEntitiesResponse` | `shutterstock_api_explorer/models/search_entities_response.py` |
-| `GetImageKeywordSuggestionsErrorBody` | `shutterstock_api_explorer/errors/get_image_keyword_suggestions_error.py` |
+| `SearchEntitiesRequest` | `shutterstock/models/search_entities_request.py` |
+| `SearchEntitiesRequestDict` | `shutterstock/models/search_entities_request.py` |
+| `SearchEntitiesResponse` | `shutterstock/models/search_entities_response.py` |
+| `GetImageKeywordSuggestionsErrorBody` | `shutterstock/errors/get_image_keyword_suggestions_error.py` |
 
 ### client.images.get_image_license_list
 
@@ -230,10 +230,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Sort5OrStr` | `shutterstock_api_explorer/models/enums/sort5.py` |
-| `DownloadAvailabilityOrStr` | `shutterstock_api_explorer/models/enums/download_availability.py` |
-| `DownloadHistoryDataList` | `shutterstock_api_explorer/models/download_history_data_list.py` |
-| `GetImageLicenseListErrorBody` | `shutterstock_api_explorer/errors/get_image_license_list_error.py` |
+| `Sort5OrStr` | `shutterstock/models/enums/sort5.py` |
+| `DownloadAvailabilityOrStr` | `shutterstock/models/enums/download_availability.py` |
+| `DownloadHistoryDataList` | `shutterstock/models/download_history_data_list.py` |
+| `GetImageLicenseListErrorBody` | `shutterstock/errors/get_image_license_list_error.py` |
 
 ### client.images.get_image_list
 
@@ -249,9 +249,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `View2OrStr` | `shutterstock_api_explorer/models/enums/view2.py` |
-| `ImageDataList` | `shutterstock_api_explorer/models/image_data_list.py` |
-| `GetImageListErrorBody` | `shutterstock_api_explorer/errors/get_image_list_error.py` |
+| `View2OrStr` | `shutterstock/models/enums/view2.py` |
+| `ImageDataList` | `shutterstock/models/image_data_list.py` |
+| `GetImageListErrorBody` | `shutterstock/errors/get_image_list_error.py` |
 
 ### client.images.get_image_recommendations
 
@@ -267,8 +267,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `RecommendationDataList` | `shutterstock_api_explorer/models/recommendation_data_list.py` |
-| `GetImageRecommendationsErrorBody` | `shutterstock_api_explorer/errors/get_image_recommendations_error.py` |
+| `RecommendationDataList` | `shutterstock/models/recommendation_data_list.py` |
+| `GetImageRecommendationsErrorBody` | `shutterstock/errors/get_image_recommendations_error.py` |
 
 ### client.images.get_image_suggestions
 
@@ -284,14 +284,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Suggestions` | `shutterstock_api_explorer/models/suggestions.py` |
-| `GetImageSuggestionsErrorBody` | `shutterstock_api_explorer/errors/get_image_suggestions_error.py` |
+| `Suggestions` | `shutterstock/models/suggestions.py` |
+| `GetImageSuggestionsErrorBody` | `shutterstock/errors/get_image_suggestions_error.py` |
 
 ### client.images.get_updated_images
 
 - **Route**: `GET /v2/images/updated`
 - **Server**: `default`
-- **Signature**: `def get_updated_images(*, type_: list[Type4OrStr] | None = None, start_date: str | None = None, end_date: str | None = None, interval: str | None = "1 HOUR", page: int | None = 1, per_page: int | None = 100, sort: Sort5OrStr | None = None, request_options: RequestOptionsOrDict | None = None)`
+- **Signature**: `def get_updated_images(*, type_: list[Type14OrStr] | None = None, start_date: str | None = None, end_date: str | None = None, interval: str | None = "1 HOUR", page: int | None = 1, per_page: int | None = 100, sort: Sort5OrStr | None = None, request_options: RequestOptionsOrDict | None = None)`
 - **Params**: `type_` — query `type` · `start_date` — query · `end_date` — query · `interval` — query · `page` — query · `per_page` — query · `sort` — query
 - **Returns (parsed)**: `UpdatedMediaDataList`
 - **Returns (raw)**: `ApiResult[UpdatedMediaDataList, RawError]`
@@ -299,9 +299,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Type4OrStr` | `shutterstock_api_explorer/models/enums/type4.py` |
-| `Sort5OrStr` | `shutterstock_api_explorer/models/enums/sort5.py` |
-| `UpdatedMediaDataList` | `shutterstock_api_explorer/models/updated_media_data_list.py` |
+| `Type14OrStr` | `shutterstock/models/enums/type14.py` |
+| `Sort5OrStr` | `shutterstock/models/enums/sort5.py` |
+| `UpdatedMediaDataList` | `shutterstock/models/updated_media_data_list.py` |
 
 ### client.images.license_images
 
@@ -317,12 +317,12 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `LicenseImageRequest` | `shutterstock_api_explorer/models/license_image_request.py` |
-| `LicenseImageRequestDict` | `shutterstock_api_explorer/models/license_image_request.py` |
-| `Format15OrStr` | `shutterstock_api_explorer/models/enums/format15.py` |
-| `Size12OrStr` | `shutterstock_api_explorer/models/enums/size12.py` |
-| `LicenseImageResultDataList` | `shutterstock_api_explorer/models/license_image_result_data_list.py` |
-| `LicenseImagesErrorBody` | `shutterstock_api_explorer/errors/license_images_error.py` |
+| `LicenseImageRequest` | `shutterstock/models/license_image_request.py` |
+| `LicenseImageRequestDict` | `shutterstock/models/license_image_request.py` |
+| `Format15OrStr` | `shutterstock/models/enums/format15.py` |
+| `Size12OrStr` | `shutterstock/models/enums/size12.py` |
+| `LicenseImageResultDataList` | `shutterstock/models/license_image_result_data_list.py` |
+| `LicenseImagesErrorBody` | `shutterstock/errors/license_images_error.py` |
 
 ### client.images.list_image_categories
 
@@ -337,9 +337,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `LanguageOrStr` | `shutterstock_api_explorer/models/enums/language.py` |
-| `CategoryDataList` | `shutterstock_api_explorer/models/category_data_list.py` |
-| `ListImageCategoriesErrorBody` | `shutterstock_api_explorer/errors/list_image_categories_error.py` |
+| `LanguageOrStr` | `shutterstock/models/enums/language.py` |
+| `CategoryDataList` | `shutterstock/models/category_data_list.py` |
+| `ListImageCategoriesErrorBody` | `shutterstock/errors/list_image_categories_error.py` |
 
 ### client.images.list_similar_images
 
@@ -355,10 +355,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `LanguageOrStr` | `shutterstock_api_explorer/models/enums/language.py` |
-| `View2OrStr` | `shutterstock_api_explorer/models/enums/view2.py` |
-| `ImageSearchResults` | `shutterstock_api_explorer/models/image_search_results.py` |
-| `ListSimilarImagesErrorBody` | `shutterstock_api_explorer/errors/list_similar_images_error.py` |
+| `LanguageOrStr` | `shutterstock/models/enums/language.py` |
+| `View2OrStr` | `shutterstock/models/enums/view2.py` |
+| `ImageSearchResults` | `shutterstock/models/image_search_results.py` |
+| `ListSimilarImagesErrorBody` | `shutterstock/errors/list_similar_images_error.py` |
 
 ### client.images.rename_image_collection
 
@@ -374,9 +374,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CollectionUpdateRequest` | `shutterstock_api_explorer/models/collection_update_request.py` |
-| `CollectionUpdateRequestDict` | `shutterstock_api_explorer/models/collection_update_request.py` |
-| `RenameImageCollectionErrorBody` | `shutterstock_api_explorer/errors/rename_image_collection_error.py` |
+| `CollectionUpdateRequest` | `shutterstock/models/collection_update_request.py` |
+| `CollectionUpdateRequestDict` | `shutterstock/models/collection_update_request.py` |
+| `RenameImageCollectionErrorBody` | `shutterstock/errors/rename_image_collection_error.py` |
 
 ### client.images.search_images
 
@@ -391,20 +391,20 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `LibraryOrStr` | `shutterstock_api_explorer/models/enums/library.py` |
-| `ContributorCountryModel` | `shutterstock_api_explorer/models/unions/contributor_country_model.py` |
-| `ContributorCountryModelDict` | `shutterstock_api_explorer/models/unions/contributor_country_model.py` |
-| `ImageType2OrStr` | `shutterstock_api_explorer/models/enums/image_type2.py` |
-| `LanguageOrStr` | `shutterstock_api_explorer/models/enums/language.py` |
-| `LicenseOrStr` | `shutterstock_api_explorer/models/enums/license.py` |
-| `Orientation2OrStr` | `shutterstock_api_explorer/models/enums/orientation2.py` |
-| `PeopleAge2OrStr` | `shutterstock_api_explorer/models/enums/people_age2.py` |
-| `PeopleEthnicity2OrStr` | `shutterstock_api_explorer/models/enums/people_ethnicity2.py` |
-| `PeopleGender2OrStr` | `shutterstock_api_explorer/models/enums/people_gender2.py` |
-| `RegionModel` | `shutterstock_api_explorer/models/unions/region_model.py` |
-| `RegionModelDict` | `shutterstock_api_explorer/models/unions/region_model.py` |
-| `Sort2OrStr` | `shutterstock_api_explorer/models/enums/sort2.py` |
-| `View2OrStr` | `shutterstock_api_explorer/models/enums/view2.py` |
-| `ImageSearchResults` | `shutterstock_api_explorer/models/image_search_results.py` |
-| `SearchImagesErrorBody` | `shutterstock_api_explorer/errors/search_images_error.py` |
+| `LibraryOrStr` | `shutterstock/models/enums/library.py` |
+| `ContributorCountryModel` | `shutterstock/models/unions/contributor_country_model.py` |
+| `ContributorCountryModelDict` | `shutterstock/models/unions/contributor_country_model.py` |
+| `ImageType2OrStr` | `shutterstock/models/enums/image_type2.py` |
+| `LanguageOrStr` | `shutterstock/models/enums/language.py` |
+| `LicenseOrStr` | `shutterstock/models/enums/license.py` |
+| `Orientation2OrStr` | `shutterstock/models/enums/orientation2.py` |
+| `PeopleAge2OrStr` | `shutterstock/models/enums/people_age2.py` |
+| `PeopleEthnicity2OrStr` | `shutterstock/models/enums/people_ethnicity2.py` |
+| `PeopleGender2OrStr` | `shutterstock/models/enums/people_gender2.py` |
+| `RegionModel` | `shutterstock/models/unions/region_model.py` |
+| `RegionModelDict` | `shutterstock/models/unions/region_model.py` |
+| `Sort2OrStr` | `shutterstock/models/enums/sort2.py` |
+| `View2OrStr` | `shutterstock/models/enums/view2.py` |
+| `ImageSearchResults` | `shutterstock/models/image_search_results.py` |
+| `SearchImagesErrorBody` | `shutterstock/errors/search_images_error.py` |
 

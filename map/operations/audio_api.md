@@ -2,7 +2,7 @@
 
 # AudioApi — operations
 
-Accessor: `client.audio_api` · Source: `shutterstock_api_explorer/apis/audio_api.py` · 17 operations
+Accessor: `client.audio_api` · Source: `shutterstock/apis/audio_api.py` · 17 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -20,9 +20,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CollectionItemRequest` | `shutterstock_api_explorer/models/collection_item_request.py` |
-| `CollectionItemRequestDict` | `shutterstock_api_explorer/models/collection_item_request.py` |
-| `AddTrackCollectionItemsErrorBody` | `shutterstock_api_explorer/errors/add_track_collection_items_error.py` |
+| `CollectionItemRequest` | `shutterstock/models/collection_item_request.py` |
+| `CollectionItemRequestDict` | `shutterstock/models/collection_item_request.py` |
+| `AddTrackCollectionItemsErrorBody` | `shutterstock/errors/add_track_collection_items_error.py` |
 
 ### client.audio_api.create_track_collection
 
@@ -38,10 +38,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CollectionCreateRequest` | `shutterstock_api_explorer/models/collection_create_request.py` |
-| `CollectionCreateRequestDict` | `shutterstock_api_explorer/models/collection_create_request.py` |
-| `CollectionCreateResponse` | `shutterstock_api_explorer/models/collection_create_response.py` |
-| `CreateTrackCollectionErrorBody` | `shutterstock_api_explorer/errors/create_track_collection_error.py` |
+| `CollectionCreateRequest` | `shutterstock/models/collection_create_request.py` |
+| `CollectionCreateRequestDict` | `shutterstock/models/collection_create_request.py` |
+| `CollectionCreateResponse` | `shutterstock/models/collection_create_response.py` |
+| `CreateTrackCollectionErrorBody` | `shutterstock/errors/create_track_collection_error.py` |
 
 ### client.audio_api.delete_track_collection
 
@@ -57,7 +57,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `DeleteTrackCollectionErrorBody` | `shutterstock_api_explorer/errors/delete_track_collection_error.py` |
+| `DeleteTrackCollectionErrorBody` | `shutterstock/errors/delete_track_collection_error.py` |
 
 ### client.audio_api.delete_track_collection_items
 
@@ -73,7 +73,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `DeleteTrackCollectionItemsErrorBody` | `shutterstock_api_explorer/errors/delete_track_collection_items_error.py` |
+| `DeleteTrackCollectionItemsErrorBody` | `shutterstock/errors/delete_track_collection_items_error.py` |
 
 ### client.audio_api.download_tracks
 
@@ -89,8 +89,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AudioUrl` | `shutterstock_api_explorer/models/audio_url.py` |
-| `DownloadTracksErrorBody` | `shutterstock_api_explorer/errors/download_tracks_error.py` |
+| `AudioUrl` | `shutterstock/models/audio_url.py` |
+| `DownloadTracksErrorBody` | `shutterstock/errors/download_tracks_error.py` |
 
 ### client.audio_api.get_track
 
@@ -106,9 +106,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `View2OrStr` | `shutterstock_api_explorer/models/enums/view2.py` |
-| `Audio` | `shutterstock_api_explorer/models/audio.py` |
-| `GetTrackErrorBody` | `shutterstock_api_explorer/errors/get_track_error.py` |
+| `View2OrStr` | `shutterstock/models/enums/view2.py` |
+| `Audio` | `shutterstock/models/audio.py` |
+| `GetTrackErrorBody` | `shutterstock/errors/get_track_error.py` |
 
 ### client.audio_api.get_track_collection
 
@@ -124,9 +124,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `EmbedOrStr` | `shutterstock_api_explorer/models/enums/embed.py` |
-| `Collection` | `shutterstock_api_explorer/models/collection.py` |
-| `GetTrackCollectionErrorBody` | `shutterstock_api_explorer/errors/get_track_collection_error.py` |
+| `EmbedOrStr` | `shutterstock/models/enums/embed.py` |
+| `Collection` | `shutterstock/models/collection.py` |
+| `GetTrackCollectionErrorBody` | `shutterstock/errors/get_track_collection_error.py` |
 
 ### client.audio_api.get_track_collection_items
 
@@ -142,9 +142,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Sort5OrStr` | `shutterstock_api_explorer/models/enums/sort5.py` |
-| `CollectionItemDataList` | `shutterstock_api_explorer/models/collection_item_data_list.py` |
-| `GetTrackCollectionItemsErrorBody` | `shutterstock_api_explorer/errors/get_track_collection_items_error.py` |
+| `Sort5OrStr` | `shutterstock/models/enums/sort5.py` |
+| `CollectionItemDataList` | `shutterstock/models/collection_item_data_list.py` |
+| `GetTrackCollectionItemsErrorBody` | `shutterstock/errors/get_track_collection_items_error.py` |
 
 ### client.audio_api.get_track_collection_list
 
@@ -159,9 +159,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `EmbedOrStr` | `shutterstock_api_explorer/models/enums/embed.py` |
-| `CollectionDataList` | `shutterstock_api_explorer/models/collection_data_list.py` |
-| `GetTrackCollectionListErrorBody` | `shutterstock_api_explorer/errors/get_track_collection_list_error.py` |
+| `EmbedOrStr` | `shutterstock/models/enums/embed.py` |
+| `CollectionDataList` | `shutterstock/models/collection_data_list.py` |
+| `GetTrackCollectionListErrorBody` | `shutterstock/errors/get_track_collection_list_error.py` |
 
 ### client.audio_api.get_track_license_list
 
@@ -176,10 +176,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Sort5OrStr` | `shutterstock_api_explorer/models/enums/sort5.py` |
-| `DownloadAvailabilityOrStr` | `shutterstock_api_explorer/models/enums/download_availability.py` |
-| `DownloadHistoryDataList` | `shutterstock_api_explorer/models/download_history_data_list.py` |
-| `GetTrackLicenseListErrorBody` | `shutterstock_api_explorer/errors/get_track_license_list_error.py` |
+| `Sort5OrStr` | `shutterstock/models/enums/sort5.py` |
+| `DownloadAvailabilityOrStr` | `shutterstock/models/enums/download_availability.py` |
+| `DownloadHistoryDataList` | `shutterstock/models/download_history_data_list.py` |
+| `GetTrackLicenseListErrorBody` | `shutterstock/errors/get_track_license_list_error.py` |
 
 ### client.audio_api.get_track_list
 
@@ -195,9 +195,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `View2OrStr` | `shutterstock_api_explorer/models/enums/view2.py` |
-| `AudioDataList` | `shutterstock_api_explorer/models/audio_data_list.py` |
-| `GetTrackListErrorBody` | `shutterstock_api_explorer/errors/get_track_list_error.py` |
+| `View2OrStr` | `shutterstock/models/enums/view2.py` |
+| `AudioDataList` | `shutterstock/models/audio_data_list.py` |
+| `GetTrackListErrorBody` | `shutterstock/errors/get_track_list_error.py` |
 
 ### client.audio_api.license_track
 
@@ -213,11 +213,11 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `LicenseAudioRequest` | `shutterstock_api_explorer/models/license_audio_request.py` |
-| `LicenseAudioRequestDict` | `shutterstock_api_explorer/models/license_audio_request.py` |
-| `License10OrStr` | `shutterstock_api_explorer/models/enums/license10.py` |
-| `LicenseAudioResultDataList` | `shutterstock_api_explorer/models/license_audio_result_data_list.py` |
-| `LicenseTrackErrorBody` | `shutterstock_api_explorer/errors/license_track_error.py` |
+| `LicenseAudioRequest` | `shutterstock/models/license_audio_request.py` |
+| `LicenseAudioRequestDict` | `shutterstock/models/license_audio_request.py` |
+| `License10OrStr` | `shutterstock/models/enums/license10.py` |
+| `LicenseAudioResultDataList` | `shutterstock/models/license_audio_result_data_list.py` |
+| `LicenseTrackErrorBody` | `shutterstock/errors/license_track_error.py` |
 
 ### client.audio_api.list_genres
 
@@ -231,7 +231,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `GenreList` | `shutterstock_api_explorer/models/genre_list.py` |
+| `GenreList` | `shutterstock/models/genre_list.py` |
 
 ### client.audio_api.list_instruments
 
@@ -245,7 +245,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `InstrumentList` | `shutterstock_api_explorer/models/instrument_list.py` |
+| `InstrumentList` | `shutterstock/models/instrument_list.py` |
 
 ### client.audio_api.list_moods
 
@@ -259,7 +259,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `MoodList` | `shutterstock_api_explorer/models/mood_list.py` |
+| `MoodList` | `shutterstock/models/mood_list.py` |
 
 ### client.audio_api.rename_track_collection
 
@@ -275,9 +275,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CollectionUpdateRequest` | `shutterstock_api_explorer/models/collection_update_request.py` |
-| `CollectionUpdateRequestDict` | `shutterstock_api_explorer/models/collection_update_request.py` |
-| `RenameTrackCollectionErrorBody` | `shutterstock_api_explorer/errors/rename_track_collection_error.py` |
+| `CollectionUpdateRequest` | `shutterstock/models/collection_update_request.py` |
+| `CollectionUpdateRequestDict` | `shutterstock/models/collection_update_request.py` |
+| `RenameTrackCollectionErrorBody` | `shutterstock/errors/rename_track_collection_error.py` |
 
 ### client.audio_api.search_tracks
 
@@ -292,10 +292,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Sort12OrStr` | `shutterstock_api_explorer/models/enums/sort12.py` |
-| `SortOrderOrStr` | `shutterstock_api_explorer/models/enums/sort_order.py` |
-| `View2OrStr` | `shutterstock_api_explorer/models/enums/view2.py` |
-| `Library1OrStr` | `shutterstock_api_explorer/models/enums/library1.py` |
-| `AudioSearchResults` | `shutterstock_api_explorer/models/audio_search_results.py` |
-| `SearchTracksErrorBody` | `shutterstock_api_explorer/errors/search_tracks_error.py` |
+| `Sort12OrStr` | `shutterstock/models/enums/sort12.py` |
+| `SortOrderOrStr` | `shutterstock/models/enums/sort_order.py` |
+| `View2OrStr` | `shutterstock/models/enums/view2.py` |
+| `Library1OrStr` | `shutterstock/models/enums/library1.py` |
+| `AudioSearchResults` | `shutterstock/models/audio_search_results.py` |
+| `SearchTracksErrorBody` | `shutterstock/errors/search_tracks_error.py` |
 

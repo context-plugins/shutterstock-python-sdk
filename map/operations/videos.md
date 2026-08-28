@@ -2,7 +2,7 @@
 
 # Videos — operations
 
-Accessor: `client.videos` · Source: `shutterstock_api_explorer/apis/videos.py` · 18 operations
+Accessor: `client.videos` · Source: `shutterstock/apis/videos.py` · 18 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -20,9 +20,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CollectionItemRequest` | `shutterstock_api_explorer/models/collection_item_request.py` |
-| `CollectionItemRequestDict` | `shutterstock_api_explorer/models/collection_item_request.py` |
-| `AddVideoCollectionItemsErrorBody` | `shutterstock_api_explorer/errors/add_video_collection_items_error.py` |
+| `CollectionItemRequest` | `shutterstock/models/collection_item_request.py` |
+| `CollectionItemRequestDict` | `shutterstock/models/collection_item_request.py` |
+| `AddVideoCollectionItemsErrorBody` | `shutterstock/errors/add_video_collection_items_error.py` |
 
 ### client.videos.create_video_collection
 
@@ -38,10 +38,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CollectionCreateRequest` | `shutterstock_api_explorer/models/collection_create_request.py` |
-| `CollectionCreateRequestDict` | `shutterstock_api_explorer/models/collection_create_request.py` |
-| `CollectionCreateResponse` | `shutterstock_api_explorer/models/collection_create_response.py` |
-| `CreateVideoCollectionErrorBody` | `shutterstock_api_explorer/errors/create_video_collection_error.py` |
+| `CollectionCreateRequest` | `shutterstock/models/collection_create_request.py` |
+| `CollectionCreateRequestDict` | `shutterstock/models/collection_create_request.py` |
+| `CollectionCreateResponse` | `shutterstock/models/collection_create_response.py` |
+| `CreateVideoCollectionErrorBody` | `shutterstock/errors/create_video_collection_error.py` |
 
 ### client.videos.delete_video_collection
 
@@ -57,7 +57,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `DeleteVideoCollectionErrorBody` | `shutterstock_api_explorer/errors/delete_video_collection_error.py` |
+| `DeleteVideoCollectionErrorBody` | `shutterstock/errors/delete_video_collection_error.py` |
 
 ### client.videos.delete_video_collection_items
 
@@ -73,7 +73,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `DeleteVideoCollectionItemsErrorBody` | `shutterstock_api_explorer/errors/delete_video_collection_items_error.py` |
+| `DeleteVideoCollectionItemsErrorBody` | `shutterstock/errors/delete_video_collection_items_error.py` |
 
 ### client.videos.download_videos
 
@@ -89,10 +89,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `RedownloadVideo` | `shutterstock_api_explorer/models/redownload_video.py` |
-| `RedownloadVideoDict` | `shutterstock_api_explorer/models/redownload_video.py` |
-| `Url` | `shutterstock_api_explorer/models/url.py` |
-| `DownloadVideosErrorBody` | `shutterstock_api_explorer/errors/download_videos_error.py` |
+| `RedownloadVideo` | `shutterstock/models/redownload_video.py` |
+| `RedownloadVideoDict` | `shutterstock/models/redownload_video.py` |
+| `Url` | `shutterstock/models/url.py` |
+| `DownloadVideosErrorBody` | `shutterstock/errors/download_videos_error.py` |
 
 ### client.videos.find_similar_videos
 
@@ -108,10 +108,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `LanguageOrStr` | `shutterstock_api_explorer/models/enums/language.py` |
-| `View2OrStr` | `shutterstock_api_explorer/models/enums/view2.py` |
-| `VideoSearchResults` | `shutterstock_api_explorer/models/video_search_results.py` |
-| `FindSimilarVideosErrorBody` | `shutterstock_api_explorer/errors/find_similar_videos_error.py` |
+| `LanguageOrStr` | `shutterstock/models/enums/language.py` |
+| `View2OrStr` | `shutterstock/models/enums/view2.py` |
+| `VideoSearchResults` | `shutterstock/models/video_search_results.py` |
+| `FindSimilarVideosErrorBody` | `shutterstock/errors/find_similar_videos_error.py` |
 
 ### client.videos.get_updated_videos
 
@@ -125,8 +125,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Sort5OrStr` | `shutterstock_api_explorer/models/enums/sort5.py` |
-| `UpdatedMediaDataList` | `shutterstock_api_explorer/models/updated_media_data_list.py` |
+| `Sort5OrStr` | `shutterstock/models/enums/sort5.py` |
+| `UpdatedMediaDataList` | `shutterstock/models/updated_media_data_list.py` |
 
 ### client.videos.get_video
 
@@ -142,10 +142,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `LanguageOrStr` | `shutterstock_api_explorer/models/enums/language.py` |
-| `View2OrStr` | `shutterstock_api_explorer/models/enums/view2.py` |
-| `Video` | `shutterstock_api_explorer/models/video.py` |
-| `GetVideoErrorBody` | `shutterstock_api_explorer/errors/get_video_error.py` |
+| `LanguageOrStr` | `shutterstock/models/enums/language.py` |
+| `View2OrStr` | `shutterstock/models/enums/view2.py` |
+| `Video` | `shutterstock/models/video.py` |
+| `GetVideoErrorBody` | `shutterstock/errors/get_video_error.py` |
 
 ### client.videos.get_video_collection
 
@@ -161,9 +161,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `EmbedOrStr` | `shutterstock_api_explorer/models/enums/embed.py` |
-| `Collection` | `shutterstock_api_explorer/models/collection.py` |
-| `GetVideoCollectionErrorBody` | `shutterstock_api_explorer/errors/get_video_collection_error.py` |
+| `EmbedOrStr` | `shutterstock/models/enums/embed.py` |
+| `Collection` | `shutterstock/models/collection.py` |
+| `GetVideoCollectionErrorBody` | `shutterstock/errors/get_video_collection_error.py` |
 
 ### client.videos.get_video_collection_items
 
@@ -179,9 +179,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Sort5OrStr` | `shutterstock_api_explorer/models/enums/sort5.py` |
-| `CollectionItemDataList` | `shutterstock_api_explorer/models/collection_item_data_list.py` |
-| `GetVideoCollectionItemsErrorBody` | `shutterstock_api_explorer/errors/get_video_collection_items_error.py` |
+| `Sort5OrStr` | `shutterstock/models/enums/sort5.py` |
+| `CollectionItemDataList` | `shutterstock/models/collection_item_data_list.py` |
+| `GetVideoCollectionItemsErrorBody` | `shutterstock/errors/get_video_collection_items_error.py` |
 
 ### client.videos.get_video_collection_list
 
@@ -196,9 +196,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `EmbedOrStr` | `shutterstock_api_explorer/models/enums/embed.py` |
-| `CollectionDataList` | `shutterstock_api_explorer/models/collection_data_list.py` |
-| `GetVideoCollectionListErrorBody` | `shutterstock_api_explorer/errors/get_video_collection_list_error.py` |
+| `EmbedOrStr` | `shutterstock/models/enums/embed.py` |
+| `CollectionDataList` | `shutterstock/models/collection_data_list.py` |
+| `GetVideoCollectionListErrorBody` | `shutterstock/errors/get_video_collection_list_error.py` |
 
 ### client.videos.get_video_license_list
 
@@ -213,10 +213,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Sort5OrStr` | `shutterstock_api_explorer/models/enums/sort5.py` |
-| `DownloadAvailabilityOrStr` | `shutterstock_api_explorer/models/enums/download_availability.py` |
-| `DownloadHistoryDataList` | `shutterstock_api_explorer/models/download_history_data_list.py` |
-| `GetVideoLicenseListErrorBody` | `shutterstock_api_explorer/errors/get_video_license_list_error.py` |
+| `Sort5OrStr` | `shutterstock/models/enums/sort5.py` |
+| `DownloadAvailabilityOrStr` | `shutterstock/models/enums/download_availability.py` |
+| `DownloadHistoryDataList` | `shutterstock/models/download_history_data_list.py` |
+| `GetVideoLicenseListErrorBody` | `shutterstock/errors/get_video_license_list_error.py` |
 
 ### client.videos.get_video_list
 
@@ -232,9 +232,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `View2OrStr` | `shutterstock_api_explorer/models/enums/view2.py` |
-| `VideoDataList` | `shutterstock_api_explorer/models/video_data_list.py` |
-| `GetVideoListErrorBody` | `shutterstock_api_explorer/errors/get_video_list_error.py` |
+| `View2OrStr` | `shutterstock/models/enums/view2.py` |
+| `VideoDataList` | `shutterstock/models/video_data_list.py` |
+| `GetVideoListErrorBody` | `shutterstock/errors/get_video_list_error.py` |
 
 ### client.videos.get_video_suggestions
 
@@ -250,8 +250,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Suggestions` | `shutterstock_api_explorer/models/suggestions.py` |
-| `GetVideoSuggestionsErrorBody` | `shutterstock_api_explorer/errors/get_video_suggestions_error.py` |
+| `Suggestions` | `shutterstock/models/suggestions.py` |
+| `GetVideoSuggestionsErrorBody` | `shutterstock/errors/get_video_suggestions_error.py` |
 
 ### client.videos.license_videos
 
@@ -267,11 +267,11 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `LicenseVideoRequest` | `shutterstock_api_explorer/models/license_video_request.py` |
-| `LicenseVideoRequestDict` | `shutterstock_api_explorer/models/license_video_request.py` |
-| `Size16OrStr` | `shutterstock_api_explorer/models/enums/size16.py` |
-| `LicenseVideoResultDataList` | `shutterstock_api_explorer/models/license_video_result_data_list.py` |
-| `LicenseVideosErrorBody` | `shutterstock_api_explorer/errors/license_videos_error.py` |
+| `LicenseVideoRequest` | `shutterstock/models/license_video_request.py` |
+| `LicenseVideoRequestDict` | `shutterstock/models/license_video_request.py` |
+| `Size16OrStr` | `shutterstock/models/enums/size16.py` |
+| `LicenseVideoResultDataList` | `shutterstock/models/license_video_result_data_list.py` |
+| `LicenseVideosErrorBody` | `shutterstock/errors/license_videos_error.py` |
 
 ### client.videos.list_video_categories
 
@@ -286,9 +286,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `LanguageOrStr` | `shutterstock_api_explorer/models/enums/language.py` |
-| `CategoryDataList` | `shutterstock_api_explorer/models/category_data_list.py` |
-| `ListVideoCategoriesErrorBody` | `shutterstock_api_explorer/errors/list_video_categories_error.py` |
+| `LanguageOrStr` | `shutterstock/models/enums/language.py` |
+| `CategoryDataList` | `shutterstock/models/category_data_list.py` |
+| `ListVideoCategoriesErrorBody` | `shutterstock/errors/list_video_categories_error.py` |
 
 ### client.videos.rename_video_collection
 
@@ -304,9 +304,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CollectionUpdateRequest` | `shutterstock_api_explorer/models/collection_update_request.py` |
-| `CollectionUpdateRequestDict` | `shutterstock_api_explorer/models/collection_update_request.py` |
-| `RenameVideoCollectionErrorBody` | `shutterstock_api_explorer/errors/rename_video_collection_error.py` |
+| `CollectionUpdateRequest` | `shutterstock/models/collection_update_request.py` |
+| `CollectionUpdateRequestDict` | `shutterstock/models/collection_update_request.py` |
+| `RenameVideoCollectionErrorBody` | `shutterstock/errors/rename_video_collection_error.py` |
 
 ### client.videos.search_videos
 
@@ -321,16 +321,16 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AspectRatioOrStr` | `shutterstock_api_explorer/models/enums/aspect_ratio.py` |
-| `LanguageOrStr` | `shutterstock_api_explorer/models/enums/language.py` |
-| `License9OrStr` | `shutterstock_api_explorer/models/enums/license9.py` |
-| `Orientation2OrStr` | `shutterstock_api_explorer/models/enums/orientation2.py` |
-| `PeopleAge2OrStr` | `shutterstock_api_explorer/models/enums/people_age2.py` |
-| `PeopleEthnicity5OrStr` | `shutterstock_api_explorer/models/enums/people_ethnicity5.py` |
-| `PeopleGender2OrStr` | `shutterstock_api_explorer/models/enums/people_gender2.py` |
-| `ResolutionOrStr` | `shutterstock_api_explorer/models/enums/resolution.py` |
-| `Sort2OrStr` | `shutterstock_api_explorer/models/enums/sort2.py` |
-| `View2OrStr` | `shutterstock_api_explorer/models/enums/view2.py` |
-| `VideoSearchResults` | `shutterstock_api_explorer/models/video_search_results.py` |
-| `SearchVideosErrorBody` | `shutterstock_api_explorer/errors/search_videos_error.py` |
+| `AspectRatioOrStr` | `shutterstock/models/enums/aspect_ratio.py` |
+| `LanguageOrStr` | `shutterstock/models/enums/language.py` |
+| `License9OrStr` | `shutterstock/models/enums/license9.py` |
+| `Orientation2OrStr` | `shutterstock/models/enums/orientation2.py` |
+| `PeopleAge2OrStr` | `shutterstock/models/enums/people_age2.py` |
+| `PeopleEthnicity5OrStr` | `shutterstock/models/enums/people_ethnicity5.py` |
+| `PeopleGender2OrStr` | `shutterstock/models/enums/people_gender2.py` |
+| `ResolutionOrStr` | `shutterstock/models/enums/resolution.py` |
+| `Sort2OrStr` | `shutterstock/models/enums/sort2.py` |
+| `View2OrStr` | `shutterstock/models/enums/view2.py` |
+| `VideoSearchResults` | `shutterstock/models/video_search_results.py` |
+| `SearchVideosErrorBody` | `shutterstock/errors/search_videos_error.py` |
 

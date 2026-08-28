@@ -2,7 +2,7 @@
 
 # Catalog — operations
 
-Accessor: `client.catalog` · Source: `shutterstock_api_explorer/apis/catalog.py` · 7 operations
+Accessor: `client.catalog` · Source: `shutterstock/apis/catalog.py` · 7 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -19,9 +19,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CreateCatalogCollectionItems` | `shutterstock_api_explorer/models/create_catalog_collection_items.py` |
-| `CreateCatalogCollectionItemsDict` | `shutterstock_api_explorer/models/create_catalog_collection_items.py` |
-| `CatalogCollection` | `shutterstock_api_explorer/models/catalog_collection.py` |
+| `CreateCatalogCollectionItems` | `shutterstock/models/create_catalog_collection_items.py` |
+| `CreateCatalogCollectionItemsDict` | `shutterstock/models/create_catalog_collection_items.py` |
+| `CatalogCollection` | `shutterstock/models/catalog_collection.py` |
 
 ### client.catalog.create_collection
 
@@ -36,9 +36,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CreateCatalogCollection` | `shutterstock_api_explorer/models/create_catalog_collection.py` |
-| `CreateCatalogCollectionDict` | `shutterstock_api_explorer/models/create_catalog_collection.py` |
-| `CatalogCollection` | `shutterstock_api_explorer/models/catalog_collection.py` |
+| `CreateCatalogCollection` | `shutterstock/models/create_catalog_collection.py` |
+| `CreateCatalogCollectionDict` | `shutterstock/models/create_catalog_collection.py` |
+| `CatalogCollection` | `shutterstock/models/catalog_collection.py` |
 
 ### client.catalog.delete_collection
 
@@ -54,7 +54,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `DeleteCollectionErrorBody` | `shutterstock_api_explorer/errors/delete_collection_error.py` |
+| `DeleteCollectionErrorBody` | `shutterstock/errors/delete_collection_error.py` |
 
 ### client.catalog.delete_from_collection
 
@@ -69,9 +69,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `RemoveCatalogCollectionItems` | `shutterstock_api_explorer/models/remove_catalog_collection_items.py` |
-| `RemoveCatalogCollectionItemsDict` | `shutterstock_api_explorer/models/remove_catalog_collection_items.py` |
-| `CatalogCollection` | `shutterstock_api_explorer/models/catalog_collection.py` |
+| `RemoveCatalogCollectionItems` | `shutterstock/models/remove_catalog_collection_items.py` |
+| `RemoveCatalogCollectionItemsDict` | `shutterstock/models/remove_catalog_collection_items.py` |
+| `CatalogCollection` | `shutterstock/models/catalog_collection.py` |
 
 ### client.catalog.get_collections
 
@@ -86,9 +86,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Sort5OrStr` | `shutterstock_api_explorer/models/enums/sort5.py` |
-| `CatalogCollectionDataList` | `shutterstock_api_explorer/models/catalog_collection_data_list.py` |
-| `GetCollectionsErrorBody` | `shutterstock_api_explorer/errors/get_collections_error.py` |
+| `Sort5OrStr` | `shutterstock/models/enums/sort5.py` |
+| `CatalogCollectionDataList` | `shutterstock/models/catalog_collection_data_list.py` |
+| `GetCollectionsErrorBody` | `shutterstock/errors/get_collections_error.py` |
 
 ### client.catalog.search_catalog
 
@@ -103,10 +103,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Sort5OrStr` | `shutterstock_api_explorer/models/enums/sort5.py` |
-| `AssetTypeOrStr` | `shutterstock_api_explorer/models/enums/asset_type.py` |
-| `CatalogCollectionItemDataList` | `shutterstock_api_explorer/models/catalog_collection_item_data_list.py` |
-| `SearchCatalogErrorBody` | `shutterstock_api_explorer/errors/search_catalog_error.py` |
+| `Sort5OrStr` | `shutterstock/models/enums/sort5.py` |
+| `AssetTypeOrStr` | `shutterstock/models/enums/asset_type.py` |
+| `CatalogCollectionItemDataList` | `shutterstock/models/catalog_collection_item_data_list.py` |
+| `SearchCatalogErrorBody` | `shutterstock/errors/search_catalog_error.py` |
 
 ### client.catalog.update_collection
 
@@ -121,7 +121,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UpdateCatalogCollection` | `shutterstock_api_explorer/models/update_catalog_collection.py` |
-| `UpdateCatalogCollectionDict` | `shutterstock_api_explorer/models/update_catalog_collection.py` |
-| `CatalogCollection` | `shutterstock_api_explorer/models/catalog_collection.py` |
+| `UpdateCatalogCollection` | `shutterstock/models/update_catalog_collection.py` |
+| `UpdateCatalogCollectionDict` | `shutterstock/models/update_catalog_collection.py` |
+| `CatalogCollection` | `shutterstock/models/catalog_collection.py` |
 

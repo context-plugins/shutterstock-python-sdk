@@ -1,5 +1,5 @@
 [project]
-name = "shutterstock-api-explorer"
+name = "shutterstock"
 version = "1.2.0"
 description = "The Shutterstock API provides access to Shutterstock's library of media, as well as information about customers' accounts and the contributors that provide the media."
 maintainers = [
@@ -74,7 +74,7 @@ ignore = [
 
 [tool.mypy]
 python_version = "3.10"         # the supported floor, not whichever interpreter is local
-files = ["shutterstock_api_explorer"]
+files = ["shutterstock"]
 strict = true
 warn_unreachable = true
 enable_error_code = ["redundant-expr", "truthy-bool", "ignore-without-code", "possibly-undefined"]

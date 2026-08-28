@@ -18,7 +18,7 @@ from .apis.test import AsyncTest
 from .apis.users import AsyncUsers
 from .apis.videos import AsyncVideos
 from .auth import AsyncAuthSchemes, CustomerAccessCodeScope
-from .base_client import DEFAULT_TIMEOUT, BaseShutterstockApiExplorerClient
+from .base_client import DEFAULT_TIMEOUT, BaseShutterstockClient
 from .core import (
     AsyncAuthorizationCodeCredentials,
     AsyncAuthorizationCodeCredentialsOrDict,
@@ -38,7 +38,7 @@ from .server.environment import Environment
 from .server.server_config import ServerConfigOrDict
 
 
-class AsyncShutterstockApiExplorerClient(BaseShutterstockApiExplorerClient[AsyncRawClient]):
+class AsyncShutterstockClient(BaseShutterstockClient[AsyncRawClient]):
     def __init__(
         self,
         *,
@@ -140,4 +140,4 @@ class AsyncShutterstockApiExplorerClient(BaseShutterstockApiExplorerClient[Async
         await self.aclose()
 
 
-AsyncClient = AsyncShutterstockApiExplorerClient
+AsyncClient = AsyncShutterstockClient

@@ -79,7 +79,7 @@ from ..models.editorial_updated_results import EditorialUpdatedResults
 from ..models.enums.download_availability import DownloadAvailabilityOrStr
 from ..models.enums.sort5 import Sort5OrStr
 from ..models.enums.sort17 import Sort17OrStr
-from ..models.enums.type5 import Type5OrStr
+from ..models.enums.type15 import Type15OrStr
 from ..models.license_editorial_content_request import (
     LicenseEditorialContentRequest,
     LicenseEditorialContentRequestDict,
@@ -327,7 +327,7 @@ class EditorialImages:
 
     def get_updated_editorial_image(
         self,
-        type_: Type5OrStr,
+        type_: Type15OrStr,
         date_updated_start: RFC3339DateTime,
         date_updated_end: RFC3339DateTime,
         country: str,
@@ -381,7 +381,7 @@ class EditorialImages:
 
     def get_updated_editorial_images(
         self,
-        type_: Type5OrStr,
+        type_: Type15OrStr,
         date_updated_start: RFC3339DateTime,
         date_updated_end: RFC3339DateTime,
         country: str,
@@ -876,7 +876,7 @@ class AsyncEditorialImages:
 
     async def get_updated_editorial_image(
         self,
-        type_: Type5OrStr,
+        type_: Type15OrStr,
         date_updated_start: RFC3339DateTime,
         date_updated_end: RFC3339DateTime,
         country: str,
@@ -932,7 +932,7 @@ class AsyncEditorialImages:
 
     async def get_updated_editorial_images(
         self,
-        type_: Type5OrStr,
+        type_: Type15OrStr,
         date_updated_start: RFC3339DateTime,
         date_updated_end: RFC3339DateTime,
         country: str,
@@ -1464,7 +1464,7 @@ class EditorialImagesWithRawResponse(SecuredRawResponse[RawClient, Server, AuthS
 
     def get_updated_editorial_image(
         self,
-        type_: Type5OrStr,
+        type_: Type15OrStr,
         date_updated_start: RFC3339DateTime,
         date_updated_end: RFC3339DateTime,
         country: str,
@@ -1503,7 +1503,7 @@ class EditorialImagesWithRawResponse(SecuredRawResponse[RawClient, Server, AuthS
             http_method="GET",
             url_template=self._server.default("/v2/editorial/updated"),
             query_params=[
-                param[Type5OrStr]("type", type_),
+                param[Type15OrStr]("type", type_),
                 param[RFC3339DateTime]("date_updated_start", date_updated_start),
                 param[RFC3339DateTime]("date_updated_end", date_updated_end),
                 param[str]("country", country),
@@ -1522,7 +1522,7 @@ class EditorialImagesWithRawResponse(SecuredRawResponse[RawClient, Server, AuthS
 
     def get_updated_editorial_images(
         self,
-        type_: Type5OrStr,
+        type_: Type15OrStr,
         date_updated_start: RFC3339DateTime,
         date_updated_end: RFC3339DateTime,
         country: str,
@@ -1565,7 +1565,7 @@ class EditorialImagesWithRawResponse(SecuredRawResponse[RawClient, Server, AuthS
             http_method="GET",
             url_template=self._server.default("/v2/editorial/images/updated"),
             query_params=[
-                param[Type5OrStr]("type", type_),
+                param[Type15OrStr]("type", type_),
                 param[RFC3339DateTime]("date_updated_start", date_updated_start),
                 param[RFC3339DateTime]("date_updated_end", date_updated_end),
                 param[str]("country", country),
@@ -2073,7 +2073,7 @@ class AsyncEditorialImagesWithRawResponse(SecuredRawResponse[AsyncRawClient, Ser
 
     async def get_updated_editorial_image(
         self,
-        type_: Type5OrStr,
+        type_: Type15OrStr,
         date_updated_start: RFC3339DateTime,
         date_updated_end: RFC3339DateTime,
         country: str,
@@ -2112,7 +2112,7 @@ class AsyncEditorialImagesWithRawResponse(SecuredRawResponse[AsyncRawClient, Ser
             http_method="GET",
             url_template=self._server.default("/v2/editorial/updated"),
             query_params=[
-                param[Type5OrStr]("type", type_),
+                param[Type15OrStr]("type", type_),
                 param[RFC3339DateTime]("date_updated_start", date_updated_start),
                 param[RFC3339DateTime]("date_updated_end", date_updated_end),
                 param[str]("country", country),
@@ -2131,7 +2131,7 @@ class AsyncEditorialImagesWithRawResponse(SecuredRawResponse[AsyncRawClient, Ser
 
     async def get_updated_editorial_images(
         self,
-        type_: Type5OrStr,
+        type_: Type15OrStr,
         date_updated_start: RFC3339DateTime,
         date_updated_end: RFC3339DateTime,
         country: str,
@@ -2174,7 +2174,7 @@ class AsyncEditorialImagesWithRawResponse(SecuredRawResponse[AsyncRawClient, Ser
             http_method="GET",
             url_template=self._server.default("/v2/editorial/images/updated"),
             query_params=[
-                param[Type5OrStr]("type", type_),
+                param[Type15OrStr]("type", type_),
                 param[RFC3339DateTime]("date_updated_start", date_updated_start),
                 param[RFC3339DateTime]("date_updated_end", date_updated_end),
                 param[str]("country", country),

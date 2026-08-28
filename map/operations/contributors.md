@@ -2,7 +2,7 @@
 
 # Contributors — operations
 
-Accessor: `client.contributors` · Source: `shutterstock_api_explorer/apis/contributors.py` · 5 operations
+Accessor: `client.contributors` · Source: `shutterstock/apis/contributors.py` · 5 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -20,8 +20,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ContributorProfile` | `shutterstock_api_explorer/models/contributor_profile.py` |
-| `GetContributorErrorBody` | `shutterstock_api_explorer/errors/get_contributor_error.py` |
+| `ContributorProfile` | `shutterstock/models/contributor_profile.py` |
+| `GetContributorErrorBody` | `shutterstock/errors/get_contributor_error.py` |
 
 ### client.contributors.get_contributor_collection_items
 
@@ -37,9 +37,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Sort5OrStr` | `shutterstock_api_explorer/models/enums/sort5.py` |
-| `CollectionItemDataList` | `shutterstock_api_explorer/models/collection_item_data_list.py` |
-| `GetContributorCollectionItemsErrorBody` | `shutterstock_api_explorer/errors/get_contributor_collection_items_error.py` |
+| `Sort5OrStr` | `shutterstock/models/enums/sort5.py` |
+| `CollectionItemDataList` | `shutterstock/models/collection_item_data_list.py` |
+| `GetContributorCollectionItemsErrorBody` | `shutterstock/errors/get_contributor_collection_items_error.py` |
 
 ### client.contributors.get_contributor_collections
 
@@ -55,8 +55,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Collection` | `shutterstock_api_explorer/models/collection.py` |
-| `GetContributorCollectionsErrorBody` | `shutterstock_api_explorer/errors/get_contributor_collections_error.py` |
+| `Collection` | `shutterstock/models/collection.py` |
+| `GetContributorCollectionsErrorBody` | `shutterstock/errors/get_contributor_collections_error.py` |
 
 ### client.contributors.get_contributor_collections_list
 
@@ -72,9 +72,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Sort24OrStr` | `shutterstock_api_explorer/models/enums/sort24.py` |
-| `CollectionDataList` | `shutterstock_api_explorer/models/collection_data_list.py` |
-| `GetContributorCollectionsListErrorBody` | `shutterstock_api_explorer/errors/get_contributor_collections_list_error.py` |
+| `Sort24OrStr` | `shutterstock/models/enums/sort24.py` |
+| `CollectionDataList` | `shutterstock/models/collection_data_list.py` |
+| `GetContributorCollectionsListErrorBody` | `shutterstock/errors/get_contributor_collections_list_error.py` |
 
 ### client.contributors.get_contributor_list
 
@@ -90,6 +90,6 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ContributorProfileDataList` | `shutterstock_api_explorer/models/contributor_profile_data_list.py` |
-| `GetContributorListErrorBody` | `shutterstock_api_explorer/errors/get_contributor_list_error.py` |
+| `ContributorProfileDataList` | `shutterstock/models/contributor_profile_data_list.py` |
+| `GetContributorListErrorBody` | `shutterstock/errors/get_contributor_list_error.py` |
 

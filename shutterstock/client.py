@@ -18,7 +18,7 @@ from .apis.test import Test
 from .apis.users import Users
 from .apis.videos import Videos
 from .auth import AuthSchemes, CustomerAccessCodeScope
-from .base_client import DEFAULT_TIMEOUT, BaseShutterstockApiExplorerClient
+from .base_client import DEFAULT_TIMEOUT, BaseShutterstockClient
 from .core import (
     AuthorizationCodeCredentials,
     AuthorizationCodeCredentialsOrDict,
@@ -38,7 +38,7 @@ from .server.environment import Environment
 from .server.server_config import ServerConfigOrDict
 
 
-class ShutterstockApiExplorerClient(BaseShutterstockApiExplorerClient[RawClient]):
+class ShutterstockClient(BaseShutterstockClient[RawClient]):
     def __init__(
         self,
         *,
@@ -138,4 +138,4 @@ class ShutterstockApiExplorerClient(BaseShutterstockApiExplorerClient[RawClient]
         self.close()
 
 
-Client = ShutterstockApiExplorerClient
+Client = ShutterstockClient

@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from pydantic import AnyUrl
 from typing_extensions import NotRequired, TypedDict
 
 from ..core import UNSET, Date, Optional, SdkBaseModel
@@ -17,7 +16,7 @@ class Video(SdkBaseModel):
     added_date: Optional[Date] = UNSET
     """Date this video was added to the Shutterstock library"""
 
-    affiliate_url: Optional[AnyUrl] = UNSET
+    affiliate_url: Optional[str] = UNSET
     """Affiliate referral link; appears only for registered affiliate partners"""
 
     aspect: Optional[float] = UNSET
@@ -78,7 +77,7 @@ class Video(SdkBaseModel):
 
 class VideoDict(TypedDict):
     added_date: NotRequired[Date]
-    affiliate_url: NotRequired[AnyUrl]
+    affiliate_url: NotRequired[str]
     aspect: NotRequired[float]
     aspect_ratio: NotRequired[str]
     assets: NotRequired[VideoAssets | VideoAssetsDict]

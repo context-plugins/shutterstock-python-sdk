@@ -2,7 +2,7 @@
 
 # Users — operations
 
-Accessor: `client.users` · Source: `shutterstock_api_explorer/apis/users.py` · 3 operations
+Accessor: `client.users` · Source: `shutterstock/apis/users.py` · 3 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -18,8 +18,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AccessTokenDetails` | `shutterstock_api_explorer/models/access_token_details.py` |
-| `GetAccessTokenErrorBody` | `shutterstock_api_explorer/errors/get_access_token_error.py` |
+| `AccessTokenDetails` | `shutterstock/models/access_token_details.py` |
+| `GetAccessTokenErrorBody` | `shutterstock/errors/get_access_token_error.py` |
 
 ### client.users.get_user
 
@@ -33,8 +33,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UserDetails` | `shutterstock_api_explorer/models/user_details.py` |
-| `GetUserErrorBody` | `shutterstock_api_explorer/errors/get_user_error.py` |
+| `UserDetails` | `shutterstock/models/user_details.py` |
+| `GetUserErrorBody` | `shutterstock/errors/get_user_error.py` |
 
 ### client.users.get_user_subscription_list
 
@@ -48,6 +48,6 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SubscriptionDataList` | `shutterstock_api_explorer/models/subscription_data_list.py` |
-| `GetUserSubscriptionListErrorBody` | `shutterstock_api_explorer/errors/get_user_subscription_list_error.py` |
+| `SubscriptionDataList` | `shutterstock/models/subscription_data_list.py` |
+| `GetUserSubscriptionListErrorBody` | `shutterstock/errors/get_user_subscription_list_error.py` |
 

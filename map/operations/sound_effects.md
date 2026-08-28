@@ -2,7 +2,7 @@
 
 # SoundEffects — operations
 
-Accessor: `client.sound_effects` · Source: `shutterstock_api_explorer/apis/sound_effects.py` · 6 operations
+Accessor: `client.sound_effects` · Source: `shutterstock/apis/sound_effects.py` · 6 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -20,8 +20,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SfxUrl` | `shutterstock_api_explorer/models/sfx_url.py` |
-| `DownloadSfxErrorBody` | `shutterstock_api_explorer/errors/download_sfx_error.py` |
+| `SfxUrl` | `shutterstock/models/sfx_url.py` |
+| `DownloadSfxErrorBody` | `shutterstock/errors/download_sfx_error.py` |
 
 ### client.sound_effects.get_sfx_details
 
@@ -37,11 +37,11 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `LanguageOrStr` | `shutterstock_api_explorer/models/enums/language.py` |
-| `View2OrStr` | `shutterstock_api_explorer/models/enums/view2.py` |
-| `Library2OrStr` | `shutterstock_api_explorer/models/enums/library2.py` |
-| `Sfx` | `shutterstock_api_explorer/models/sfx.py` |
-| `GetSfxDetailsErrorBody` | `shutterstock_api_explorer/errors/get_sfx_details_error.py` |
+| `LanguageOrStr` | `shutterstock/models/enums/language.py` |
+| `View2OrStr` | `shutterstock/models/enums/view2.py` |
+| `Library2OrStr` | `shutterstock/models/enums/library2.py` |
+| `Sfx` | `shutterstock/models/sfx.py` |
+| `GetSfxDetailsErrorBody` | `shutterstock/errors/get_sfx_details_error.py` |
 
 ### client.sound_effects.get_sfx_license_list
 
@@ -56,10 +56,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Sort5OrStr` | `shutterstock_api_explorer/models/enums/sort5.py` |
-| `DownloadAvailabilityOrStr` | `shutterstock_api_explorer/models/enums/download_availability.py` |
-| `DownloadHistoryDataList` | `shutterstock_api_explorer/models/download_history_data_list.py` |
-| `GetSfxLicenseListErrorBody` | `shutterstock_api_explorer/errors/get_sfx_license_list_error.py` |
+| `Sort5OrStr` | `shutterstock/models/enums/sort5.py` |
+| `DownloadAvailabilityOrStr` | `shutterstock/models/enums/download_availability.py` |
+| `DownloadHistoryDataList` | `shutterstock/models/download_history_data_list.py` |
+| `GetSfxLicenseListErrorBody` | `shutterstock/errors/get_sfx_license_list_error.py` |
 
 ### client.sound_effects.get_sfx_list_details
 
@@ -75,11 +75,11 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `View2OrStr` | `shutterstock_api_explorer/models/enums/view2.py` |
-| `LanguageOrStr` | `shutterstock_api_explorer/models/enums/language.py` |
-| `Library2OrStr` | `shutterstock_api_explorer/models/enums/library2.py` |
-| `SfxdataList` | `shutterstock_api_explorer/models/sfxdata_list.py` |
-| `GetSfxListDetailsErrorBody` | `shutterstock_api_explorer/errors/get_sfx_list_details_error.py` |
+| `View2OrStr` | `shutterstock/models/enums/view2.py` |
+| `LanguageOrStr` | `shutterstock/models/enums/language.py` |
+| `Library2OrStr` | `shutterstock/models/enums/library2.py` |
+| `SfxdataList` | `shutterstock/models/sfxdata_list.py` |
+| `GetSfxListDetailsErrorBody` | `shutterstock/errors/get_sfx_list_details_error.py` |
 
 ### client.sound_effects.licenses_sfx
 
@@ -95,10 +95,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `LicenseSfxrequest` | `shutterstock_api_explorer/models/license_sfxrequest.py` |
-| `LicenseSfxrequestDict` | `shutterstock_api_explorer/models/license_sfxrequest.py` |
-| `LicenseSfxresultDataList` | `shutterstock_api_explorer/models/license_sfxresult_data_list.py` |
-| `LicensesSfxErrorBody` | `shutterstock_api_explorer/errors/licenses_sfx_error.py` |
+| `LicenseSfxrequest` | `shutterstock/models/license_sfxrequest.py` |
+| `LicenseSfxrequestDict` | `shutterstock/models/license_sfxrequest.py` |
+| `LicenseSfxresultDataList` | `shutterstock/models/license_sfxresult_data_list.py` |
+| `LicensesSfxErrorBody` | `shutterstock/errors/licenses_sfx_error.py` |
 
 ### client.sound_effects.search_sfx
 
@@ -113,9 +113,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Sort15OrStr` | `shutterstock_api_explorer/models/enums/sort15.py` |
-| `View2OrStr` | `shutterstock_api_explorer/models/enums/view2.py` |
-| `LanguageOrStr` | `shutterstock_api_explorer/models/enums/language.py` |
-| `SfxsearchResults` | `shutterstock_api_explorer/models/sfxsearch_results.py` |
-| `SearchSfxErrorBody` | `shutterstock_api_explorer/errors/search_sfx_error.py` |
+| `Sort15OrStr` | `shutterstock/models/enums/sort15.py` |
+| `View2OrStr` | `shutterstock/models/enums/view2.py` |
+| `LanguageOrStr` | `shutterstock/models/enums/language.py` |
+| `SfxsearchResults` | `shutterstock/models/sfxsearch_results.py` |
+| `SearchSfxErrorBody` | `shutterstock/errors/search_sfx_error.py` |
 

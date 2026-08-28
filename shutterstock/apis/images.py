@@ -80,7 +80,7 @@ from ..models.enums.people_gender2 import PeopleGender2OrStr
 from ..models.enums.size12 import Size12OrStr
 from ..models.enums.sort2 import Sort2OrStr
 from ..models.enums.sort5 import Sort5OrStr
-from ..models.enums.type4 import Type4OrStr
+from ..models.enums.type14 import Type14OrStr
 from ..models.enums.view2 import View2OrStr
 from ..models.image import Image
 from ..models.image_data_list import ImageDataList
@@ -587,7 +587,7 @@ class Images:
     def get_updated_images(
         self,
         *,
-        type_: list[Type4OrStr] | None = None,
+        type_: list[Type14OrStr] | None = None,
         start_date: str | None = None,
         end_date: str | None = None,
         interval: str | None = "1 HOUR",
@@ -1396,7 +1396,7 @@ class AsyncImages:
     async def get_updated_images(
         self,
         *,
-        type_: list[Type4OrStr] | None = None,
+        type_: list[Type14OrStr] | None = None,
         start_date: str | None = None,
         end_date: str | None = None,
         interval: str | None = "1 HOUR",
@@ -2276,7 +2276,7 @@ class ImagesWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSchemes]):
     def get_updated_images(
         self,
         *,
-        type_: list[Type4OrStr] | None = None,
+        type_: list[Type14OrStr] | None = None,
         start_date: str | None = None,
         end_date: str | None = None,
         interval: str | None = "1 HOUR",
@@ -2313,7 +2313,7 @@ class ImagesWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSchemes]):
             http_method="GET",
             url_template=self._server.default("/v2/images/updated"),
             query_params=[
-                param[list[Type4OrStr] | None]("type", type_),
+                param[list[Type14OrStr] | None]("type", type_),
                 param[str | None]("start_date", start_date),
                 param[str | None]("end_date", end_date),
                 param[str | None]("interval", interval),
@@ -3174,7 +3174,7 @@ class AsyncImagesWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, Asyn
     async def get_updated_images(
         self,
         *,
-        type_: list[Type4OrStr] | None = None,
+        type_: list[Type14OrStr] | None = None,
         start_date: str | None = None,
         end_date: str | None = None,
         interval: str | None = "1 HOUR",
@@ -3211,7 +3211,7 @@ class AsyncImagesWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, Asyn
             http_method="GET",
             url_template=self._server.default("/v2/images/updated"),
             query_params=[
-                param[list[Type4OrStr] | None]("type", type_),
+                param[list[Type14OrStr] | None]("type", type_),
                 param[str | None]("start_date", start_date),
                 param[str | None]("end_date", end_date),
                 param[str | None]("interval", interval),
