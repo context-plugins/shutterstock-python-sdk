@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from uuid import UUID, uuid4
+
 from ..auth import AsyncAuthSchemes, AuthSchemes
 from ..core import (
     AnySchemes,
@@ -482,6 +484,7 @@ class SoundEffectsWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSche
             http_method="POST",
             url_template=self._server.default("/v2/sfx/licenses/{id}/downloads"),
             path_params=[param[str]("id", id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             auth_scheme=self._auth.customer_access_code,
             decoder=json_decoder[SfxUrl],
             error_mapper=download_sfx_error_mapper,
@@ -635,6 +638,7 @@ class SoundEffectsWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSche
         return self._client.execute(
             http_method="POST",
             url_template=self._server.default("/v2/sfx/licenses"),
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[LicenseSfxrequest | LicenseSfxrequestDict](body),
             auth_scheme=AnySchemes(self._auth.basic, self._auth.customer_access_code),
             decoder=json_decoder[LicenseSfxresultDataList],
@@ -723,6 +727,7 @@ class AsyncSoundEffectsWithRawResponse(SecuredRawResponse[AsyncRawClient, Server
             http_method="POST",
             url_template=self._server.default("/v2/sfx/licenses/{id}/downloads"),
             path_params=[param[str]("id", id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             auth_scheme=self._auth.customer_access_code,
             decoder=json_decoder[SfxUrl],
             error_mapper=download_sfx_error_mapper,
@@ -876,6 +881,7 @@ class AsyncSoundEffectsWithRawResponse(SecuredRawResponse[AsyncRawClient, Server
         return await self._client.execute(
             http_method="POST",
             url_template=self._server.default("/v2/sfx/licenses"),
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[LicenseSfxrequest | LicenseSfxrequestDict](body),
             auth_scheme=AsyncAnySchemes(self._auth.basic, self._auth.customer_access_code),
             decoder=json_decoder[LicenseSfxresultDataList],

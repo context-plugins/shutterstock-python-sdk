@@ -2,7 +2,7 @@
 
 # Oauth — operations
 
-Accessor: `client.oauth` · Source: `shutterstock/apis/oauth.py` · 2 operations
+Accessor: `client.oauth` · Source: `shutterstock_api_explorer/apis/oauth.py` · 2 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -20,9 +20,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ResponseTypeOrStr` | `shutterstock/models/enums/response_type.py` |
-| `Realm2OrStr` | `shutterstock/models/enums/realm2.py` |
-| `AuthorizeErrorBody` | `shutterstock/errors/authorize_error.py` |
+| `ResponseTypeOrStr` | `shutterstock_api_explorer/models/enums/response_type.py` |
+| `Realm2OrStr` | `shutterstock_api_explorer/models/enums/realm2.py` |
+| `AuthorizeErrorBody` | `shutterstock_api_explorer/errors/authorize_error.py` |
 
 ### client.oauth.create_access_token
 
@@ -38,9 +38,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `GrantTypeOrStr` | `shutterstock/models/enums/grant_type.py` |
-| `Realm3OrStr` | `shutterstock/models/enums/realm3.py` |
-| `ExpiresOrStr` | `shutterstock/models/enums/expires.py` |
-| `OauthAccessTokenResponse` | `shutterstock/models/oauth_access_token_response.py` |
-| `CreateAccessTokenErrorBody` | `shutterstock/errors/create_access_token_error.py` |
+| `GrantTypeOrStr` | `shutterstock_api_explorer/models/enums/grant_type.py` |
+| `Realm3OrStr` | `shutterstock_api_explorer/models/enums/realm3.py` |
+| `ExpiresOrStr` | `shutterstock_api_explorer/models/enums/expires.py` |
+| `OauthAccessTokenResponse` | `shutterstock_api_explorer/models/oauth_access_token_response.py` |
+| `CreateAccessTokenErrorBody` | `shutterstock_api_explorer/errors/create_access_token_error.py` |
 

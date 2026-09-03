@@ -18,8 +18,10 @@ from .apis.test import AsyncTest
 from .apis.users import AsyncUsers
 from .apis.videos import AsyncVideos
 from .auth import AsyncAuthSchemes, CustomerAccessCodeScope
-from .base_client import DEFAULT_TIMEOUT, BaseShutterstockClient
+from .base_client import DEFAULT_TIMEOUT, BaseShutterstockApiExplorerClient
 from .core import (
+    OPERATING_SYSTEM,
+    PYTHON_RUNTIME,
     AsyncAuthorizationCodeCredentials,
     AsyncAuthorizationCodeCredentialsOrDict,
     AsyncAuthorizationCodeTokenSource,
@@ -33,12 +35,13 @@ from .core import (
     BasicAuthScheme,
     client_secret_basic,
     no_auth,
+    param,
 )
 from .server.environment import Environment
 from .server.server_config import ServerConfigOrDict
 
 
-class AsyncShutterstockClient(BaseShutterstockClient[AsyncRawClient]):
+class AsyncShutterstockApiExplorerClient(BaseShutterstockApiExplorerClient[AsyncRawClient]):
     def __init__(
         self,
         *,
@@ -57,6 +60,14 @@ class AsyncShutterstockClient(BaseShutterstockClient[AsyncRawClient]):
             http_client=(
                 custom_async_http_client if custom_async_http_client is not None else AsyncHttpxClient(timeout=timeout)
             ),
+            global_headers=[
+                param[str]("User-Agent", "ShutterstockApiExplorerClient/1.2.0 Python"),
+                param[str]("X-APIMatic-Lang", "Python"),
+                param[str]("X-APIMatic-Package-Version", "1.2.0"),
+                param[str]("X-APIMatic-Gen-Version", "4.0.0"),
+                param[str]("X-APIMatic-OS", OPERATING_SYSTEM),
+                param[str]("X-APIMatic-Runtime", PYTHON_RUNTIME),
+            ],
         )
         self._auth = AsyncAuthSchemes(
             basic=BasicAuthScheme(BasicAuthCredentials.coerce(basic)) if basic is not None else no_auth,
@@ -140,4 +151,4 @@ class AsyncShutterstockClient(BaseShutterstockClient[AsyncRawClient]):
         await self.aclose()
 
 
-AsyncClient = AsyncShutterstockClient
+AsyncClient = AsyncShutterstockApiExplorerClient

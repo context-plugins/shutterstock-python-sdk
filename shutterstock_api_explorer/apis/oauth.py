@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from uuid import UUID, uuid4
+
 from ..core import (
     ApiResult,
     AsyncRawClient,
@@ -271,6 +273,7 @@ class OauthWithRawResponse(BaseRawResponse[RawClient, Server]):
         return self._client.execute(
             http_method="POST",
             url_template=self._server.default("/v2/oauth/access_token"),
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=form_body(
                 [
                     param[str]("client_id", client_id),
@@ -365,6 +368,7 @@ class AsyncOauthWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         return await self._client.execute(
             http_method="POST",
             url_template=self._server.default("/v2/oauth/access_token"),
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=form_body(
                 [
                     param[str]("client_id", client_id),

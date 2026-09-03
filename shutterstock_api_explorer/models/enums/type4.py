@@ -4,7 +4,7 @@ from typing import Annotated, TypeAlias
 from ...core import open_enum_validator
 
 
-class Type14(str, Enum):
+class Type4(str, Enum):
     ADDITION = "addition"
     DELETION = "deletion"
     EDIT = "edit"
@@ -12,4 +12,4 @@ class Type14(str, Enum):
     __str__ = str.__str__
 
 
-Type14OrStr: TypeAlias = Annotated[Type14 | str, open_enum_validator(Type14)]
+Type4OrStr: TypeAlias = Annotated[Type4 | str, open_enum_validator(Type4)]

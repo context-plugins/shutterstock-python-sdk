@@ -10,7 +10,7 @@ from .server.server_config import ServerConfig, ServerConfigOrDict
 DEFAULT_TIMEOUT = 30.0
 
 
-class BaseShutterstockClient(Generic[RawClientT]):
+class BaseShutterstockApiExplorerClient(Generic[RawClientT]):
     _raw_client: RawClientT
 
     def __init__(

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from uuid import UUID, uuid4
+
 from ..auth import AsyncAuthSchemes, AuthSchemes
 from ..core import (
     AnySchemes,
@@ -410,6 +412,7 @@ class ComputerVisionWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSc
         return self._client.execute(
             http_method="POST",
             url_template=self._server.default("/v2/cv/images"),
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[ImageCreateRequest | ImageCreateRequestDict](body),
             auth_scheme=AnySchemes(self._auth.basic, self._auth.customer_access_code),
             decoder=json_decoder[ComputerVisionImageCreateResponse],
@@ -545,6 +548,7 @@ class AsyncComputerVisionWithRawResponse(SecuredRawResponse[AsyncRawClient, Serv
         return await self._client.execute(
             http_method="POST",
             url_template=self._server.default("/v2/cv/images"),
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[ImageCreateRequest | ImageCreateRequestDict](body),
             auth_scheme=AsyncAnySchemes(self._auth.basic, self._auth.customer_access_code),
             decoder=json_decoder[ComputerVisionImageCreateResponse],

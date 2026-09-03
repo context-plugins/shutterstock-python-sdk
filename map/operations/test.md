@@ -2,7 +2,7 @@
 
 # Test — operations
 
-Accessor: `client.test` · Source: `shutterstock/apis/test.py` · 2 operations
+Accessor: `client.test` · Source: `shutterstock_api_explorer/apis/test.py` · 2 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -19,8 +19,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TestEcho` | `shutterstock/models/test_echo.py` |
-| `EchoErrorBody` | `shutterstock/errors/echo_error.py` |
+| `TestEcho` | `shutterstock_api_explorer/models/test_echo.py` |
+| `EchoErrorBody` | `shutterstock_api_explorer/errors/echo_error.py` |
 
 ### client.test.validate
 
@@ -36,6 +36,6 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TestValidate` | `shutterstock/models/test_validate.py` |
-| `ValidateErrorBody` | `shutterstock/errors/validate_error.py` |
+| `TestValidate` | `shutterstock_api_explorer/models/test_validate.py` |
+| `ValidateErrorBody` | `shutterstock_api_explorer/errors/validate_error.py` |
 

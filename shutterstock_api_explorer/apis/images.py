@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from uuid import UUID, uuid4
+
 from ..auth import AsyncAuthSchemes, AuthSchemes
 from ..core import (
     AnySchemes,
@@ -80,7 +82,7 @@ from ..models.enums.people_gender2 import PeopleGender2OrStr
 from ..models.enums.size12 import Size12OrStr
 from ..models.enums.sort2 import Sort2OrStr
 from ..models.enums.sort5 import Sort5OrStr
-from ..models.enums.type14 import Type14OrStr
+from ..models.enums.type4 import Type4OrStr
 from ..models.enums.view2 import View2OrStr
 from ..models.image import Image
 from ..models.image_data_list import ImageDataList
@@ -587,7 +589,7 @@ class Images:
     def get_updated_images(
         self,
         *,
-        type_: list[Type14OrStr] | None = None,
+        type_: list[Type4OrStr] | None = None,
         start_date: str | None = None,
         end_date: str | None = None,
         interval: str | None = "1 HOUR",
@@ -1396,7 +1398,7 @@ class AsyncImages:
     async def get_updated_images(
         self,
         *,
-        type_: list[Type14OrStr] | None = None,
+        type_: list[Type4OrStr] | None = None,
         start_date: str | None = None,
         end_date: str | None = None,
         interval: str | None = "1 HOUR",
@@ -1727,6 +1729,7 @@ class ImagesWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSchemes]):
             http_method="POST",
             url_template=self._server.default("/v2/images/collections/{id}/items"),
             path_params=[param[str]("id", id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[CollectionItemRequest | CollectionItemRequestDict](body),
             auth_scheme=self._auth.customer_access_code,
             decoder=empty_response,
@@ -1871,6 +1874,7 @@ class ImagesWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSchemes]):
                 param[int | None]("width_from", width_from),
                 param[int | None]("width_to", width_to),
             ],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[list[SearchImage | SearchImageDict]](body),
             auth_scheme=AnySchemes(self._auth.basic, self._auth.customer_access_code),
             decoder=json_decoder[BulkImageSearchResults],
@@ -1896,6 +1900,7 @@ class ImagesWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSchemes]):
         return self._client.execute(
             http_method="POST",
             url_template=self._server.default("/v2/images/collections"),
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[CollectionCreateRequest | CollectionCreateRequestDict](body),
             auth_scheme=self._auth.customer_access_code,
             decoder=json_decoder[CollectionCreateResponse],
@@ -1918,6 +1923,7 @@ class ImagesWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSchemes]):
             http_method="DELETE",
             url_template=self._server.default("/v2/images/collections/{id}"),
             path_params=[param[str]("id", id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             auth_scheme=self._auth.customer_access_code,
             decoder=empty_response,
             error_mapper=delete_image_collection_error_mapper,
@@ -1941,6 +1947,7 @@ class ImagesWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSchemes]):
             url_template=self._server.default("/v2/images/collections/{id}/items"),
             path_params=[param[str]("id", id)],
             query_params=[param[list[str] | None]("item_id", item_id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             auth_scheme=self._auth.customer_access_code,
             decoder=empty_response,
             error_mapper=delete_image_collection_items_error_mapper,
@@ -1968,6 +1975,7 @@ class ImagesWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSchemes]):
             http_method="POST",
             url_template=self._server.default("/v2/images/licenses/{id}/downloads"),
             path_params=[param[str]("id", id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[RedownloadImage | RedownloadImageDict](body),
             auth_scheme=self._auth.customer_access_code,
             decoder=json_decoder[Url],
@@ -2129,6 +2137,7 @@ class ImagesWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSchemes]):
         return self._client.execute(
             http_method="POST",
             url_template=self._server.default("/v2/images/search/suggestions"),
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[SearchEntitiesRequest | SearchEntitiesRequestDict](body),
             auth_scheme=AnySchemes(self._auth.basic, self._auth.customer_access_code),
             decoder=json_decoder[SearchEntitiesResponse],
@@ -2276,7 +2285,7 @@ class ImagesWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSchemes]):
     def get_updated_images(
         self,
         *,
-        type_: list[Type14OrStr] | None = None,
+        type_: list[Type4OrStr] | None = None,
         start_date: str | None = None,
         end_date: str | None = None,
         interval: str | None = "1 HOUR",
@@ -2313,7 +2322,7 @@ class ImagesWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSchemes]):
             http_method="GET",
             url_template=self._server.default("/v2/images/updated"),
             query_params=[
-                param[list[Type14OrStr] | None]("type", type_),
+                param[list[Type4OrStr] | None]("type", type_),
                 param[str | None]("start_date", start_date),
                 param[str | None]("end_date", end_date),
                 param[str | None]("interval", interval),
@@ -2362,6 +2371,7 @@ class ImagesWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSchemes]):
                 param[Size12OrStr | None]("size", size),
                 param[str | None]("search_id", search_id),
             ],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[LicenseImageRequest | LicenseImageRequestDict](body),
             auth_scheme=self._auth.customer_access_code,
             decoder=json_decoder[LicenseImageResultDataList],
@@ -2448,6 +2458,7 @@ class ImagesWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSchemes]):
             http_method="POST",
             url_template=self._server.default("/v2/images/collections/{id}"),
             path_params=[param[str]("id", id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[CollectionUpdateRequest | CollectionUpdateRequestDict](body),
             auth_scheme=self._auth.customer_access_code,
             decoder=empty_response,
@@ -2625,6 +2636,7 @@ class AsyncImagesWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, Asyn
             http_method="POST",
             url_template=self._server.default("/v2/images/collections/{id}/items"),
             path_params=[param[str]("id", id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[CollectionItemRequest | CollectionItemRequestDict](body),
             auth_scheme=self._auth.customer_access_code,
             decoder=empty_response,
@@ -2769,6 +2781,7 @@ class AsyncImagesWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, Asyn
                 param[int | None]("width_from", width_from),
                 param[int | None]("width_to", width_to),
             ],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[list[SearchImage | SearchImageDict]](body),
             auth_scheme=AsyncAnySchemes(self._auth.basic, self._auth.customer_access_code),
             decoder=json_decoder[BulkImageSearchResults],
@@ -2794,6 +2807,7 @@ class AsyncImagesWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, Asyn
         return await self._client.execute(
             http_method="POST",
             url_template=self._server.default("/v2/images/collections"),
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[CollectionCreateRequest | CollectionCreateRequestDict](body),
             auth_scheme=self._auth.customer_access_code,
             decoder=json_decoder[CollectionCreateResponse],
@@ -2816,6 +2830,7 @@ class AsyncImagesWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, Asyn
             http_method="DELETE",
             url_template=self._server.default("/v2/images/collections/{id}"),
             path_params=[param[str]("id", id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             auth_scheme=self._auth.customer_access_code,
             decoder=empty_response,
             error_mapper=delete_image_collection_error_mapper,
@@ -2839,6 +2854,7 @@ class AsyncImagesWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, Asyn
             url_template=self._server.default("/v2/images/collections/{id}/items"),
             path_params=[param[str]("id", id)],
             query_params=[param[list[str] | None]("item_id", item_id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             auth_scheme=self._auth.customer_access_code,
             decoder=empty_response,
             error_mapper=delete_image_collection_items_error_mapper,
@@ -2866,6 +2882,7 @@ class AsyncImagesWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, Asyn
             http_method="POST",
             url_template=self._server.default("/v2/images/licenses/{id}/downloads"),
             path_params=[param[str]("id", id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[RedownloadImage | RedownloadImageDict](body),
             auth_scheme=self._auth.customer_access_code,
             decoder=json_decoder[Url],
@@ -3027,6 +3044,7 @@ class AsyncImagesWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, Asyn
         return await self._client.execute(
             http_method="POST",
             url_template=self._server.default("/v2/images/search/suggestions"),
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[SearchEntitiesRequest | SearchEntitiesRequestDict](body),
             auth_scheme=AsyncAnySchemes(self._auth.basic, self._auth.customer_access_code),
             decoder=json_decoder[SearchEntitiesResponse],
@@ -3174,7 +3192,7 @@ class AsyncImagesWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, Asyn
     async def get_updated_images(
         self,
         *,
-        type_: list[Type14OrStr] | None = None,
+        type_: list[Type4OrStr] | None = None,
         start_date: str | None = None,
         end_date: str | None = None,
         interval: str | None = "1 HOUR",
@@ -3211,7 +3229,7 @@ class AsyncImagesWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, Asyn
             http_method="GET",
             url_template=self._server.default("/v2/images/updated"),
             query_params=[
-                param[list[Type14OrStr] | None]("type", type_),
+                param[list[Type4OrStr] | None]("type", type_),
                 param[str | None]("start_date", start_date),
                 param[str | None]("end_date", end_date),
                 param[str | None]("interval", interval),
@@ -3260,6 +3278,7 @@ class AsyncImagesWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, Asyn
                 param[Size12OrStr | None]("size", size),
                 param[str | None]("search_id", search_id),
             ],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[LicenseImageRequest | LicenseImageRequestDict](body),
             auth_scheme=self._auth.customer_access_code,
             decoder=json_decoder[LicenseImageResultDataList],
@@ -3346,6 +3365,7 @@ class AsyncImagesWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, Asyn
             http_method="POST",
             url_template=self._server.default("/v2/images/collections/{id}"),
             path_params=[param[str]("id", id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[CollectionUpdateRequest | CollectionUpdateRequestDict](body),
             auth_scheme=self._auth.customer_access_code,
             decoder=empty_response,

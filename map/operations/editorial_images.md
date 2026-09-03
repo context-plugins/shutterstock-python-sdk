@@ -2,13 +2,14 @@
 
 # EditorialImages — operations
 
-Accessor: `client.editorial_images` · Source: `shutterstock/apis/editorial_images.py` · 18 operations
+Accessor: `client.editorial_images` · Source: `shutterstock_api_explorer/apis/editorial_images.py` · 18 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
 ### client.editorial_images.get_editorial_categories
 
 - **Route**: `GET /v2/editorial/categories`
+- **Auth**: `basic` OR `customer_access_code`
 - **Server**: `default`
 - **Signature**: `def get_editorial_categories(*, request_options: RequestOptionsOrDict | None = None)`
 - **Returns (parsed)**: `EditorialCategoryResults`
@@ -18,12 +19,13 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `EditorialCategoryResults` | `shutterstock/models/editorial_category_results.py` |
-| `GetEditorialCategoriesErrorBody` | `shutterstock/errors/get_editorial_categories_error.py` |
+| `EditorialCategoryResults` | `shutterstock_api_explorer/models/editorial_category_results.py` |
+| `GetEditorialCategoriesErrorBody` | `shutterstock_api_explorer/errors/get_editorial_categories_error.py` |
 
 ### client.editorial_images.get_editorial_image
 
 - **Route**: `GET /v2/editorial/images/{id}`
+- **Auth**: `basic` OR `customer_access_code`
 - **Server**: `default`
 - **Signature**: `def get_editorial_image(id: str, country: str, *, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `id`, `country`
@@ -35,12 +37,13 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `EditorialContent` | `shutterstock/models/editorial_content.py` |
-| `GetEditorialImageErrorBody` | `shutterstock/errors/get_editorial_image_error.py` |
+| `EditorialContent` | `shutterstock_api_explorer/models/editorial_content.py` |
+| `GetEditorialImageErrorBody` | `shutterstock_api_explorer/errors/get_editorial_image_error.py` |
 
 ### client.editorial_images.get_editorial_image2
 
 - **Route**: `GET /v2/editorial/{id}`
+- **Auth**: `basic` OR `customer_access_code`
 - **Server**: `default`
 - **Signature**: `def get_editorial_image2(id: str, country: str, *, search_id: str | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `id`, `country`
@@ -52,12 +55,13 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `EditorialContent` | `shutterstock/models/editorial_content.py` |
-| `GetEditorialImage2ErrorBody` | `shutterstock/errors/get_editorial_image2_error.py` |
+| `EditorialContent` | `shutterstock_api_explorer/models/editorial_content.py` |
+| `GetEditorialImage2ErrorBody` | `shutterstock_api_explorer/errors/get_editorial_image2_error.py` |
 
 ### client.editorial_images.get_editorial_image_license_list
 
 - **Route**: `GET /v2/editorial/images/licenses`
+- **Auth**: `customer_access_code`
 - **Server**: `default`
 - **Signature**: `def get_editorial_image_license_list(*, image_id: str | None = None, license: str | None = None, page: int | None = 1, per_page: int | None = 20, sort: Sort5OrStr | None = None, username: str | None = None, start_date: RFC3339DateTime | None = None, end_date: RFC3339DateTime | None = None, download_availability: DownloadAvailabilityOrStr | None = None, team_history: bool | None = False, request_options: RequestOptionsOrDict | None = None)`
 - **Params**: `image_id` — query · `license` — query · `page` — query · `per_page` — query · `sort` — query · `username` — query · `start_date` — query · `end_date` — query · `download_availability` — query · `team_history` — query
@@ -68,14 +72,15 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Sort5OrStr` | `shutterstock/models/enums/sort5.py` |
-| `DownloadAvailabilityOrStr` | `shutterstock/models/enums/download_availability.py` |
-| `DownloadHistoryDataList` | `shutterstock/models/download_history_data_list.py` |
-| `GetEditorialImageLicenseListErrorBody` | `shutterstock/errors/get_editorial_image_license_list_error.py` |
+| `Sort5OrStr` | `shutterstock_api_explorer/models/enums/sort5.py` |
+| `DownloadAvailabilityOrStr` | `shutterstock_api_explorer/models/enums/download_availability.py` |
+| `DownloadHistoryDataList` | `shutterstock_api_explorer/models/download_history_data_list.py` |
+| `GetEditorialImageLicenseListErrorBody` | `shutterstock_api_explorer/errors/get_editorial_image_license_list_error.py` |
 
 ### client.editorial_images.get_editorial_image_livefeed
 
 - **Route**: `GET /v2/editorial/images/livefeeds/{id}`
+- **Auth**: `basic` OR `customer_access_code`
 - **Server**: `default`
 - **Signature**: `def get_editorial_image_livefeed(id: str, country: str, *, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `id`, `country`
@@ -87,12 +92,13 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `EditorialImageLivefeed` | `shutterstock/models/editorial_image_livefeed.py` |
-| `GetEditorialImageLivefeedErrorBody` | `shutterstock/errors/get_editorial_image_livefeed_error.py` |
+| `EditorialImageLivefeed` | `shutterstock_api_explorer/models/editorial_image_livefeed.py` |
+| `GetEditorialImageLivefeedErrorBody` | `shutterstock_api_explorer/errors/get_editorial_image_livefeed_error.py` |
 
 ### client.editorial_images.get_editorial_image_livefeed_items
 
 - **Route**: `GET /v2/editorial/images/livefeeds/{id}/items`
+- **Auth**: `basic` OR `customer_access_code`
 - **Server**: `default`
 - **Signature**: `def get_editorial_image_livefeed_items(id: str, country: str, *, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `id`, `country`
@@ -104,12 +110,13 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `EditorialContentDataList` | `shutterstock/models/editorial_content_data_list.py` |
-| `GetEditorialImageLivefeedItemsErrorBody` | `shutterstock/errors/get_editorial_image_livefeed_items_error.py` |
+| `EditorialContentDataList` | `shutterstock_api_explorer/models/editorial_content_data_list.py` |
+| `GetEditorialImageLivefeedItemsErrorBody` | `shutterstock_api_explorer/errors/get_editorial_image_livefeed_items_error.py` |
 
 ### client.editorial_images.get_editorial_image_livefeed_list
 
 - **Route**: `GET /v2/editorial/images/livefeeds`
+- **Auth**: `basic` OR `customer_access_code`
 - **Server**: `default`
 - **Signature**: `def get_editorial_image_livefeed_list(country: str, *, page: int | None = 1, per_page: int | None = 20, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `country`
@@ -121,12 +128,13 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `EditorialImageLivefeedList` | `shutterstock/models/editorial_image_livefeed_list.py` |
-| `GetEditorialImageLivefeedListErrorBody` | `shutterstock/errors/get_editorial_image_livefeed_list_error.py` |
+| `EditorialImageLivefeedList` | `shutterstock_api_explorer/models/editorial_image_livefeed_list.py` |
+| `GetEditorialImageLivefeedListErrorBody` | `shutterstock_api_explorer/errors/get_editorial_image_livefeed_list_error.py` |
 
 ### client.editorial_images.get_editorial_livefeed
 
 - **Route**: `GET /v2/editorial/livefeeds/{id}`
+- **Auth**: `basic` OR `customer_access_code`
 - **Server**: `default`
 - **Signature**: `def get_editorial_livefeed(id: str, country: str, *, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `id`, `country`
@@ -138,12 +146,13 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `EditorialImageLivefeed` | `shutterstock/models/editorial_image_livefeed.py` |
-| `GetEditorialLivefeedErrorBody` | `shutterstock/errors/get_editorial_livefeed_error.py` |
+| `EditorialImageLivefeed` | `shutterstock_api_explorer/models/editorial_image_livefeed.py` |
+| `GetEditorialLivefeedErrorBody` | `shutterstock_api_explorer/errors/get_editorial_livefeed_error.py` |
 
 ### client.editorial_images.get_editorial_livefeed_items
 
 - **Route**: `GET /v2/editorial/livefeeds/{id}/items`
+- **Auth**: `basic` OR `customer_access_code`
 - **Server**: `default`
 - **Signature**: `def get_editorial_livefeed_items(id: str, country: str, *, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `id`, `country`
@@ -155,12 +164,13 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `EditorialContentDataList` | `shutterstock/models/editorial_content_data_list.py` |
-| `GetEditorialLivefeedItemsErrorBody` | `shutterstock/errors/get_editorial_livefeed_items_error.py` |
+| `EditorialContentDataList` | `shutterstock_api_explorer/models/editorial_content_data_list.py` |
+| `GetEditorialLivefeedItemsErrorBody` | `shutterstock_api_explorer/errors/get_editorial_livefeed_items_error.py` |
 
 ### client.editorial_images.get_editorial_livefeed_list
 
 - **Route**: `GET /v2/editorial/livefeeds`
+- **Auth**: `basic` OR `customer_access_code`
 - **Server**: `default`
 - **Signature**: `def get_editorial_livefeed_list(country: str, *, page: int | None = 1, per_page: int | None = 20, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `country`
@@ -172,14 +182,15 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `EditorialImageLivefeedList` | `shutterstock/models/editorial_image_livefeed_list.py` |
-| `GetEditorialLivefeedListErrorBody` | `shutterstock/errors/get_editorial_livefeed_list_error.py` |
+| `EditorialImageLivefeedList` | `shutterstock_api_explorer/models/editorial_image_livefeed_list.py` |
+| `GetEditorialLivefeedListErrorBody` | `shutterstock_api_explorer/errors/get_editorial_livefeed_list_error.py` |
 
 ### client.editorial_images.get_updated_editorial_image
 
 - **Route**: `GET /v2/editorial/updated`
+- **Auth**: `basic` OR `customer_access_code`
 - **Server**: `default`
-- **Signature**: `def get_updated_editorial_image(type_: Type15OrStr, date_updated_start: RFC3339DateTime, date_updated_end: RFC3339DateTime, country: str, *, date_taken_start: Date | None = None, date_taken_end: Date | None = None, cursor: str | None = None, sort: Sort5OrStr | None = None, supplier_code: list[str] | None = None, per_page: int | None = 500, request_options: RequestOptionsOrDict | None = None)`
+- **Signature**: `def get_updated_editorial_image(type_: Type5OrStr, date_updated_start: RFC3339DateTime, date_updated_end: RFC3339DateTime, country: str, *, date_taken_start: Date | None = None, date_taken_end: Date | None = None, cursor: str | None = None, sort: Sort5OrStr | None = None, supplier_code: list[str] | None = None, per_page: int | None = 500, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `type_`, `date_updated_start`, `date_updated_end`, `country`
 - **Params**: `type_` — query `type` · `date_updated_start` — query · `date_updated_end` — query · `country` — query · `date_taken_start` — query · `date_taken_end` — query · `cursor` — query · `sort` — query · `supplier_code` — query · `per_page` — query
 - **Returns (parsed)**: `EditorialUpdatedResults`
@@ -189,16 +200,17 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Type15OrStr` | `shutterstock/models/enums/type15.py` |
-| `Sort5OrStr` | `shutterstock/models/enums/sort5.py` |
-| `EditorialUpdatedResults` | `shutterstock/models/editorial_updated_results.py` |
-| `GetUpdatedEditorialImageErrorBody` | `shutterstock/errors/get_updated_editorial_image_error.py` |
+| `Type5OrStr` | `shutterstock_api_explorer/models/enums/type5.py` |
+| `Sort5OrStr` | `shutterstock_api_explorer/models/enums/sort5.py` |
+| `EditorialUpdatedResults` | `shutterstock_api_explorer/models/editorial_updated_results.py` |
+| `GetUpdatedEditorialImageErrorBody` | `shutterstock_api_explorer/errors/get_updated_editorial_image_error.py` |
 
 ### client.editorial_images.get_updated_editorial_images
 
 - **Route**: `GET /v2/editorial/images/updated`
+- **Auth**: `basic` OR `customer_access_code`
 - **Server**: `default`
-- **Signature**: `def get_updated_editorial_images(type_: Type15OrStr, date_updated_start: RFC3339DateTime, date_updated_end: RFC3339DateTime, country: str, *, date_taken_start: Date | None = None, date_taken_end: Date | None = None, cursor: str | None = None, sort: Sort5OrStr | None = None, supplier_code: list[str] | None = None, per_page: int | None = 500, request_options: RequestOptionsOrDict | None = None)`
+- **Signature**: `def get_updated_editorial_images(type_: Type5OrStr, date_updated_start: RFC3339DateTime, date_updated_end: RFC3339DateTime, country: str, *, date_taken_start: Date | None = None, date_taken_end: Date | None = None, cursor: str | None = None, sort: Sort5OrStr | None = None, supplier_code: list[str] | None = None, per_page: int | None = 500, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `type_`, `date_updated_start`, `date_updated_end`, `country`
 - **Params**: `type_` — query `type` · `date_updated_start` — query · `date_updated_end` — query · `country` — query · `date_taken_start` — query · `date_taken_end` — query · `cursor` — query · `sort` — query · `supplier_code` — query · `per_page` — query
 - **Returns (parsed)**: `EditorialUpdatedResults`
@@ -208,14 +220,15 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Type15OrStr` | `shutterstock/models/enums/type15.py` |
-| `Sort5OrStr` | `shutterstock/models/enums/sort5.py` |
-| `EditorialUpdatedResults` | `shutterstock/models/editorial_updated_results.py` |
-| `GetUpdatedEditorialImagesErrorBody` | `shutterstock/errors/get_updated_editorial_images_error.py` |
+| `Type5OrStr` | `shutterstock_api_explorer/models/enums/type5.py` |
+| `Sort5OrStr` | `shutterstock_api_explorer/models/enums/sort5.py` |
+| `EditorialUpdatedResults` | `shutterstock_api_explorer/models/editorial_updated_results.py` |
+| `GetUpdatedEditorialImagesErrorBody` | `shutterstock_api_explorer/errors/get_updated_editorial_images_error.py` |
 
 ### client.editorial_images.license_editorial_image
 
 - **Route**: `POST /v2/editorial/licenses`
+- **Auth**: `customer_access_code`
 - **Server**: `default`
 - **Signature**: `def license_editorial_image(body: LicenseEditorialContentRequest | LicenseEditorialContentRequestDict, *, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `body`
@@ -227,14 +240,15 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `LicenseEditorialContentRequest` | `shutterstock/models/license_editorial_content_request.py` |
-| `LicenseEditorialContentRequestDict` | `shutterstock/models/license_editorial_content_request.py` |
-| `LicenseEditorialContentResults` | `shutterstock/models/license_editorial_content_results.py` |
-| `LicenseEditorialImageErrorBody` | `shutterstock/errors/license_editorial_image_error.py` |
+| `LicenseEditorialContentRequest` | `shutterstock_api_explorer/models/license_editorial_content_request.py` |
+| `LicenseEditorialContentRequestDict` | `shutterstock_api_explorer/models/license_editorial_content_request.py` |
+| `LicenseEditorialContentResults` | `shutterstock_api_explorer/models/license_editorial_content_results.py` |
+| `LicenseEditorialImageErrorBody` | `shutterstock_api_explorer/errors/license_editorial_image_error.py` |
 
 ### client.editorial_images.license_editorial_images
 
 - **Route**: `POST /v2/editorial/images/licenses`
+- **Auth**: `customer_access_code`
 - **Server**: `default`
 - **Signature**: `def license_editorial_images(body: LicenseEditorialContentRequest | LicenseEditorialContentRequestDict, *, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `body`
@@ -246,14 +260,15 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `LicenseEditorialContentRequest` | `shutterstock/models/license_editorial_content_request.py` |
-| `LicenseEditorialContentRequestDict` | `shutterstock/models/license_editorial_content_request.py` |
-| `LicenseEditorialContentResults` | `shutterstock/models/license_editorial_content_results.py` |
-| `LicenseEditorialImagesErrorBody` | `shutterstock/errors/license_editorial_images_error.py` |
+| `LicenseEditorialContentRequest` | `shutterstock_api_explorer/models/license_editorial_content_request.py` |
+| `LicenseEditorialContentRequestDict` | `shutterstock_api_explorer/models/license_editorial_content_request.py` |
+| `LicenseEditorialContentResults` | `shutterstock_api_explorer/models/license_editorial_content_results.py` |
+| `LicenseEditorialImagesErrorBody` | `shutterstock_api_explorer/errors/license_editorial_images_error.py` |
 
 ### client.editorial_images.list_editorial_image_categories
 
 - **Route**: `GET /v2/editorial/images/categories`
+- **Auth**: `basic` OR `customer_access_code`
 - **Server**: `default`
 - **Signature**: `def list_editorial_image_categories(*, request_options: RequestOptionsOrDict | None = None)`
 - **Returns (parsed)**: `EditorialImageCategoryResults`
@@ -263,12 +278,13 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `EditorialImageCategoryResults` | `shutterstock/models/editorial_image_category_results.py` |
-| `ListEditorialImageCategoriesErrorBody` | `shutterstock/errors/list_editorial_image_categories_error.py` |
+| `EditorialImageCategoryResults` | `shutterstock_api_explorer/models/editorial_image_category_results.py` |
+| `ListEditorialImageCategoriesErrorBody` | `shutterstock_api_explorer/errors/list_editorial_image_categories_error.py` |
 
 ### client.editorial_images.list_editorial_images
 
 - **Route**: `GET /v2/editorial/images`
+- **Auth**: `basic` OR `customer_access_code`
 - **Server**: `default`
 - **Signature**: `def list_editorial_images(id: list[str], country: str, *, search_id: str | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `id`, `country`
@@ -280,12 +296,13 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `EditorialImageResults` | `shutterstock/models/editorial_image_results.py` |
-| `ListEditorialImagesErrorBody` | `shutterstock/errors/list_editorial_images_error.py` |
+| `EditorialImageResults` | `shutterstock_api_explorer/models/editorial_image_results.py` |
+| `ListEditorialImagesErrorBody` | `shutterstock_api_explorer/errors/list_editorial_images_error.py` |
 
 ### client.editorial_images.search_editorial
 
 - **Route**: `GET /v2/editorial/search`
+- **Auth**: `basic` OR `customer_access_code`
 - **Server**: `default`
 - **Signature**: `def search_editorial(country: str, *, query: str | None = None, sort: Sort17OrStr | None = None, category: str | None = None, supplier_code: list[str] | None = None, date_start: Date | None = None, date_end: Date | None = None, per_page: int | None = 20, cursor: str | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `country`
@@ -297,13 +314,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Sort17OrStr` | `shutterstock/models/enums/sort17.py` |
-| `EditorialSearchResults` | `shutterstock/models/editorial_search_results.py` |
-| `SearchEditorialErrorBody` | `shutterstock/errors/search_editorial_error.py` |
+| `Sort17OrStr` | `shutterstock_api_explorer/models/enums/sort17.py` |
+| `EditorialSearchResults` | `shutterstock_api_explorer/models/editorial_search_results.py` |
+| `SearchEditorialErrorBody` | `shutterstock_api_explorer/errors/search_editorial_error.py` |
 
 ### client.editorial_images.search_editorial_images
 
 - **Route**: `GET /v2/editorial/images/search`
+- **Auth**: `basic` OR `customer_access_code`
 - **Server**: `default`
 - **Signature**: `def search_editorial_images(country: str, *, query: str | None = None, sort: Sort17OrStr | None = None, category: str | None = None, supplier_code: list[str] | None = None, date_start: Date | None = None, date_end: Date | None = None, per_page: int | None = 20, cursor: str | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `country`
@@ -315,7 +333,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Sort17OrStr` | `shutterstock/models/enums/sort17.py` |
-| `EditorialSearchResults` | `shutterstock/models/editorial_search_results.py` |
-| `SearchEditorialImagesErrorBody` | `shutterstock/errors/search_editorial_images_error.py` |
+| `Sort17OrStr` | `shutterstock_api_explorer/models/enums/sort17.py` |
+| `EditorialSearchResults` | `shutterstock_api_explorer/models/editorial_search_results.py` |
+| `SearchEditorialImagesErrorBody` | `shutterstock_api_explorer/errors/search_editorial_images_error.py` |
 

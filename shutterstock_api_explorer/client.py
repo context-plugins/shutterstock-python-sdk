@@ -18,8 +18,10 @@ from .apis.test import Test
 from .apis.users import Users
 from .apis.videos import Videos
 from .auth import AuthSchemes, CustomerAccessCodeScope
-from .base_client import DEFAULT_TIMEOUT, BaseShutterstockClient
+from .base_client import DEFAULT_TIMEOUT, BaseShutterstockApiExplorerClient
 from .core import (
+    OPERATING_SYSTEM,
+    PYTHON_RUNTIME,
     AuthorizationCodeCredentials,
     AuthorizationCodeCredentialsOrDict,
     AuthorizationCodeTokenSource,
@@ -33,12 +35,13 @@ from .core import (
     RefreshableTokenSource,
     client_secret_basic,
     no_auth,
+    param,
 )
 from .server.environment import Environment
 from .server.server_config import ServerConfigOrDict
 
 
-class ShutterstockClient(BaseShutterstockClient[RawClient]):
+class ShutterstockApiExplorerClient(BaseShutterstockApiExplorerClient[RawClient]):
     def __init__(
         self,
         *,
@@ -54,7 +57,15 @@ class ShutterstockClient(BaseShutterstockClient[RawClient]):
     ) -> None:
         super().__init__(environment=environment, timeout=timeout, server_config=server_config)
         self._raw_client = RawClient(
-            http_client=custom_http_client if custom_http_client is not None else HttpxClient(timeout=timeout)
+            http_client=custom_http_client if custom_http_client is not None else HttpxClient(timeout=timeout),
+            global_headers=[
+                param[str]("User-Agent", "ShutterstockApiExplorerClient/1.2.0 Python"),
+                param[str]("X-APIMatic-Lang", "Python"),
+                param[str]("X-APIMatic-Package-Version", "1.2.0"),
+                param[str]("X-APIMatic-Gen-Version", "4.0.0"),
+                param[str]("X-APIMatic-OS", OPERATING_SYSTEM),
+                param[str]("X-APIMatic-Runtime", PYTHON_RUNTIME),
+            ],
         )
         self._auth = AuthSchemes(
             basic=BasicAuthScheme(BasicAuthCredentials.coerce(basic)) if basic is not None else no_auth,
@@ -138,4 +149,4 @@ class ShutterstockClient(BaseShutterstockClient[RawClient]):
         self.close()
 
 
-Client = ShutterstockClient
+Client = ShutterstockApiExplorerClient

@@ -2,11 +2,11 @@
 
 **Raw** endpoints, reached through `with_raw_response`, return `ApiResult[T, E]` and never raise for an API error. For the parsed endpoints, see [API Reference](api-reference.md).
 
-> Source: [ShutterstockClient](shutterstock/client.py)
+> Source: [ShutterstockApiExplorerClient](shutterstock_api_explorer/client.py)
 
 ## AudioApi
 
-> Source: [AudioApi](shutterstock/apis/audio_api.py)
+> Source: [AudioApi](shutterstock_api_explorer/apis/audio_api.py)
 
 <details>
 <summary><code>def add_track_collection_items(id: str, body: CollectionItemRequest | CollectionItemRequestDict, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, AddTrackCollectionItemsErrorBody]</code></summary>
@@ -62,8 +62,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Collection ID |
-| <code>body</code> | <code>[CollectionItemRequest](shutterstock/models/collection_item_request.py) \| [CollectionItemRequestDict](shutterstock/models/collection_item_request.py)</code> | List of items to add to collection |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[CollectionItemRequest](shutterstock_api_explorer/models/collection_item_request.py) \| [CollectionItemRequestDict](shutterstock_api_explorer/models/collection_item_request.py)</code> | List of items to add to collection |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -73,18 +73,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;None, [AddTrackCollectionItemsErrorBody](shutterstock/errors/add_track_collection_items_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;None, [AddTrackCollectionItemsErrorBody](shutterstock_api_explorer/errors/add_track_collection_items_error.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[AddTrackCollectionItemsErrorBody](shutterstock/errors/add_track_collection_items_error.py)</code>
+**On `Failure`**: `error` is <code>[AddTrackCollectionItemsErrorBody](shutterstock_api_explorer/errors/add_track_collection_items_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -147,8 +147,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[CollectionCreateRequest](shutterstock/models/collection_create_request.py) \| [CollectionCreateRequestDict](shutterstock/models/collection_create_request.py)</code> | Collection metadata |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[CollectionCreateRequest](shutterstock_api_explorer/models/collection_create_request.py) \| [CollectionCreateRequestDict](shutterstock_api_explorer/models/collection_create_request.py)</code> | Collection metadata |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -158,18 +158,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CollectionCreateResponse](shutterstock/models/collection_create_response.py), [CreateTrackCollectionErrorBody](shutterstock/errors/create_track_collection_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CollectionCreateResponse](shutterstock_api_explorer/models/collection_create_response.py), [CreateTrackCollectionErrorBody](shutterstock_api_explorer/errors/create_track_collection_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CollectionCreateResponse](shutterstock/models/collection_create_response.py)</code> -- Successfully created audio collection
+**On `Success`**: `payload` is <code>[CollectionCreateResponse](shutterstock_api_explorer/models/collection_create_response.py)</code> -- Successfully created audio collection
 
-**On `Failure`**: `error` is <code>[CreateTrackCollectionErrorBody](shutterstock/errors/create_track_collection_error.py)</code>
+**On `Failure`**: `error` is <code>[CreateTrackCollectionErrorBody](shutterstock_api_explorer/errors/create_track_collection_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -233,7 +233,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Collection ID |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -243,18 +243,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;None, [DeleteTrackCollectionErrorBody](shutterstock/errors/delete_track_collection_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;None, [DeleteTrackCollectionErrorBody](shutterstock_api_explorer/errors/delete_track_collection_error.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[DeleteTrackCollectionErrorBody](shutterstock/errors/delete_track_collection_error.py)</code>
+**On `Failure`**: `error` is <code>[DeleteTrackCollectionErrorBody](shutterstock_api_explorer/errors/delete_track_collection_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -319,7 +319,7 @@ match result:
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Collection ID |
 | <code>item_id</code> | <code>list&#91;str&#93; \| None</code> | One or more item IDs to remove from the collection<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -329,18 +329,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;None, [DeleteTrackCollectionItemsErrorBody](shutterstock/errors/delete_track_collection_items_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;None, [DeleteTrackCollectionItemsErrorBody](shutterstock_api_explorer/errors/delete_track_collection_items_error.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[DeleteTrackCollectionItemsErrorBody](shutterstock/errors/delete_track_collection_items_error.py)</code>
+**On `Failure`**: `error` is <code>[DeleteTrackCollectionItemsErrorBody](shutterstock_api_explorer/errors/delete_track_collection_items_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -404,7 +404,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | License ID |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -414,18 +414,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[AudioUrl](shutterstock/models/audio_url.py), [DownloadTracksErrorBody](shutterstock/errors/download_tracks_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[AudioUrl](shutterstock_api_explorer/models/audio_url.py), [DownloadTracksErrorBody](shutterstock_api_explorer/errors/download_tracks_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AudioUrl](shutterstock/models/audio_url.py)</code> -- OK
+**On `Success`**: `payload` is <code>[AudioUrl](shutterstock_api_explorer/models/audio_url.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[DownloadTracksErrorBody](shutterstock/errors/download_tracks_error.py)</code>
+**On `Failure`**: `error` is <code>[DownloadTracksErrorBody](shutterstock_api_explorer/errors/download_tracks_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -489,9 +489,9 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Audio track ID |
-| <code>view</code> | <code>[View2OrStr](shutterstock/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
+| <code>view</code> | <code>[View2OrStr](shutterstock_api_explorer/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
 | <code>search_id</code> | <code>str \| None</code> | The ID of the search that is related to this request<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -501,18 +501,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[Audio](shutterstock/models/audio.py), [GetTrackErrorBody](shutterstock/errors/get_track_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[Audio](shutterstock_api_explorer/models/audio.py), [GetTrackErrorBody](shutterstock_api_explorer/errors/get_track_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[Audio](shutterstock/models/audio.py)</code> -- OK
+**On `Success`**: `payload` is <code>[Audio](shutterstock_api_explorer/models/audio.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetTrackErrorBody](shutterstock/errors/get_track_error.py)</code>
+**On `Failure`**: `error` is <code>[GetTrackErrorBody](shutterstock_api_explorer/errors/get_track_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -576,9 +576,9 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Collection ID |
-| <code>embed</code> | <code>list&#91;[EmbedOrStr](shutterstock/models/enums/embed.py)&#93; \| None</code> | Which sharing information to include in the response, such as a URL to the collection<br>**Default**: <code>None</code> |
+| <code>embed</code> | <code>list&#91;[EmbedOrStr](shutterstock_api_explorer/models/enums/embed.py)&#93; \| None</code> | Which sharing information to include in the response, such as a URL to the collection<br>**Default**: <code>None</code> |
 | <code>share_code</code> | <code>str \| None</code> | Code to retrieve a shared collection<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -588,18 +588,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[Collection](shutterstock/models/collection.py), [GetTrackCollectionErrorBody](shutterstock/errors/get_track_collection_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[Collection](shutterstock_api_explorer/models/collection.py), [GetTrackCollectionErrorBody](shutterstock_api_explorer/errors/get_track_collection_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[Collection](shutterstock/models/collection.py)</code> -- OK
+**On `Success`**: `payload` is <code>[Collection](shutterstock_api_explorer/models/collection.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetTrackCollectionErrorBody](shutterstock/errors/get_track_collection_error.py)</code>
+**On `Failure`**: `error` is <code>[GetTrackCollectionErrorBody](shutterstock_api_explorer/errors/get_track_collection_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -666,8 +666,8 @@ match result:
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>100</code> |
 | <code>share_code</code> | <code>str \| None</code> | Code to retrieve the contents of a shared collection<br>**Default**: <code>None</code> |
-| <code>sort</code> | <code>[Sort5OrStr](shutterstock/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>sort</code> | <code>[Sort5OrStr](shutterstock_api_explorer/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -677,18 +677,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CollectionItemDataList](shutterstock/models/collection_item_data_list.py), [GetTrackCollectionItemsErrorBody](shutterstock/errors/get_track_collection_items_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CollectionItemDataList](shutterstock_api_explorer/models/collection_item_data_list.py), [GetTrackCollectionItemsErrorBody](shutterstock_api_explorer/errors/get_track_collection_items_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CollectionItemDataList](shutterstock/models/collection_item_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[CollectionItemDataList](shutterstock_api_explorer/models/collection_item_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetTrackCollectionItemsErrorBody](shutterstock/errors/get_track_collection_items_error.py)</code>
+**On `Failure`**: `error` is <code>[GetTrackCollectionItemsErrorBody](shutterstock_api_explorer/errors/get_track_collection_items_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -753,8 +753,8 @@ match result:
 | --- | --- | --- |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>100</code> |
-| <code>embed</code> | <code>list&#91;[EmbedOrStr](shutterstock/models/enums/embed.py)&#93; \| None</code> | Which sharing information to include in the response, such as a URL to the collection<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>embed</code> | <code>list&#91;[EmbedOrStr](shutterstock_api_explorer/models/enums/embed.py)&#93; \| None</code> | Which sharing information to include in the response, such as a URL to the collection<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -764,18 +764,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CollectionDataList](shutterstock/models/collection_data_list.py), [GetTrackCollectionListErrorBody](shutterstock/errors/get_track_collection_list_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CollectionDataList](shutterstock_api_explorer/models/collection_data_list.py), [GetTrackCollectionListErrorBody](shutterstock_api_explorer/errors/get_track_collection_list_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CollectionDataList](shutterstock/models/collection_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[CollectionDataList](shutterstock_api_explorer/models/collection_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetTrackCollectionListErrorBody](shutterstock/errors/get_track_collection_list_error.py)</code>
+**On `Failure`**: `error` is <code>[GetTrackCollectionListErrorBody](shutterstock_api_explorer/errors/get_track_collection_list_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -842,13 +842,13 @@ match result:
 | <code>license</code> | <code>str \| None</code> | Restrict results by license.<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
-| <code>sort</code> | <code>[Sort5OrStr](shutterstock/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
+| <code>sort</code> | <code>[Sort5OrStr](shutterstock_api_explorer/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
 | <code>username</code> | <code>str \| None</code> | Filter licenses by username of licensee<br>**Default**: <code>None</code> |
 | <code>start_date</code> | <code>RFC3339DateTime \| None</code> | Show licenses created on or after the specified date<br>**Default**: <code>None</code> |
 | <code>end_date</code> | <code>RFC3339DateTime \| None</code> | Show licenses created before the specified date<br>**Default**: <code>None</code> |
-| <code>download_availability</code> | <code>[DownloadAvailabilityOrStr](shutterstock/models/enums/download_availability.py) \| None</code> | Filter licenses by download availability<br>**Default**: <code>None</code> |
+| <code>download_availability</code> | <code>[DownloadAvailabilityOrStr](shutterstock_api_explorer/models/enums/download_availability.py) \| None</code> | Filter licenses by download availability<br>**Default**: <code>None</code> |
 | <code>team_history</code> | <code>bool \| None</code> | Set to true to see license history for all members of your team.<br>**Default**: <code>False</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -858,18 +858,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[DownloadHistoryDataList](shutterstock/models/download_history_data_list.py), [GetTrackLicenseListErrorBody](shutterstock/errors/get_track_license_list_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[DownloadHistoryDataList](shutterstock_api_explorer/models/download_history_data_list.py), [GetTrackLicenseListErrorBody](shutterstock_api_explorer/errors/get_track_license_list_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[DownloadHistoryDataList](shutterstock/models/download_history_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[DownloadHistoryDataList](shutterstock_api_explorer/models/download_history_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetTrackLicenseListErrorBody](shutterstock/errors/get_track_license_list_error.py)</code>
+**On `Failure`**: `error` is <code>[GetTrackLicenseListErrorBody](shutterstock_api_explorer/errors/get_track_license_list_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -933,9 +933,9 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>list&#91;str&#93;</code> | One or more audio IDs |
-| <code>view</code> | <code>[View2OrStr](shutterstock/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
+| <code>view</code> | <code>[View2OrStr](shutterstock_api_explorer/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
 | <code>search_id</code> | <code>str \| None</code> | The ID of the search that is related to this request<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -945,18 +945,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[AudioDataList](shutterstock/models/audio_data_list.py), [GetTrackListErrorBody](shutterstock/errors/get_track_list_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[AudioDataList](shutterstock_api_explorer/models/audio_data_list.py), [GetTrackListErrorBody](shutterstock_api_explorer/errors/get_track_list_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AudioDataList](shutterstock/models/audio_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[AudioDataList](shutterstock_api_explorer/models/audio_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetTrackListErrorBody](shutterstock/errors/get_track_list_error.py)</code>
+**On `Failure`**: `error` is <code>[GetTrackListErrorBody](shutterstock_api_explorer/errors/get_track_list_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -1019,10 +1019,10 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[LicenseAudioRequest](shutterstock/models/license_audio_request.py) \| [LicenseAudioRequestDict](shutterstock/models/license_audio_request.py)</code> | Tracks to license |
-| <code>license</code> | <code>[License10OrStr](shutterstock/models/enums/license10.py) \| None</code> | License type<br>**Default**: <code>None</code> |
+| <code>body</code> | <code>[LicenseAudioRequest](shutterstock_api_explorer/models/license_audio_request.py) \| [LicenseAudioRequestDict](shutterstock_api_explorer/models/license_audio_request.py)</code> | Tracks to license |
+| <code>license</code> | <code>[License10OrStr](shutterstock_api_explorer/models/enums/license10.py) \| None</code> | License type<br>**Default**: <code>None</code> |
 | <code>search_id</code> | <code>str \| None</code> | The ID of the search that led to licensing this track<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1032,18 +1032,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[LicenseAudioResultDataList](shutterstock/models/license_audio_result_data_list.py), [LicenseTrackErrorBody](shutterstock/errors/license_track_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[LicenseAudioResultDataList](shutterstock_api_explorer/models/license_audio_result_data_list.py), [LicenseTrackErrorBody](shutterstock_api_explorer/errors/license_track_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[LicenseAudioResultDataList](shutterstock/models/license_audio_result_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[LicenseAudioResultDataList](shutterstock_api_explorer/models/license_audio_result_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[LicenseTrackErrorBody](shutterstock/errors/license_track_error.py)</code>
+**On `Failure`**: `error` is <code>[LicenseTrackErrorBody](shutterstock_api_explorer/errors/license_track_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -1107,7 +1107,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>language</code> | <code>str \| None</code> | Which language the genres will be returned<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1117,11 +1117,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[GenreList](shutterstock/models/genre_list.py), [RawError](shutterstock/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[GenreList](shutterstock_api_explorer/models/genre_list.py), [RawError](shutterstock_api_explorer/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[GenreList](shutterstock/models/genre_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[GenreList](shutterstock_api_explorer/models/genre_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[RawError](shutterstock/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](shutterstock_api_explorer/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1185,7 +1185,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>language</code> | <code>str \| None</code> | Which language the instruments will be returned in<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1195,11 +1195,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[InstrumentList](shutterstock/models/instrument_list.py), [RawError](shutterstock/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[InstrumentList](shutterstock_api_explorer/models/instrument_list.py), [RawError](shutterstock_api_explorer/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[InstrumentList](shutterstock/models/instrument_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[InstrumentList](shutterstock_api_explorer/models/instrument_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[RawError](shutterstock/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](shutterstock_api_explorer/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1263,7 +1263,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>language</code> | <code>str \| None</code> | Which language the moods will be returned in<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1273,11 +1273,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[MoodList](shutterstock/models/mood_list.py), [RawError](shutterstock/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[MoodList](shutterstock_api_explorer/models/mood_list.py), [RawError](shutterstock_api_explorer/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[MoodList](shutterstock/models/mood_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[MoodList](shutterstock_api_explorer/models/mood_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[RawError](shutterstock/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](shutterstock_api_explorer/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1341,8 +1341,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Collection ID |
-| <code>body</code> | <code>[CollectionUpdateRequest](shutterstock/models/collection_update_request.py) \| [CollectionUpdateRequestDict](shutterstock/models/collection_update_request.py)</code> | Collection changes |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[CollectionUpdateRequest](shutterstock_api_explorer/models/collection_update_request.py) \| [CollectionUpdateRequestDict](shutterstock_api_explorer/models/collection_update_request.py)</code> | Collection changes |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1352,18 +1352,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;None, [RenameTrackCollectionErrorBody](shutterstock/errors/rename_track_collection_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;None, [RenameTrackCollectionErrorBody](shutterstock_api_explorer/errors/rename_track_collection_error.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[RenameTrackCollectionErrorBody](shutterstock/errors/rename_track_collection_error.py)</code>
+**On `Failure`**: `error` is <code>[RenameTrackCollectionErrorBody](shutterstock_api_explorer/errors/rename_track_collection_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -1440,14 +1440,14 @@ match result:
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
 | <code>query</code> | <code>str \| None</code> | One or more search terms separated by spaces<br>**Default**: <code>None</code> |
-| <code>sort</code> | <code>[Sort12OrStr](shutterstock/models/enums/sort12.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
-| <code>sort_order</code> | <code>[SortOrderOrStr](shutterstock/models/enums/sort_order.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
+| <code>sort</code> | <code>[Sort12OrStr](shutterstock_api_explorer/models/enums/sort12.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
+| <code>sort_order</code> | <code>[SortOrderOrStr](shutterstock_api_explorer/models/enums/sort_order.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
 | <code>vocal_description</code> | <code>str \| None</code> | Show tracks with the specified vocal description (male, female)<br>**Default**: <code>None</code> |
-| <code>view</code> | <code>[View2OrStr](shutterstock/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
+| <code>view</code> | <code>[View2OrStr](shutterstock_api_explorer/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
 | <code>fields</code> | <code>str \| None</code> | Fields to display in the response; see the documentation for the fields parameter in the overview section<br>**Default**: <code>None</code> |
-| <code>library</code> | <code>[Library1OrStr](shutterstock/models/enums/library1.py) \| None</code> | Which library to search<br>**Default**: <code>None</code> |
+| <code>library</code> | <code>[Library1OrStr](shutterstock_api_explorer/models/enums/library1.py) \| None</code> | Which library to search<br>**Default**: <code>None</code> |
 | <code>language</code> | <code>str \| None</code> | Which language to search in<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1457,18 +1457,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[AudioSearchResults](shutterstock/models/audio_search_results.py), [SearchTracksErrorBody](shutterstock/errors/search_tracks_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[AudioSearchResults](shutterstock_api_explorer/models/audio_search_results.py), [SearchTracksErrorBody](shutterstock_api_explorer/errors/search_tracks_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AudioSearchResults](shutterstock/models/audio_search_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[AudioSearchResults](shutterstock_api_explorer/models/audio_search_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[SearchTracksErrorBody](shutterstock/errors/search_tracks_error.py)</code>
+**On `Failure`**: `error` is <code>[SearchTracksErrorBody](shutterstock_api_explorer/errors/search_tracks_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -1480,7 +1480,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## Catalog
 
-> Source: [Catalog](shutterstock/apis/catalog.py)
+> Source: [Catalog](shutterstock_api_explorer/apis/catalog.py)
 
 <details>
 <summary><code>def add_to_collection(collection_id: str, body: CreateCatalogCollectionItems | CreateCatalogCollectionItemsDict, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[CatalogCollection, RawError]</code></summary>
@@ -1536,8 +1536,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>collection_id</code> | <code>str</code> | The ID of the collection to add assets to |
-| <code>body</code> | <code>[CreateCatalogCollectionItems](shutterstock/models/create_catalog_collection_items.py) \| [CreateCatalogCollectionItemsDict](shutterstock/models/create_catalog_collection_items.py)</code> | Collection item attributes to add to collection |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[CreateCatalogCollectionItems](shutterstock_api_explorer/models/create_catalog_collection_items.py) \| [CreateCatalogCollectionItemsDict](shutterstock_api_explorer/models/create_catalog_collection_items.py)</code> | Collection item attributes to add to collection |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1547,11 +1547,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CatalogCollection](shutterstock/models/catalog_collection.py), [RawError](shutterstock/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CatalogCollection](shutterstock_api_explorer/models/catalog_collection.py), [RawError](shutterstock_api_explorer/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CatalogCollection](shutterstock/models/catalog_collection.py)</code> -- OK
+**On `Success`**: `payload` is <code>[CatalogCollection](shutterstock_api_explorer/models/catalog_collection.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[RawError](shutterstock/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](shutterstock_api_explorer/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1614,8 +1614,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[CreateCatalogCollection](shutterstock/models/create_catalog_collection.py) \| [CreateCatalogCollectionDict](shutterstock/models/create_catalog_collection.py)</code> | Create a catalog collection and, optionally, add items. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[CreateCatalogCollection](shutterstock_api_explorer/models/create_catalog_collection.py) \| [CreateCatalogCollectionDict](shutterstock_api_explorer/models/create_catalog_collection.py)</code> | Create a catalog collection and, optionally, add items. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1625,11 +1625,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CatalogCollection](shutterstock/models/catalog_collection.py), [RawError](shutterstock/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CatalogCollection](shutterstock_api_explorer/models/catalog_collection.py), [RawError](shutterstock_api_explorer/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CatalogCollection](shutterstock/models/catalog_collection.py)</code> -- OK
+**On `Success`**: `payload` is <code>[CatalogCollection](shutterstock_api_explorer/models/catalog_collection.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[RawError](shutterstock/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](shutterstock_api_explorer/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1693,7 +1693,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>collection_id</code> | <code>str</code> | The ID of the collection to delete |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1703,18 +1703,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;None, [DeleteCollectionErrorBody](shutterstock/errors/delete_collection_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;None, [DeleteCollectionErrorBody](shutterstock_api_explorer/errors/delete_collection_error.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[DeleteCollectionErrorBody](shutterstock/errors/delete_collection_error.py)</code>
+**On `Failure`**: `error` is <code>[DeleteCollectionErrorBody](shutterstock_api_explorer/errors/delete_collection_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -1778,8 +1778,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>collection_id</code> | <code>str</code> | The ID of the collection to remove assets from |
-| <code>body</code> | <code>[RemoveCatalogCollectionItems](shutterstock/models/remove_catalog_collection_items.py) \| [RemoveCatalogCollectionItemsDict](shutterstock/models/remove_catalog_collection_items.py)</code> | Items to remove from the collection |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[RemoveCatalogCollectionItems](shutterstock_api_explorer/models/remove_catalog_collection_items.py) \| [RemoveCatalogCollectionItemsDict](shutterstock_api_explorer/models/remove_catalog_collection_items.py)</code> | Items to remove from the collection |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1789,11 +1789,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CatalogCollection](shutterstock/models/catalog_collection.py), [RawError](shutterstock/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CatalogCollection](shutterstock_api_explorer/models/catalog_collection.py), [RawError](shutterstock_api_explorer/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CatalogCollection](shutterstock/models/catalog_collection.py)</code> -- OK
+**On `Success`**: `payload` is <code>[CatalogCollection](shutterstock_api_explorer/models/catalog_collection.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[RawError](shutterstock/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](shutterstock_api_explorer/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1858,9 +1858,9 @@ match result:
 | --- | --- | --- |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
-| <code>sort</code> | <code>[Sort5OrStr](shutterstock/models/enums/sort5.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
+| <code>sort</code> | <code>[Sort5OrStr](shutterstock_api_explorer/models/enums/sort5.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
 | <code>shared</code> | <code>bool \| None</code> | Set to true to omit collections that you own and return only collections  that are shared with you<br>**Default**: <code>False</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1870,18 +1870,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CatalogCollectionDataList](shutterstock/models/catalog_collection_data_list.py), [GetCollectionsErrorBody](shutterstock/errors/get_collections_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CatalogCollectionDataList](shutterstock_api_explorer/models/catalog_collection_data_list.py), [GetCollectionsErrorBody](shutterstock_api_explorer/errors/get_collections_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CatalogCollectionDataList](shutterstock/models/catalog_collection_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[CatalogCollectionDataList](shutterstock_api_explorer/models/catalog_collection_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetCollectionsErrorBody](shutterstock/errors/get_collections_error.py)</code>
+**On `Failure`**: `error` is <code>[GetCollectionsErrorBody](shutterstock_api_explorer/errors/get_collections_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -1944,13 +1944,13 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>sort</code> | <code>[Sort5OrStr](shutterstock/models/enums/sort5.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
+| <code>sort</code> | <code>[Sort5OrStr](shutterstock_api_explorer/models/enums/sort5.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
 | <code>query</code> | <code>str \| None</code> | One or more search terms separated by spaces<br>**Default**: <code>None</code> |
 | <code>collection_id</code> | <code>list&#91;str&#93; \| None</code> | Filter by collection id<br>**Default**: <code>None</code> |
-| <code>asset_type</code> | <code>list&#91;[AssetTypeOrStr](shutterstock/models/enums/asset_type.py)&#93; \| None</code> | Filter by asset type<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>asset_type</code> | <code>list&#91;[AssetTypeOrStr](shutterstock_api_explorer/models/enums/asset_type.py)&#93; \| None</code> | Filter by asset type<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1960,18 +1960,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CatalogCollectionItemDataList](shutterstock/models/catalog_collection_item_data_list.py), [SearchCatalogErrorBody](shutterstock/errors/search_catalog_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CatalogCollectionItemDataList](shutterstock_api_explorer/models/catalog_collection_item_data_list.py), [SearchCatalogErrorBody](shutterstock_api_explorer/errors/search_catalog_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CatalogCollectionItemDataList](shutterstock/models/catalog_collection_item_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[CatalogCollectionItemDataList](shutterstock_api_explorer/models/catalog_collection_item_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[SearchCatalogErrorBody](shutterstock/errors/search_catalog_error.py)</code>
+**On `Failure`**: `error` is <code>[SearchCatalogErrorBody](shutterstock_api_explorer/errors/search_catalog_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2035,8 +2035,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>collection_id</code> | <code>str</code> | ID of collection that needs to be modified |
-| <code>body</code> | <code>[UpdateCatalogCollection](shutterstock/models/update_catalog_collection.py) \| [UpdateCatalogCollectionDict](shutterstock/models/update_catalog_collection.py)</code> | Collections Metadata to update |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[UpdateCatalogCollection](shutterstock_api_explorer/models/update_catalog_collection.py) \| [UpdateCatalogCollectionDict](shutterstock_api_explorer/models/update_catalog_collection.py)</code> | Collections Metadata to update |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2046,11 +2046,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CatalogCollection](shutterstock/models/catalog_collection.py), [RawError](shutterstock/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CatalogCollection](shutterstock_api_explorer/models/catalog_collection.py), [RawError](shutterstock_api_explorer/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CatalogCollection](shutterstock/models/catalog_collection.py)</code> -- OK
+**On `Success`**: `payload` is <code>[CatalogCollection](shutterstock_api_explorer/models/catalog_collection.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[RawError](shutterstock/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](shutterstock_api_explorer/core/results.py)</code>
 
 </dd>
 </dl>
@@ -2062,7 +2062,7 @@ match result:
 
 ## ComputerVision
 
-> Source: [ComputerVision](shutterstock/apis/computer_vision.py)
+> Source: [ComputerVision](shutterstock_api_explorer/apis/computer_vision.py)
 
 <details>
 <summary><code>def get_keywords(asset_id: AssetId | AssetIdDict, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[KeywordDataList, GetKeywordsErrorBody]</code></summary>
@@ -2117,8 +2117,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>asset_id</code> | <code>[AssetId](shutterstock/models/unions/asset_id.py) \| [AssetIdDict](shutterstock/models/unions/asset_id.py)</code> | The asset ID or upload ID to suggest keywords for |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>asset_id</code> | <code>[AssetId](shutterstock_api_explorer/models/unions/asset_id.py) \| [AssetIdDict](shutterstock_api_explorer/models/unions/asset_id.py)</code> | The asset ID or upload ID to suggest keywords for |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2128,18 +2128,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[KeywordDataList](shutterstock/models/keyword_data_list.py), [GetKeywordsErrorBody](shutterstock/errors/get_keywords_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[KeywordDataList](shutterstock_api_explorer/models/keyword_data_list.py), [GetKeywordsErrorBody](shutterstock_api_explorer/errors/get_keywords_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[KeywordDataList](shutterstock/models/keyword_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[KeywordDataList](shutterstock_api_explorer/models/keyword_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetKeywordsErrorBody](shutterstock/errors/get_keywords_error.py)</code>
+**On `Failure`**: `error` is <code>[GetKeywordsErrorBody](shutterstock_api_explorer/errors/get_keywords_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 415 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 415 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2203,13 +2203,13 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>asset_id</code> | <code>str</code> | The asset ID or upload ID to find similar images for |
-| <code>license</code> | <code>list&#91;[License9OrStr](shutterstock/models/enums/license9.py)&#93; \| None</code> | Show only images with the specified license<br>**Default**: <code>None</code> |
+| <code>license</code> | <code>list&#91;[License9OrStr](shutterstock_api_explorer/models/enums/license9.py)&#93; \| None</code> | Show only images with the specified license<br>**Default**: <code>None</code> |
 | <code>safe</code> | <code>bool \| None</code> | Enable or disable safe search<br>**Default**: <code>True</code> |
-| <code>language</code> | <code>[LanguageOrStr](shutterstock/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
+| <code>language</code> | <code>[LanguageOrStr](shutterstock_api_explorer/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
-| <code>view</code> | <code>[View2OrStr](shutterstock/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>view</code> | <code>[View2OrStr](shutterstock_api_explorer/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2219,18 +2219,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[ImageSearchResults](shutterstock/models/image_search_results.py), [GetSimilarImagesErrorBody](shutterstock/errors/get_similar_images_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[ImageSearchResults](shutterstock_api_explorer/models/image_search_results.py), [GetSimilarImagesErrorBody](shutterstock_api_explorer/errors/get_similar_images_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[ImageSearchResults](shutterstock/models/image_search_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[ImageSearchResults](shutterstock_api_explorer/models/image_search_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetSimilarImagesErrorBody](shutterstock/errors/get_similar_images_error.py)</code>
+**On `Failure`**: `error` is <code>[GetSimilarImagesErrorBody](shutterstock_api_explorer/errors/get_similar_images_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2294,13 +2294,13 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>asset_id</code> | <code>str</code> | The asset ID or upload ID to find similar videos for |
-| <code>license</code> | <code>list&#91;[License9OrStr](shutterstock/models/enums/license9.py)&#93; \| None</code> | Show only videos with the specified license<br>**Default**: <code>None</code> |
+| <code>license</code> | <code>list&#91;[License9OrStr](shutterstock_api_explorer/models/enums/license9.py)&#93; \| None</code> | Show only videos with the specified license<br>**Default**: <code>None</code> |
 | <code>safe</code> | <code>bool \| None</code> | Enable or disable safe search<br>**Default**: <code>True</code> |
-| <code>language</code> | <code>[LanguageOrStr](shutterstock/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
+| <code>language</code> | <code>[LanguageOrStr](shutterstock_api_explorer/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
-| <code>view</code> | <code>[View2OrStr](shutterstock/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>view</code> | <code>[View2OrStr](shutterstock_api_explorer/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2310,18 +2310,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[VideoSearchResults](shutterstock/models/video_search_results.py), [GetSimilarVideosErrorBody](shutterstock/errors/get_similar_videos_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[VideoSearchResults](shutterstock_api_explorer/models/video_search_results.py), [GetSimilarVideosErrorBody](shutterstock_api_explorer/errors/get_similar_videos_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[VideoSearchResults](shutterstock/models/video_search_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[VideoSearchResults](shutterstock_api_explorer/models/video_search_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetSimilarVideosErrorBody](shutterstock/errors/get_similar_videos_error.py)</code>
+**On `Failure`**: `error` is <code>[GetSimilarVideosErrorBody](shutterstock_api_explorer/errors/get_similar_videos_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2384,8 +2384,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[ImageCreateRequest](shutterstock/models/image_create_request.py) \| [ImageCreateRequestDict](shutterstock/models/image_create_request.py)</code> | A Base 64 encoded jpeg or png; images can be no larger than 10mb and can be no larger than 10,000 pixels in width or height |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[ImageCreateRequest](shutterstock_api_explorer/models/image_create_request.py) \| [ImageCreateRequestDict](shutterstock_api_explorer/models/image_create_request.py)</code> | A Base 64 encoded jpeg or png; images can be no larger than 10mb and can be no larger than 10,000 pixels in width or height |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2395,18 +2395,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[ComputerVisionImageCreateResponse](shutterstock/models/computer_vision_image_create_response.py), [UploadImageErrorBody](shutterstock/errors/upload_image_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[ComputerVisionImageCreateResponse](shutterstock_api_explorer/models/computer_vision_image_create_response.py), [UploadImageErrorBody](shutterstock_api_explorer/errors/upload_image_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[ComputerVisionImageCreateResponse](shutterstock/models/computer_vision_image_create_response.py)</code> -- Created
+**On `Success`**: `payload` is <code>[ComputerVisionImageCreateResponse](shutterstock_api_explorer/models/computer_vision_image_create_response.py)</code> -- Created
 
-**On `Failure`**: `error` is <code>[UploadImageErrorBody](shutterstock/errors/upload_image_error.py)</code>
+**On `Failure`**: `error` is <code>[UploadImageErrorBody](shutterstock_api_explorer/errors/upload_image_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 413, 415 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 413, 415 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2418,7 +2418,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## Contributors
 
-> Source: [Contributors](shutterstock/apis/contributors.py)
+> Source: [Contributors](shutterstock_api_explorer/apis/contributors.py)
 
 <details>
 <summary><code>def get_contributor(contributor_id: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[ContributorProfile, GetContributorErrorBody]</code></summary>
@@ -2474,7 +2474,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>contributor_id</code> | <code>str</code> | Contributor ID |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2484,18 +2484,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[ContributorProfile](shutterstock/models/contributor_profile.py), [GetContributorErrorBody](shutterstock/errors/get_contributor_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[ContributorProfile](shutterstock_api_explorer/models/contributor_profile.py), [GetContributorErrorBody](shutterstock_api_explorer/errors/get_contributor_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[ContributorProfile](shutterstock/models/contributor_profile.py)</code> -- OK
+**On `Success`**: `payload` is <code>[ContributorProfile](shutterstock_api_explorer/models/contributor_profile.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetContributorErrorBody](shutterstock/errors/get_contributor_error.py)</code>
+**On `Failure`**: `error` is <code>[GetContributorErrorBody](shutterstock_api_explorer/errors/get_contributor_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2562,8 +2562,8 @@ match result:
 | <code>id</code> | <code>str</code> | Collection ID that belongs to the contributor |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
-| <code>sort</code> | <code>[Sort5OrStr](shutterstock/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>sort</code> | <code>[Sort5OrStr](shutterstock_api_explorer/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2573,18 +2573,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CollectionItemDataList](shutterstock/models/collection_item_data_list.py), [GetContributorCollectionItemsErrorBody](shutterstock/errors/get_contributor_collection_items_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CollectionItemDataList](shutterstock_api_explorer/models/collection_item_data_list.py), [GetContributorCollectionItemsErrorBody](shutterstock_api_explorer/errors/get_contributor_collection_items_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CollectionItemDataList](shutterstock/models/collection_item_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[CollectionItemDataList](shutterstock_api_explorer/models/collection_item_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetContributorCollectionItemsErrorBody](shutterstock/errors/get_contributor_collection_items_error.py)</code>
+**On `Failure`**: `error` is <code>[GetContributorCollectionItemsErrorBody](shutterstock_api_explorer/errors/get_contributor_collection_items_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2649,7 +2649,7 @@ match result:
 | --- | --- | --- |
 | <code>contributor_id</code> | <code>str</code> | Contributor ID |
 | <code>id</code> | <code>str</code> | Collection ID that belongs to the contributor |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2659,18 +2659,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[Collection](shutterstock/models/collection.py), [GetContributorCollectionsErrorBody](shutterstock/errors/get_contributor_collections_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[Collection](shutterstock_api_explorer/models/collection.py), [GetContributorCollectionsErrorBody](shutterstock_api_explorer/errors/get_contributor_collections_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[Collection](shutterstock/models/collection.py)</code> -- OK
+**On `Success`**: `payload` is <code>[Collection](shutterstock_api_explorer/models/collection.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetContributorCollectionsErrorBody](shutterstock/errors/get_contributor_collections_error.py)</code>
+**On `Failure`**: `error` is <code>[GetContributorCollectionsErrorBody](shutterstock_api_explorer/errors/get_contributor_collections_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2734,8 +2734,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>contributor_id</code> | <code>str</code> | Contributor ID |
-| <code>sort</code> | <code>[Sort24OrStr](shutterstock/models/enums/sort24.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>sort</code> | <code>[Sort24OrStr](shutterstock_api_explorer/models/enums/sort24.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2745,18 +2745,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CollectionDataList](shutterstock/models/collection_data_list.py), [GetContributorCollectionsListErrorBody](shutterstock/errors/get_contributor_collections_list_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CollectionDataList](shutterstock_api_explorer/models/collection_data_list.py), [GetContributorCollectionsListErrorBody](shutterstock_api_explorer/errors/get_contributor_collections_list_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CollectionDataList](shutterstock/models/collection_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[CollectionDataList](shutterstock_api_explorer/models/collection_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetContributorCollectionsListErrorBody](shutterstock/errors/get_contributor_collections_list_error.py)</code>
+**On `Failure`**: `error` is <code>[GetContributorCollectionsListErrorBody](shutterstock_api_explorer/errors/get_contributor_collections_list_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2820,7 +2820,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>list&#91;str&#93;</code> | One or more contributor IDs |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2830,18 +2830,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[ContributorProfileDataList](shutterstock/models/contributor_profile_data_list.py), [GetContributorListErrorBody](shutterstock/errors/get_contributor_list_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[ContributorProfileDataList](shutterstock_api_explorer/models/contributor_profile_data_list.py), [GetContributorListErrorBody](shutterstock_api_explorer/errors/get_contributor_list_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[ContributorProfileDataList](shutterstock/models/contributor_profile_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[ContributorProfileDataList](shutterstock_api_explorer/models/contributor_profile_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetContributorListErrorBody](shutterstock/errors/get_contributor_list_error.py)</code>
+**On `Failure`**: `error` is <code>[GetContributorListErrorBody](shutterstock_api_explorer/errors/get_contributor_list_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2853,7 +2853,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## EditorialImages
 
-> Source: [EditorialImages](shutterstock/apis/editorial_images.py)
+> Source: [EditorialImages](shutterstock_api_explorer/apis/editorial_images.py)
 
 <details>
 <summary><code>def get_editorial_categories(*, request_options: RequestOptionsOrDict | None = None) -> ApiResult[EditorialCategoryResults, GetEditorialCategoriesErrorBody]</code></summary>
@@ -2908,7 +2908,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2918,18 +2918,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialCategoryResults](shutterstock/models/editorial_category_results.py), [GetEditorialCategoriesErrorBody](shutterstock/errors/get_editorial_categories_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialCategoryResults](shutterstock_api_explorer/models/editorial_category_results.py), [GetEditorialCategoriesErrorBody](shutterstock_api_explorer/errors/get_editorial_categories_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialCategoryResults](shutterstock/models/editorial_category_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialCategoryResults](shutterstock_api_explorer/models/editorial_category_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetEditorialCategoriesErrorBody](shutterstock/errors/get_editorial_categories_error.py)</code>
+**On `Failure`**: `error` is <code>[GetEditorialCategoriesErrorBody](shutterstock_api_explorer/errors/get_editorial_categories_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2994,7 +2994,7 @@ match result:
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Editorial ID |
 | <code>country</code> | <code>str</code> | Returns only if the content is available for distribution in a certain country |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3004,18 +3004,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialContent](shutterstock/models/editorial_content.py), [GetEditorialImageErrorBody](shutterstock/errors/get_editorial_image_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialContent](shutterstock_api_explorer/models/editorial_content.py), [GetEditorialImageErrorBody](shutterstock_api_explorer/errors/get_editorial_image_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialContent](shutterstock/models/editorial_content.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialContent](shutterstock_api_explorer/models/editorial_content.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetEditorialImageErrorBody](shutterstock/errors/get_editorial_image_error.py)</code>
+**On `Failure`**: `error` is <code>[GetEditorialImageErrorBody](shutterstock_api_explorer/errors/get_editorial_image_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3081,7 +3081,7 @@ match result:
 | <code>id</code> | <code>str</code> | Editorial ID |
 | <code>country</code> | <code>str</code> | Returns only if the content is available for distribution in a certain country |
 | <code>search_id</code> | <code>str \| None</code> | The ID of the search that is related to this request<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3091,18 +3091,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialContent](shutterstock/models/editorial_content.py), [GetEditorialImage2ErrorBody](shutterstock/errors/get_editorial_image2_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialContent](shutterstock_api_explorer/models/editorial_content.py), [GetEditorialImage2ErrorBody](shutterstock_api_explorer/errors/get_editorial_image2_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialContent](shutterstock/models/editorial_content.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialContent](shutterstock_api_explorer/models/editorial_content.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetEditorialImage2ErrorBody](shutterstock/errors/get_editorial_image2_error.py)</code>
+**On `Failure`**: `error` is <code>[GetEditorialImage2ErrorBody](shutterstock_api_explorer/errors/get_editorial_image2_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3169,13 +3169,13 @@ match result:
 | <code>license</code> | <code>str \| None</code> | Show editorial images that are available with the specified license name<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
-| <code>sort</code> | <code>[Sort5OrStr](shutterstock/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
+| <code>sort</code> | <code>[Sort5OrStr](shutterstock_api_explorer/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
 | <code>username</code> | <code>str \| None</code> | Filter licenses by username of licensee<br>**Default**: <code>None</code> |
 | <code>start_date</code> | <code>RFC3339DateTime \| None</code> | Show licenses created on or after the specified date<br>**Default**: <code>None</code> |
 | <code>end_date</code> | <code>RFC3339DateTime \| None</code> | Show licenses created before the specified date<br>**Default**: <code>None</code> |
-| <code>download_availability</code> | <code>[DownloadAvailabilityOrStr](shutterstock/models/enums/download_availability.py) \| None</code> | Filter licenses by download availability<br>**Default**: <code>None</code> |
+| <code>download_availability</code> | <code>[DownloadAvailabilityOrStr](shutterstock_api_explorer/models/enums/download_availability.py) \| None</code> | Filter licenses by download availability<br>**Default**: <code>None</code> |
 | <code>team_history</code> | <code>bool \| None</code> | Set to true to see license history for all members of your team.<br>**Default**: <code>False</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3185,18 +3185,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[DownloadHistoryDataList](shutterstock/models/download_history_data_list.py), [GetEditorialImageLicenseListErrorBody](shutterstock/errors/get_editorial_image_license_list_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[DownloadHistoryDataList](shutterstock_api_explorer/models/download_history_data_list.py), [GetEditorialImageLicenseListErrorBody](shutterstock_api_explorer/errors/get_editorial_image_license_list_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[DownloadHistoryDataList](shutterstock/models/download_history_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[DownloadHistoryDataList](shutterstock_api_explorer/models/download_history_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetEditorialImageLicenseListErrorBody](shutterstock/errors/get_editorial_image_license_list_error.py)</code>
+**On `Failure`**: `error` is <code>[GetEditorialImageLicenseListErrorBody](shutterstock_api_explorer/errors/get_editorial_image_license_list_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3261,7 +3261,7 @@ match result:
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Editorial livefeed ID; must be an URI encoded string |
 | <code>country</code> | <code>str</code> | Returns only if the livefeed is available for distribution in a certain country |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3271,18 +3271,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialImageLivefeed](shutterstock/models/editorial_image_livefeed.py), [GetEditorialImageLivefeedErrorBody](shutterstock/errors/get_editorial_image_livefeed_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialImageLivefeed](shutterstock_api_explorer/models/editorial_image_livefeed.py), [GetEditorialImageLivefeedErrorBody](shutterstock_api_explorer/errors/get_editorial_image_livefeed_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialImageLivefeed](shutterstock/models/editorial_image_livefeed.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialImageLivefeed](shutterstock_api_explorer/models/editorial_image_livefeed.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetEditorialImageLivefeedErrorBody](shutterstock/errors/get_editorial_image_livefeed_error.py)</code>
+**On `Failure`**: `error` is <code>[GetEditorialImageLivefeedErrorBody](shutterstock_api_explorer/errors/get_editorial_image_livefeed_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3347,7 +3347,7 @@ match result:
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Editorial livefeed ID; must be an URI encoded string |
 | <code>country</code> | <code>str</code> | Returns only if the livefeed items are available for distribution in a certain country |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3357,18 +3357,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialContentDataList](shutterstock/models/editorial_content_data_list.py), [GetEditorialImageLivefeedItemsErrorBody](shutterstock/errors/get_editorial_image_livefeed_items_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialContentDataList](shutterstock_api_explorer/models/editorial_content_data_list.py), [GetEditorialImageLivefeedItemsErrorBody](shutterstock_api_explorer/errors/get_editorial_image_livefeed_items_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialContentDataList](shutterstock/models/editorial_content_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialContentDataList](shutterstock_api_explorer/models/editorial_content_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetEditorialImageLivefeedItemsErrorBody](shutterstock/errors/get_editorial_image_livefeed_items_error.py)</code>
+**On `Failure`**: `error` is <code>[GetEditorialImageLivefeedItemsErrorBody](shutterstock_api_explorer/errors/get_editorial_image_livefeed_items_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3434,7 +3434,7 @@ match result:
 | <code>country</code> | <code>str</code> | Returns only livefeeds that are available for distribution in a certain country |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3444,18 +3444,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialImageLivefeedList](shutterstock/models/editorial_image_livefeed_list.py), [GetEditorialImageLivefeedListErrorBody](shutterstock/errors/get_editorial_image_livefeed_list_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialImageLivefeedList](shutterstock_api_explorer/models/editorial_image_livefeed_list.py), [GetEditorialImageLivefeedListErrorBody](shutterstock_api_explorer/errors/get_editorial_image_livefeed_list_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialImageLivefeedList](shutterstock/models/editorial_image_livefeed_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialImageLivefeedList](shutterstock_api_explorer/models/editorial_image_livefeed_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetEditorialImageLivefeedListErrorBody](shutterstock/errors/get_editorial_image_livefeed_list_error.py)</code>
+**On `Failure`**: `error` is <code>[GetEditorialImageLivefeedListErrorBody](shutterstock_api_explorer/errors/get_editorial_image_livefeed_list_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3520,7 +3520,7 @@ match result:
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Editorial livefeed ID; must be an URI encoded string |
 | <code>country</code> | <code>str</code> | Returns only if the livefeed is available for distribution in a certain country |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3530,18 +3530,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialImageLivefeed](shutterstock/models/editorial_image_livefeed.py), [GetEditorialLivefeedErrorBody](shutterstock/errors/get_editorial_livefeed_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialImageLivefeed](shutterstock_api_explorer/models/editorial_image_livefeed.py), [GetEditorialLivefeedErrorBody](shutterstock_api_explorer/errors/get_editorial_livefeed_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialImageLivefeed](shutterstock/models/editorial_image_livefeed.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialImageLivefeed](shutterstock_api_explorer/models/editorial_image_livefeed.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetEditorialLivefeedErrorBody](shutterstock/errors/get_editorial_livefeed_error.py)</code>
+**On `Failure`**: `error` is <code>[GetEditorialLivefeedErrorBody](shutterstock_api_explorer/errors/get_editorial_livefeed_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 406 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 406 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3606,7 +3606,7 @@ match result:
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Editorial livefeed ID; must be an URI encoded string |
 | <code>country</code> | <code>str</code> | Returns only if the livefeed items are available for distribution in a certain country |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3616,18 +3616,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialContentDataList](shutterstock/models/editorial_content_data_list.py), [GetEditorialLivefeedItemsErrorBody](shutterstock/errors/get_editorial_livefeed_items_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialContentDataList](shutterstock_api_explorer/models/editorial_content_data_list.py), [GetEditorialLivefeedItemsErrorBody](shutterstock_api_explorer/errors/get_editorial_livefeed_items_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialContentDataList](shutterstock/models/editorial_content_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialContentDataList](shutterstock_api_explorer/models/editorial_content_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetEditorialLivefeedItemsErrorBody](shutterstock/errors/get_editorial_livefeed_items_error.py)</code>
+**On `Failure`**: `error` is <code>[GetEditorialLivefeedItemsErrorBody](shutterstock_api_explorer/errors/get_editorial_livefeed_items_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 406 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 406 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3693,7 +3693,7 @@ match result:
 | <code>country</code> | <code>str</code> | Returns only livefeeds that are available for distribution in a certain country |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3703,18 +3703,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialImageLivefeedList](shutterstock/models/editorial_image_livefeed_list.py), [GetEditorialLivefeedListErrorBody](shutterstock/errors/get_editorial_livefeed_list_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialImageLivefeedList](shutterstock_api_explorer/models/editorial_image_livefeed_list.py), [GetEditorialLivefeedListErrorBody](shutterstock_api_explorer/errors/get_editorial_livefeed_list_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialImageLivefeedList](shutterstock/models/editorial_image_livefeed_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialImageLivefeedList](shutterstock_api_explorer/models/editorial_image_livefeed_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetEditorialLivefeedListErrorBody](shutterstock/errors/get_editorial_livefeed_list_error.py)</code>
+**On `Failure`**: `error` is <code>[GetEditorialLivefeedListErrorBody](shutterstock_api_explorer/errors/get_editorial_livefeed_list_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 406 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 406 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3725,7 +3725,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 </details>
 
 <details>
-<summary><code>def get_updated_editorial_image(type_: Type15OrStr, date_updated_start: RFC3339DateTime, date_updated_end: RFC3339DateTime, country: str, *, date_taken_start: Date | None = None, date_taken_end: Date | None = None, cursor: str | None = None, sort: Sort5OrStr | None = None, supplier_code: list[str] | None = None, per_page: int | None = 500, request_options: RequestOptionsOrDict | None = None) -> ApiResult[EditorialUpdatedResults, GetUpdatedEditorialImageErrorBody]</code></summary>
+<summary><code>def get_updated_editorial_image(type_: Type5OrStr, date_updated_start: RFC3339DateTime, date_updated_end: RFC3339DateTime, country: str, *, date_taken_start: Date | None = None, date_taken_end: Date | None = None, cursor: str | None = None, sort: Sort5OrStr | None = None, supplier_code: list[str] | None = None, per_page: int | None = 500, request_options: RequestOptionsOrDict | None = None) -> ApiResult[EditorialUpdatedResults, GetUpdatedEditorialImageErrorBody]</code></summary>
 
 <dl>
 <dd>
@@ -3781,17 +3781,17 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>type_</code> | <code>[Type15OrStr](shutterstock/models/enums/type15.py)</code> | Specify `addition` to return only images that were added or `edit` to return only images that were edited or deleted |
+| <code>type_</code> | <code>[Type5OrStr](shutterstock_api_explorer/models/enums/type5.py)</code> | Specify `addition` to return only images that were added or `edit` to return only images that were edited or deleted |
 | <code>date_updated_start</code> | <code>RFC3339DateTime</code> | Show images images added, edited, or deleted after the specified date. Acceptable range is 1970-01-01T00:00:01 to 2038-01-19T00:00:00. |
 | <code>date_updated_end</code> | <code>RFC3339DateTime</code> | Show images images added, edited, or deleted before the specified date. Acceptable range is 1970-01-01T00:00:01 to 2038-01-19T00:00:00. |
 | <code>country</code> | <code>str</code> | Show only editorial content that is available for distribution in a certain country |
 | <code>date_taken_start</code> | <code>Date \| None</code> | Show images that were taken on or after the specified date; use this parameter if you want recently created images from the collection instead of updated older assets<br>**Default**: <code>None</code> |
 | <code>date_taken_end</code> | <code>Date \| None</code> | Show images that were taken before the specified date<br>**Default**: <code>None</code> |
 | <code>cursor</code> | <code>str \| None</code> | The cursor of the page with which to start fetching results; this cursor is returned from previous requests<br>**Default**: <code>None</code> |
-| <code>sort</code> | <code>[Sort5OrStr](shutterstock/models/enums/sort5.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
+| <code>sort</code> | <code>[Sort5OrStr](shutterstock_api_explorer/models/enums/sort5.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
 | <code>supplier_code</code> | <code>list&#91;str&#93; \| None</code> | Show only editorial content from certain suppliers<br>**Default**: <code>None</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>500</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3801,18 +3801,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialUpdatedResults](shutterstock/models/editorial_updated_results.py), [GetUpdatedEditorialImageErrorBody](shutterstock/errors/get_updated_editorial_image_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialUpdatedResults](shutterstock_api_explorer/models/editorial_updated_results.py), [GetUpdatedEditorialImageErrorBody](shutterstock_api_explorer/errors/get_updated_editorial_image_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialUpdatedResults](shutterstock/models/editorial_updated_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialUpdatedResults](shutterstock_api_explorer/models/editorial_updated_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetUpdatedEditorialImageErrorBody](shutterstock/errors/get_updated_editorial_image_error.py)</code>
+**On `Failure`**: `error` is <code>[GetUpdatedEditorialImageErrorBody](shutterstock_api_explorer/errors/get_updated_editorial_image_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 406 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 406 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3823,7 +3823,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 </details>
 
 <details>
-<summary><code>def get_updated_editorial_images(type_: Type15OrStr, date_updated_start: RFC3339DateTime, date_updated_end: RFC3339DateTime, country: str, *, date_taken_start: Date | None = None, date_taken_end: Date | None = None, cursor: str | None = None, sort: Sort5OrStr | None = None, supplier_code: list[str] | None = None, per_page: int | None = 500, request_options: RequestOptionsOrDict | None = None) -> ApiResult[EditorialUpdatedResults, GetUpdatedEditorialImagesErrorBody]</code></summary>
+<summary><code>def get_updated_editorial_images(type_: Type5OrStr, date_updated_start: RFC3339DateTime, date_updated_end: RFC3339DateTime, country: str, *, date_taken_start: Date | None = None, date_taken_end: Date | None = None, cursor: str | None = None, sort: Sort5OrStr | None = None, supplier_code: list[str] | None = None, per_page: int | None = 500, request_options: RequestOptionsOrDict | None = None) -> ApiResult[EditorialUpdatedResults, GetUpdatedEditorialImagesErrorBody]</code></summary>
 
 <dl>
 <dd>
@@ -3879,17 +3879,17 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>type_</code> | <code>[Type15OrStr](shutterstock/models/enums/type15.py)</code> | Specify `addition` to return only images that were added or `edit` to return only images that were edited or deleted |
+| <code>type_</code> | <code>[Type5OrStr](shutterstock_api_explorer/models/enums/type5.py)</code> | Specify `addition` to return only images that were added or `edit` to return only images that were edited or deleted |
 | <code>date_updated_start</code> | <code>RFC3339DateTime</code> | Show images images added, edited, or deleted after the specified date. Acceptable range is 1970-01-01T00:00:01 to 2038-01-19T00:00:00. |
 | <code>date_updated_end</code> | <code>RFC3339DateTime</code> | Show images images added, edited, or deleted before the specified date. Acceptable range is 1970-01-01T00:00:01 to 2038-01-19T00:00:00. |
 | <code>country</code> | <code>str</code> | Show only editorial content that is available for distribution in a certain country |
 | <code>date_taken_start</code> | <code>Date \| None</code> | Show images that were taken on or after the specified date; use this parameter if you want recently created images from the collection instead of updated older assets<br>**Default**: <code>None</code> |
 | <code>date_taken_end</code> | <code>Date \| None</code> | Show images that were taken before the specified date<br>**Default**: <code>None</code> |
 | <code>cursor</code> | <code>str \| None</code> | The cursor of the page with which to start fetching results; this cursor is returned from previous requests<br>**Default**: <code>None</code> |
-| <code>sort</code> | <code>[Sort5OrStr](shutterstock/models/enums/sort5.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
+| <code>sort</code> | <code>[Sort5OrStr](shutterstock_api_explorer/models/enums/sort5.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
 | <code>supplier_code</code> | <code>list&#91;str&#93; \| None</code> | Show only editorial content from certain suppliers<br>**Default**: <code>None</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>500</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3899,18 +3899,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialUpdatedResults](shutterstock/models/editorial_updated_results.py), [GetUpdatedEditorialImagesErrorBody](shutterstock/errors/get_updated_editorial_images_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialUpdatedResults](shutterstock_api_explorer/models/editorial_updated_results.py), [GetUpdatedEditorialImagesErrorBody](shutterstock_api_explorer/errors/get_updated_editorial_images_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialUpdatedResults](shutterstock/models/editorial_updated_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialUpdatedResults](shutterstock_api_explorer/models/editorial_updated_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetUpdatedEditorialImagesErrorBody](shutterstock/errors/get_updated_editorial_images_error.py)</code>
+**On `Failure`**: `error` is <code>[GetUpdatedEditorialImagesErrorBody](shutterstock_api_explorer/errors/get_updated_editorial_images_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 406 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 406 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3973,8 +3973,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[LicenseEditorialContentRequest](shutterstock/models/license_editorial_content_request.py) \| [LicenseEditorialContentRequestDict](shutterstock/models/license_editorial_content_request.py)</code> | License editorial content |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[LicenseEditorialContentRequest](shutterstock_api_explorer/models/license_editorial_content_request.py) \| [LicenseEditorialContentRequestDict](shutterstock_api_explorer/models/license_editorial_content_request.py)</code> | License editorial content |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3984,18 +3984,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[LicenseEditorialContentResults](shutterstock/models/license_editorial_content_results.py), [LicenseEditorialImageErrorBody](shutterstock/errors/license_editorial_image_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[LicenseEditorialContentResults](shutterstock_api_explorer/models/license_editorial_content_results.py), [LicenseEditorialImageErrorBody](shutterstock_api_explorer/errors/license_editorial_image_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[LicenseEditorialContentResults](shutterstock/models/license_editorial_content_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[LicenseEditorialContentResults](shutterstock_api_explorer/models/license_editorial_content_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[LicenseEditorialImageErrorBody](shutterstock/errors/license_editorial_image_error.py)</code>
+**On `Failure`**: `error` is <code>[LicenseEditorialImageErrorBody](shutterstock_api_explorer/errors/license_editorial_image_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 406 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 406 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -4058,8 +4058,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[LicenseEditorialContentRequest](shutterstock/models/license_editorial_content_request.py) \| [LicenseEditorialContentRequestDict](shutterstock/models/license_editorial_content_request.py)</code> | License editorial content |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[LicenseEditorialContentRequest](shutterstock_api_explorer/models/license_editorial_content_request.py) \| [LicenseEditorialContentRequestDict](shutterstock_api_explorer/models/license_editorial_content_request.py)</code> | License editorial content |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4069,18 +4069,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[LicenseEditorialContentResults](shutterstock/models/license_editorial_content_results.py), [LicenseEditorialImagesErrorBody](shutterstock/errors/license_editorial_images_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[LicenseEditorialContentResults](shutterstock_api_explorer/models/license_editorial_content_results.py), [LicenseEditorialImagesErrorBody](shutterstock_api_explorer/errors/license_editorial_images_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[LicenseEditorialContentResults](shutterstock/models/license_editorial_content_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[LicenseEditorialContentResults](shutterstock_api_explorer/models/license_editorial_content_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[LicenseEditorialImagesErrorBody](shutterstock/errors/license_editorial_images_error.py)</code>
+**On `Failure`**: `error` is <code>[LicenseEditorialImagesErrorBody](shutterstock_api_explorer/errors/license_editorial_images_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 406 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 406 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -4143,7 +4143,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4153,18 +4153,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialImageCategoryResults](shutterstock/models/editorial_image_category_results.py), [ListEditorialImageCategoriesErrorBody](shutterstock/errors/list_editorial_image_categories_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialImageCategoryResults](shutterstock_api_explorer/models/editorial_image_category_results.py), [ListEditorialImageCategoriesErrorBody](shutterstock_api_explorer/errors/list_editorial_image_categories_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialImageCategoryResults](shutterstock/models/editorial_image_category_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialImageCategoryResults](shutterstock_api_explorer/models/editorial_image_category_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[ListEditorialImageCategoriesErrorBody](shutterstock/errors/list_editorial_image_categories_error.py)</code>
+**On `Failure`**: `error` is <code>[ListEditorialImageCategoriesErrorBody](shutterstock_api_explorer/errors/list_editorial_image_categories_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -4230,7 +4230,7 @@ match result:
 | <code>id</code> | <code>list&#91;str&#93;</code> | ID of the editorial image to list details for |
 | <code>country</code> | <code>str</code> | Show only editorial image content that is available for distribution in a certain country |
 | <code>search_id</code> | <code>str \| None</code> | The ID of the search that is related to this request<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4240,18 +4240,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialImageResults](shutterstock/models/editorial_image_results.py), [ListEditorialImagesErrorBody](shutterstock/errors/list_editorial_images_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialImageResults](shutterstock_api_explorer/models/editorial_image_results.py), [ListEditorialImagesErrorBody](shutterstock_api_explorer/errors/list_editorial_images_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialImageResults](shutterstock/models/editorial_image_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialImageResults](shutterstock_api_explorer/models/editorial_image_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[ListEditorialImagesErrorBody](shutterstock/errors/list_editorial_images_error.py)</code>
+**On `Failure`**: `error` is <code>[ListEditorialImagesErrorBody](shutterstock_api_explorer/errors/list_editorial_images_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -4316,14 +4316,14 @@ match result:
 | --- | --- | --- |
 | <code>country</code> | <code>str</code> | Show only editorial content that is available for distribution in a certain country |
 | <code>query</code> | <code>str \| None</code> | One or more search terms separated by spaces<br>**Default**: <code>None</code> |
-| <code>sort</code> | <code>[Sort17OrStr](shutterstock/models/enums/sort17.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
+| <code>sort</code> | <code>[Sort17OrStr](shutterstock_api_explorer/models/enums/sort17.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
 | <code>category</code> | <code>str \| None</code> | Show editorial content within a certain editorial category; specify by category name<br>**Default**: <code>None</code> |
 | <code>supplier_code</code> | <code>list&#91;str&#93; \| None</code> | Show only editorial content from certain suppliers<br>**Default**: <code>None</code> |
 | <code>date_start</code> | <code>Date \| None</code> | Show only editorial content generated on or after a specific date<br>**Default**: <code>None</code> |
 | <code>date_end</code> | <code>Date \| None</code> | Show only editorial content generated on or before a specific date<br>**Default**: <code>None</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
 | <code>cursor</code> | <code>str \| None</code> | The cursor of the page with which to start fetching results; this cursor is returned from previous requests<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4333,18 +4333,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialSearchResults](shutterstock/models/editorial_search_results.py), [SearchEditorialErrorBody](shutterstock/errors/search_editorial_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialSearchResults](shutterstock_api_explorer/models/editorial_search_results.py), [SearchEditorialErrorBody](shutterstock_api_explorer/errors/search_editorial_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialSearchResults](shutterstock/models/editorial_search_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialSearchResults](shutterstock_api_explorer/models/editorial_search_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[SearchEditorialErrorBody](shutterstock/errors/search_editorial_error.py)</code>
+**On `Failure`**: `error` is <code>[SearchEditorialErrorBody](shutterstock_api_explorer/errors/search_editorial_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 406 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 406 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -4409,14 +4409,14 @@ match result:
 | --- | --- | --- |
 | <code>country</code> | <code>str</code> | Show only editorial content that is available for distribution in a certain country |
 | <code>query</code> | <code>str \| None</code> | One or more search terms separated by spaces<br>**Default**: <code>None</code> |
-| <code>sort</code> | <code>[Sort17OrStr](shutterstock/models/enums/sort17.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
+| <code>sort</code> | <code>[Sort17OrStr](shutterstock_api_explorer/models/enums/sort17.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
 | <code>category</code> | <code>str \| None</code> | Show editorial content with each of the specified editorial categories; specify category names in a comma-separated list<br>**Default**: <code>None</code> |
 | <code>supplier_code</code> | <code>list&#91;str&#93; \| None</code> | Show only editorial content from certain suppliers<br>**Default**: <code>None</code> |
 | <code>date_start</code> | <code>Date \| None</code> | Show only editorial content generated on or after a specific date<br>**Default**: <code>None</code> |
 | <code>date_end</code> | <code>Date \| None</code> | Show only editorial content generated on or before a specific date<br>**Default**: <code>None</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
 | <code>cursor</code> | <code>str \| None</code> | The cursor of the page with which to start fetching results; this cursor is returned from previous requests<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4426,18 +4426,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialSearchResults](shutterstock/models/editorial_search_results.py), [SearchEditorialImagesErrorBody](shutterstock/errors/search_editorial_images_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialSearchResults](shutterstock_api_explorer/models/editorial_search_results.py), [SearchEditorialImagesErrorBody](shutterstock_api_explorer/errors/search_editorial_images_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialSearchResults](shutterstock/models/editorial_search_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialSearchResults](shutterstock_api_explorer/models/editorial_search_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[SearchEditorialImagesErrorBody](shutterstock/errors/search_editorial_images_error.py)</code>
+**On `Failure`**: `error` is <code>[SearchEditorialImagesErrorBody](shutterstock_api_explorer/errors/search_editorial_images_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 406 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 406 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -4449,7 +4449,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## EditorialVideo
 
-> Source: [EditorialVideo](shutterstock/apis/editorial_video.py)
+> Source: [EditorialVideo](shutterstock_api_explorer/apis/editorial_video.py)
 
 <details>
 <summary><code>def get_editorial_video(id: str, country: str, *, search_id: str | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[EditorialVideoContent, GetEditorialVideoErrorBody]</code></summary>
@@ -4507,7 +4507,7 @@ match result:
 | <code>id</code> | <code>str</code> | Editorial ID |
 | <code>country</code> | <code>str</code> | Returns only if the content is available for distribution in a certain country |
 | <code>search_id</code> | <code>str \| None</code> | The ID of the search that is related to this request<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4517,18 +4517,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialVideoContent](shutterstock/models/editorial_video_content.py), [GetEditorialVideoErrorBody](shutterstock/errors/get_editorial_video_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialVideoContent](shutterstock_api_explorer/models/editorial_video_content.py), [GetEditorialVideoErrorBody](shutterstock_api_explorer/errors/get_editorial_video_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialVideoContent](shutterstock/models/editorial_video_content.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialVideoContent](shutterstock_api_explorer/models/editorial_video_content.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetEditorialVideoErrorBody](shutterstock/errors/get_editorial_video_error.py)</code>
+**On `Failure`**: `error` is <code>[GetEditorialVideoErrorBody](shutterstock_api_explorer/errors/get_editorial_video_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 406 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 406 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -4595,13 +4595,13 @@ match result:
 | <code>license</code> | <code>str \| None</code> | Show editorial videos that are available with the specified license name<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
-| <code>sort</code> | <code>[Sort5OrStr](shutterstock/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
+| <code>sort</code> | <code>[Sort5OrStr](shutterstock_api_explorer/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
 | <code>username</code> | <code>str \| None</code> | Filter licenses by username of licensee<br>**Default**: <code>None</code> |
 | <code>start_date</code> | <code>RFC3339DateTime \| None</code> | Show licenses created on or after the specified date<br>**Default**: <code>None</code> |
 | <code>end_date</code> | <code>RFC3339DateTime \| None</code> | Show licenses created before the specified date<br>**Default**: <code>None</code> |
-| <code>download_availability</code> | <code>[DownloadAvailabilityOrStr](shutterstock/models/enums/download_availability.py) \| None</code> | Filter licenses by download availability<br>**Default**: <code>None</code> |
+| <code>download_availability</code> | <code>[DownloadAvailabilityOrStr](shutterstock_api_explorer/models/enums/download_availability.py) \| None</code> | Filter licenses by download availability<br>**Default**: <code>None</code> |
 | <code>team_history</code> | <code>bool \| None</code> | Set to true to see license history for all members of your team.<br>**Default**: <code>False</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4611,18 +4611,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[DownloadHistoryDataList](shutterstock/models/download_history_data_list.py), [GetEditorialVideoLicenseListErrorBody](shutterstock/errors/get_editorial_video_license_list_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[DownloadHistoryDataList](shutterstock_api_explorer/models/download_history_data_list.py), [GetEditorialVideoLicenseListErrorBody](shutterstock_api_explorer/errors/get_editorial_video_license_list_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[DownloadHistoryDataList](shutterstock/models/download_history_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[DownloadHistoryDataList](shutterstock_api_explorer/models/download_history_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetEditorialVideoLicenseListErrorBody](shutterstock/errors/get_editorial_video_license_list_error.py)</code>
+**On `Failure`**: `error` is <code>[GetEditorialVideoLicenseListErrorBody](shutterstock_api_explorer/errors/get_editorial_video_license_list_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -4685,8 +4685,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[LicenseEditorialVideoContentRequest](shutterstock/models/license_editorial_video_content_request.py) \| [LicenseEditorialVideoContentRequestDict](shutterstock/models/license_editorial_video_content_request.py)</code> | License editorial video content |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[LicenseEditorialVideoContentRequest](shutterstock_api_explorer/models/license_editorial_video_content_request.py) \| [LicenseEditorialVideoContentRequestDict](shutterstock_api_explorer/models/license_editorial_video_content_request.py)</code> | License editorial video content |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4696,18 +4696,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[LicenseEditorialContentResults](shutterstock/models/license_editorial_content_results.py), [LicenseEditorialVideoErrorBody](shutterstock/errors/license_editorial_video_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[LicenseEditorialContentResults](shutterstock_api_explorer/models/license_editorial_content_results.py), [LicenseEditorialVideoErrorBody](shutterstock_api_explorer/errors/license_editorial_video_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[LicenseEditorialContentResults](shutterstock/models/license_editorial_content_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[LicenseEditorialContentResults](shutterstock_api_explorer/models/license_editorial_content_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[LicenseEditorialVideoErrorBody](shutterstock/errors/license_editorial_video_error.py)</code>
+**On `Failure`**: `error` is <code>[LicenseEditorialVideoErrorBody](shutterstock_api_explorer/errors/license_editorial_video_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -4770,7 +4770,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4780,18 +4780,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialVideoCategoryResults](shutterstock/models/editorial_video_category_results.py), [ListEditorialVideoCategoriesErrorBody](shutterstock/errors/list_editorial_video_categories_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialVideoCategoryResults](shutterstock_api_explorer/models/editorial_video_category_results.py), [ListEditorialVideoCategoriesErrorBody](shutterstock_api_explorer/errors/list_editorial_video_categories_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialVideoCategoryResults](shutterstock/models/editorial_video_category_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialVideoCategoryResults](shutterstock_api_explorer/models/editorial_video_category_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[ListEditorialVideoCategoriesErrorBody](shutterstock/errors/list_editorial_video_categories_error.py)</code>
+**On `Failure`**: `error` is <code>[ListEditorialVideoCategoriesErrorBody](shutterstock_api_explorer/errors/list_editorial_video_categories_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -4857,7 +4857,7 @@ match result:
 | <code>id</code> | <code>list&#91;str&#93;</code> | ID of the editorial video to list details for |
 | <code>country</code> | <code>str</code> | Show only editorial video content that is available for distribution in a certain country |
 | <code>search_id</code> | <code>str \| None</code> | The ID of the search that is related to this request<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4867,18 +4867,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialVideoResults](shutterstock/models/editorial_video_results.py), [ListEditorialVideosErrorBody](shutterstock/errors/list_editorial_videos_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialVideoResults](shutterstock_api_explorer/models/editorial_video_results.py), [ListEditorialVideosErrorBody](shutterstock_api_explorer/errors/list_editorial_videos_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialVideoResults](shutterstock/models/editorial_video_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialVideoResults](shutterstock_api_explorer/models/editorial_video_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[ListEditorialVideosErrorBody](shutterstock/errors/list_editorial_videos_error.py)</code>
+**On `Failure`**: `error` is <code>[ListEditorialVideosErrorBody](shutterstock_api_explorer/errors/list_editorial_videos_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -4943,16 +4943,16 @@ match result:
 | --- | --- | --- |
 | <code>country</code> | <code>str</code> | Show only editorial video content that is available for distribution in a certain country |
 | <code>query</code> | <code>str \| None</code> | One or more search terms separated by spaces<br>**Default**: <code>None</code> |
-| <code>sort</code> | <code>[Sort17OrStr](shutterstock/models/enums/sort17.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
+| <code>sort</code> | <code>[Sort17OrStr](shutterstock_api_explorer/models/enums/sort17.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
 | <code>category</code> | <code>str \| None</code> | Show editorial content with each of the specified editorial categories; specify category names in a comma-separated list<br>**Default**: <code>None</code> |
 | <code>supplier_code</code> | <code>list&#91;str&#93; \| None</code> | Show only editorial video content from certain suppliers<br>**Default**: <code>None</code> |
 | <code>date_start</code> | <code>Date \| None</code> | Show only editorial video content generated on or after a specific date<br>**Default**: <code>None</code> |
 | <code>date_end</code> | <code>Date \| None</code> | Show only editorial video content generated on or before a specific date<br>**Default**: <code>None</code> |
-| <code>resolution</code> | <code>[ResolutionOrStr](shutterstock/models/enums/resolution.py) \| None</code> | Show only editorial video content with specific resolution<br>**Default**: <code>None</code> |
+| <code>resolution</code> | <code>[ResolutionOrStr](shutterstock_api_explorer/models/enums/resolution.py) \| None</code> | Show only editorial video content with specific resolution<br>**Default**: <code>None</code> |
 | <code>fps</code> | <code>float \| None</code> | Show only editorial video content generated with specific frames per second<br>**Default**: <code>None</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
 | <code>cursor</code> | <code>str \| None</code> | The cursor of the page with which to start fetching results; this cursor is returned from previous requests<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4962,18 +4962,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[EditorialVideoSearchResults](shutterstock/models/editorial_video_search_results.py), [SearchEditorialVideosErrorBody](shutterstock/errors/search_editorial_videos_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[EditorialVideoSearchResults](shutterstock_api_explorer/models/editorial_video_search_results.py), [SearchEditorialVideosErrorBody](shutterstock_api_explorer/errors/search_editorial_videos_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[EditorialVideoSearchResults](shutterstock/models/editorial_video_search_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[EditorialVideoSearchResults](shutterstock_api_explorer/models/editorial_video_search_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[SearchEditorialVideosErrorBody](shutterstock/errors/search_editorial_videos_error.py)</code>
+**On `Failure`**: `error` is <code>[SearchEditorialVideosErrorBody](shutterstock_api_explorer/errors/search_editorial_videos_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 406 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 406 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -4985,7 +4985,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## Images
 
-> Source: [Images](shutterstock/apis/images.py)
+> Source: [Images](shutterstock_api_explorer/apis/images.py)
 
 <details>
 <summary><code>def add_image_collection_items(id: str, body: CollectionItemRequest | CollectionItemRequestDict, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, AddImageCollectionItemsErrorBody]</code></summary>
@@ -5041,8 +5041,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Collection ID |
-| <code>body</code> | <code>[CollectionItemRequest](shutterstock/models/collection_item_request.py) \| [CollectionItemRequestDict](shutterstock/models/collection_item_request.py)</code> | Array of image IDs to add to the collection |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[CollectionItemRequest](shutterstock_api_explorer/models/collection_item_request.py) \| [CollectionItemRequestDict](shutterstock_api_explorer/models/collection_item_request.py)</code> | Array of image IDs to add to the collection |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5052,18 +5052,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;None, [AddImageCollectionItemsErrorBody](shutterstock/errors/add_image_collection_items_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;None, [AddImageCollectionItemsErrorBody](shutterstock_api_explorer/errors/add_image_collection_items_error.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[AddImageCollectionItemsErrorBody](shutterstock/errors/add_image_collection_items_error.py)</code>
+**On `Failure`**: `error` is <code>[AddImageCollectionItemsErrorBody](shutterstock_api_explorer/errors/add_image_collection_items_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -5126,7 +5126,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>list&#91;[SearchImage](shutterstock/models/search_image.py) \| [SearchImageDict](shutterstock/models/search_image.py)&#93;</code> | List of queries to request results for and filters to apply per query; these values override the defaults in the query parameters |
+| <code>body</code> | <code>list&#91;[SearchImage](shutterstock_api_explorer/models/search_image.py) \| [SearchImageDict](shutterstock_api_explorer/models/search_image.py)&#93;</code> | List of queries to request results for and filters to apply per query; these values override the defaults in the query parameters |
 | <code>added_date</code> | <code>Date \| None</code> | Show images added on the specified date<br>**Default**: <code>None</code> |
 | <code>added_date_start</code> | <code>Date \| None</code> | Show images added on or after the specified date<br>**Default**: <code>None</code> |
 | <code>aspect_ratio_min</code> | <code>float \| None</code> | Show images with the specified aspect ratio or higher, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image<br>**Default**: <code>None</code> |
@@ -5136,33 +5136,33 @@ match result:
 | <code>category</code> | <code>str \| None</code> | Show images with the specified Shutterstock-defined category; specify a category name or ID<br>**Default**: <code>None</code> |
 | <code>color</code> | <code>str \| None</code> | Specify either a hexadecimal color in the format '4F21EA' or 'grayscale'; the API returns images that use similar colors<br>**Default**: <code>None</code> |
 | <code>contributor</code> | <code>list&#91;str&#93; \| None</code> | Show images with the specified contributor names or IDs, allows multiple<br>**Default**: <code>None</code> |
-| <code>contributor_country</code> | <code>[ContributorCountryModel](shutterstock/models/unions/contributor_country_model.py) \| [ContributorCountryModelDict](shutterstock/models/unions/contributor_country_model.py) \| None</code> | Show images from contributors in one or more specified countries, or start with NOT to exclude a country from the search<br>**Default**: <code>None</code> |
+| <code>contributor_country</code> | <code>[ContributorCountryModel](shutterstock_api_explorer/models/unions/contributor_country_model.py) \| [ContributorCountryModelDict](shutterstock_api_explorer/models/unions/contributor_country_model.py) \| None</code> | Show images from contributors in one or more specified countries, or start with NOT to exclude a country from the search<br>**Default**: <code>None</code> |
 | <code>fields</code> | <code>str \| None</code> | Fields to display in the response; see the documentation for the fields parameter in the overview section<br>**Default**: <code>None</code> |
 | <code>height</code> | <code>int \| None</code> | (Deprecated; use height_from and height_to instead) Show images with the specified height<br>**Default**: <code>None</code> |
 | <code>height_from</code> | <code>int \| None</code> | Show images with the specified height or larger, in pixels<br>**Default**: <code>None</code> |
 | <code>height_to</code> | <code>int \| None</code> | Show images with the specified height or smaller, in pixels<br>**Default**: <code>None</code> |
-| <code>image_type</code> | <code>list&#91;[ImageType2OrStr](shutterstock/models/enums/image_type2.py)&#93; \| None</code> | Show images of the specified type<br>**Default**: <code>None</code> |
+| <code>image_type</code> | <code>list&#91;[ImageType2OrStr](shutterstock_api_explorer/models/enums/image_type2.py)&#93; \| None</code> | Show images of the specified type<br>**Default**: <code>None</code> |
 | <code>keyword_safe_search</code> | <code>bool \| None</code> | Hide results with potentially unsafe keywords<br>**Default**: <code>True</code> |
-| <code>language</code> | <code>[LanguageOrStr](shutterstock/models/enums/language.py) \| None</code> | Set query and result language (uses Accept-Language header if not set)<br>**Default**: <code>None</code> |
-| <code>license</code> | <code>list&#91;[LicenseOrStr](shutterstock/models/enums/license.py)&#93; \| None</code> | Show only images with the specified license<br>**Default**: <code>None</code> |
+| <code>language</code> | <code>[LanguageOrStr](shutterstock_api_explorer/models/enums/language.py) \| None</code> | Set query and result language (uses Accept-Language header if not set)<br>**Default**: <code>None</code> |
+| <code>license</code> | <code>list&#91;[LicenseOrStr](shutterstock_api_explorer/models/enums/license.py)&#93; \| None</code> | Show only images with the specified license<br>**Default**: <code>None</code> |
 | <code>model</code> | <code>list&#91;str&#93; \| None</code> | Show image results with the specified model IDs<br>**Default**: <code>None</code> |
-| <code>orientation</code> | <code>[Orientation2OrStr](shutterstock/models/enums/orientation2.py) \| None</code> | Show image results with horizontal or vertical orientation<br>**Default**: <code>None</code> |
+| <code>orientation</code> | <code>[Orientation2OrStr](shutterstock_api_explorer/models/enums/orientation2.py) \| None</code> | Show image results with horizontal or vertical orientation<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
 | <code>people_model_released</code> | <code>bool \| None</code> | Show images of people with a signed model release<br>**Default**: <code>None</code> |
-| <code>people_age</code> | <code>[PeopleAge2OrStr](shutterstock/models/enums/people_age2.py) \| None</code> | Show images that feature people of the specified age category<br>**Default**: <code>None</code> |
-| <code>people_ethnicity</code> | <code>list&#91;[PeopleEthnicity2OrStr](shutterstock/models/enums/people_ethnicity2.py)&#93; \| None</code> | Show images with people of the specified ethnicities, or start with NOT to show images without those ethnicities<br>**Default**: <code>None</code> |
-| <code>people_gender</code> | <code>[PeopleGender2OrStr](shutterstock/models/enums/people_gender2.py) \| None</code> | Show images with people of the specified gender<br>**Default**: <code>None</code> |
+| <code>people_age</code> | <code>[PeopleAge2OrStr](shutterstock_api_explorer/models/enums/people_age2.py) \| None</code> | Show images that feature people of the specified age category<br>**Default**: <code>None</code> |
+| <code>people_ethnicity</code> | <code>list&#91;[PeopleEthnicity2OrStr](shutterstock_api_explorer/models/enums/people_ethnicity2.py)&#93; \| None</code> | Show images with people of the specified ethnicities, or start with NOT to show images without those ethnicities<br>**Default**: <code>None</code> |
+| <code>people_gender</code> | <code>[PeopleGender2OrStr](shutterstock_api_explorer/models/enums/people_gender2.py) \| None</code> | Show images with people of the specified gender<br>**Default**: <code>None</code> |
 | <code>people_number</code> | <code>int \| None</code> | Show images with the specified number of people<br>**Default**: <code>None</code> |
-| <code>region</code> | <code>[RegionModel](shutterstock/models/unions/region_model.py) \| [RegionModelDict](shutterstock/models/unions/region_model.py) \| None</code> | Raise or lower search result rankings based on the result's relevance to a specified region; you can provide a country code or an IP address from which the API infers a country<br>**Default**: <code>None</code> |
+| <code>region</code> | <code>[RegionModel](shutterstock_api_explorer/models/unions/region_model.py) \| [RegionModelDict](shutterstock_api_explorer/models/unions/region_model.py) \| None</code> | Raise or lower search result rankings based on the result's relevance to a specified region; you can provide a country code or an IP address from which the API infers a country<br>**Default**: <code>None</code> |
 | <code>safe</code> | <code>bool \| None</code> | Enable or disable safe search<br>**Default**: <code>True</code> |
-| <code>sort</code> | <code>[Sort2OrStr](shutterstock/models/enums/sort2.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
+| <code>sort</code> | <code>[Sort2OrStr](shutterstock_api_explorer/models/enums/sort2.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
 | <code>spellcheck_query</code> | <code>bool \| None</code> | Spellcheck the search query and return results on suggested spellings<br>**Default**: <code>True</code> |
-| <code>view</code> | <code>[View2OrStr](shutterstock/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
+| <code>view</code> | <code>[View2OrStr](shutterstock_api_explorer/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
 | <code>width</code> | <code>int \| None</code> | (Deprecated; use width_from and width_to instead) Show images with the specified width<br>**Default**: <code>None</code> |
 | <code>width_from</code> | <code>int \| None</code> | Show images with the specified width or larger, in pixels<br>**Default**: <code>None</code> |
 | <code>width_to</code> | <code>int \| None</code> | Show images with the specified width or smaller, in pixels<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5172,18 +5172,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[BulkImageSearchResults](shutterstock/models/bulk_image_search_results.py), [BulkSearchImagesErrorBody](shutterstock/errors/bulk_search_images_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[BulkImageSearchResults](shutterstock_api_explorer/models/bulk_image_search_results.py), [BulkSearchImagesErrorBody](shutterstock_api_explorer/errors/bulk_search_images_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[BulkImageSearchResults](shutterstock/models/bulk_image_search_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[BulkImageSearchResults](shutterstock_api_explorer/models/bulk_image_search_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[BulkSearchImagesErrorBody](shutterstock/errors/bulk_search_images_error.py)</code>
+**On `Failure`**: `error` is <code>[BulkSearchImagesErrorBody](shutterstock_api_explorer/errors/bulk_search_images_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -5246,8 +5246,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[CollectionCreateRequest](shutterstock/models/collection_create_request.py) \| [CollectionCreateRequestDict](shutterstock/models/collection_create_request.py)</code> | The names of the new collections |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[CollectionCreateRequest](shutterstock_api_explorer/models/collection_create_request.py) \| [CollectionCreateRequestDict](shutterstock_api_explorer/models/collection_create_request.py)</code> | The names of the new collections |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5257,18 +5257,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CollectionCreateResponse](shutterstock/models/collection_create_response.py), [CreateImageCollectionErrorBody](shutterstock/errors/create_image_collection_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CollectionCreateResponse](shutterstock_api_explorer/models/collection_create_response.py), [CreateImageCollectionErrorBody](shutterstock_api_explorer/errors/create_image_collection_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CollectionCreateResponse](shutterstock/models/collection_create_response.py)</code> -- Successfully created image collection
+**On `Success`**: `payload` is <code>[CollectionCreateResponse](shutterstock_api_explorer/models/collection_create_response.py)</code> -- Successfully created image collection
 
-**On `Failure`**: `error` is <code>[CreateImageCollectionErrorBody](shutterstock/errors/create_image_collection_error.py)</code>
+**On `Failure`**: `error` is <code>[CreateImageCollectionErrorBody](shutterstock_api_explorer/errors/create_image_collection_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -5332,7 +5332,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Collection ID |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5342,18 +5342,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;None, [DeleteImageCollectionErrorBody](shutterstock/errors/delete_image_collection_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;None, [DeleteImageCollectionErrorBody](shutterstock_api_explorer/errors/delete_image_collection_error.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[DeleteImageCollectionErrorBody](shutterstock/errors/delete_image_collection_error.py)</code>
+**On `Failure`**: `error` is <code>[DeleteImageCollectionErrorBody](shutterstock_api_explorer/errors/delete_image_collection_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -5418,7 +5418,7 @@ match result:
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Collection ID |
 | <code>item_id</code> | <code>list&#91;str&#93; \| None</code> | One or more image IDs to remove from the collection<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5428,18 +5428,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;None, [DeleteImageCollectionItemsErrorBody](shutterstock/errors/delete_image_collection_items_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;None, [DeleteImageCollectionItemsErrorBody](shutterstock_api_explorer/errors/delete_image_collection_items_error.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[DeleteImageCollectionItemsErrorBody](shutterstock/errors/delete_image_collection_items_error.py)</code>
+**On `Failure`**: `error` is <code>[DeleteImageCollectionItemsErrorBody](shutterstock_api_explorer/errors/delete_image_collection_items_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -5503,8 +5503,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | License ID |
-| <code>body</code> | <code>[RedownloadImage](shutterstock/models/redownload_image.py) \| [RedownloadImageDict](shutterstock/models/redownload_image.py)</code> | Information about the images to redownload |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[RedownloadImage](shutterstock_api_explorer/models/redownload_image.py) \| [RedownloadImageDict](shutterstock_api_explorer/models/redownload_image.py)</code> | Information about the images to redownload |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5514,18 +5514,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[Url](shutterstock/models/url.py), [DownloadImageErrorBody](shutterstock/errors/download_image_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[Url](shutterstock_api_explorer/models/url.py), [DownloadImageErrorBody](shutterstock_api_explorer/errors/download_image_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[Url](shutterstock/models/url.py)</code> -- OK
+**On `Success`**: `payload` is <code>[Url](shutterstock_api_explorer/models/url.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[DownloadImageErrorBody](shutterstock/errors/download_image_error.py)</code>
+**On `Failure`**: `error` is <code>[DownloadImageErrorBody](shutterstock_api_explorer/errors/download_image_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -5589,10 +5589,10 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Image ID |
-| <code>language</code> | <code>[LanguageOrStr](shutterstock/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
-| <code>view</code> | <code>[View2OrStr](shutterstock/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
+| <code>language</code> | <code>[LanguageOrStr](shutterstock_api_explorer/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
+| <code>view</code> | <code>[View2OrStr](shutterstock_api_explorer/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
 | <code>search_id</code> | <code>str \| None</code> | The ID of the search that is related to this request<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5602,18 +5602,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[Image](shutterstock/models/image.py), [GetImageErrorBody](shutterstock/errors/get_image_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[Image](shutterstock_api_explorer/models/image.py), [GetImageErrorBody](shutterstock_api_explorer/errors/get_image_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[Image](shutterstock/models/image.py)</code> -- OK
+**On `Success`**: `payload` is <code>[Image](shutterstock_api_explorer/models/image.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetImageErrorBody](shutterstock/errors/get_image_error.py)</code>
+**On `Failure`**: `error` is <code>[GetImageErrorBody](shutterstock_api_explorer/errors/get_image_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -5677,9 +5677,9 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Collection ID |
-| <code>embed</code> | <code>list&#91;[EmbedOrStr](shutterstock/models/enums/embed.py)&#93; \| None</code> | Which sharing information to include in the response, such as a URL to the collection<br>**Default**: <code>None</code> |
+| <code>embed</code> | <code>list&#91;[EmbedOrStr](shutterstock_api_explorer/models/enums/embed.py)&#93; \| None</code> | Which sharing information to include in the response, such as a URL to the collection<br>**Default**: <code>None</code> |
 | <code>share_code</code> | <code>str \| None</code> | Code to retrieve a shared collection<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5689,18 +5689,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[Collection](shutterstock/models/collection.py), [GetImageCollectionErrorBody](shutterstock/errors/get_image_collection_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[Collection](shutterstock_api_explorer/models/collection.py), [GetImageCollectionErrorBody](shutterstock_api_explorer/errors/get_image_collection_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[Collection](shutterstock/models/collection.py)</code> -- OK
+**On `Success`**: `payload` is <code>[Collection](shutterstock_api_explorer/models/collection.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetImageCollectionErrorBody](shutterstock/errors/get_image_collection_error.py)</code>
+**On `Failure`**: `error` is <code>[GetImageCollectionErrorBody](shutterstock_api_explorer/errors/get_image_collection_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -5767,8 +5767,8 @@ match result:
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>100</code> |
 | <code>share_code</code> | <code>str \| None</code> | Code to retrieve the contents of a shared collection<br>**Default**: <code>None</code> |
-| <code>sort</code> | <code>[Sort5OrStr](shutterstock/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>sort</code> | <code>[Sort5OrStr](shutterstock_api_explorer/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5778,18 +5778,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CollectionItemDataList](shutterstock/models/collection_item_data_list.py), [GetImageCollectionItemsErrorBody](shutterstock/errors/get_image_collection_items_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CollectionItemDataList](shutterstock_api_explorer/models/collection_item_data_list.py), [GetImageCollectionItemsErrorBody](shutterstock_api_explorer/errors/get_image_collection_items_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CollectionItemDataList](shutterstock/models/collection_item_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[CollectionItemDataList](shutterstock_api_explorer/models/collection_item_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetImageCollectionItemsErrorBody](shutterstock/errors/get_image_collection_items_error.py)</code>
+**On `Failure`**: `error` is <code>[GetImageCollectionItemsErrorBody](shutterstock_api_explorer/errors/get_image_collection_items_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -5852,10 +5852,10 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>embed</code> | <code>list&#91;[EmbedOrStr](shutterstock/models/enums/embed.py)&#93; \| None</code> | Which sharing information to include in the response, such as a URL to the collection<br>**Default**: <code>None</code> |
+| <code>embed</code> | <code>list&#91;[EmbedOrStr](shutterstock_api_explorer/models/enums/embed.py)&#93; \| None</code> | Which sharing information to include in the response, such as a URL to the collection<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>100</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5865,18 +5865,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CollectionDataList](shutterstock/models/collection_data_list.py), [GetImageCollectionListErrorBody](shutterstock/errors/get_image_collection_list_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CollectionDataList](shutterstock_api_explorer/models/collection_data_list.py), [GetImageCollectionListErrorBody](shutterstock_api_explorer/errors/get_image_collection_list_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CollectionDataList](shutterstock/models/collection_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[CollectionDataList](shutterstock_api_explorer/models/collection_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetImageCollectionListErrorBody](shutterstock/errors/get_image_collection_list_error.py)</code>
+**On `Failure`**: `error` is <code>[GetImageCollectionListErrorBody](shutterstock_api_explorer/errors/get_image_collection_list_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -5939,8 +5939,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[SearchEntitiesRequest](shutterstock/models/search_entities_request.py) \| [SearchEntitiesRequestDict](shutterstock/models/search_entities_request.py)</code> | Plain text to extract keywords from |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[SearchEntitiesRequest](shutterstock_api_explorer/models/search_entities_request.py) \| [SearchEntitiesRequestDict](shutterstock_api_explorer/models/search_entities_request.py)</code> | Plain text to extract keywords from |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5950,18 +5950,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[SearchEntitiesResponse](shutterstock/models/search_entities_response.py), [GetImageKeywordSuggestionsErrorBody](shutterstock/errors/get_image_keyword_suggestions_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[SearchEntitiesResponse](shutterstock_api_explorer/models/search_entities_response.py), [GetImageKeywordSuggestionsErrorBody](shutterstock_api_explorer/errors/get_image_keyword_suggestions_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[SearchEntitiesResponse](shutterstock/models/search_entities_response.py)</code> -- OK
+**On `Success`**: `payload` is <code>[SearchEntitiesResponse](shutterstock_api_explorer/models/search_entities_response.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetImageKeywordSuggestionsErrorBody](shutterstock/errors/get_image_keyword_suggestions_error.py)</code>
+**On `Failure`**: `error` is <code>[GetImageKeywordSuggestionsErrorBody](shutterstock_api_explorer/errors/get_image_keyword_suggestions_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -6028,13 +6028,13 @@ match result:
 | <code>license</code> | <code>str \| None</code> | Show images that are available with the specified license, such as `standard` or `enhanced`<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
-| <code>sort</code> | <code>[Sort5OrStr](shutterstock/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
+| <code>sort</code> | <code>[Sort5OrStr](shutterstock_api_explorer/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
 | <code>username</code> | <code>str \| None</code> | Filter licenses by username of licensee<br>**Default**: <code>None</code> |
 | <code>start_date</code> | <code>RFC3339DateTime \| None</code> | Show licenses created on or after the specified date<br>**Default**: <code>None</code> |
 | <code>end_date</code> | <code>RFC3339DateTime \| None</code> | Show licenses created before the specified date<br>**Default**: <code>None</code> |
-| <code>download_availability</code> | <code>[DownloadAvailabilityOrStr](shutterstock/models/enums/download_availability.py) \| None</code> | Filter licenses by download availability<br>**Default**: <code>None</code> |
+| <code>download_availability</code> | <code>[DownloadAvailabilityOrStr](shutterstock_api_explorer/models/enums/download_availability.py) \| None</code> | Filter licenses by download availability<br>**Default**: <code>None</code> |
 | <code>team_history</code> | <code>bool \| None</code> | Set to true to see license history for all members of your team.<br>**Default**: <code>False</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6044,18 +6044,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[DownloadHistoryDataList](shutterstock/models/download_history_data_list.py), [GetImageLicenseListErrorBody](shutterstock/errors/get_image_license_list_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[DownloadHistoryDataList](shutterstock_api_explorer/models/download_history_data_list.py), [GetImageLicenseListErrorBody](shutterstock_api_explorer/errors/get_image_license_list_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[DownloadHistoryDataList](shutterstock/models/download_history_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[DownloadHistoryDataList](shutterstock_api_explorer/models/download_history_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetImageLicenseListErrorBody](shutterstock/errors/get_image_license_list_error.py)</code>
+**On `Failure`**: `error` is <code>[GetImageLicenseListErrorBody](shutterstock_api_explorer/errors/get_image_license_list_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -6119,9 +6119,9 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>list&#91;str&#93;</code> | One or more image IDs |
-| <code>view</code> | <code>[View2OrStr](shutterstock/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
+| <code>view</code> | <code>[View2OrStr](shutterstock_api_explorer/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
 | <code>search_id</code> | <code>str \| None</code> | The ID of the search that is related to this request<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6131,18 +6131,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[ImageDataList](shutterstock/models/image_data_list.py), [GetImageListErrorBody](shutterstock/errors/get_image_list_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[ImageDataList](shutterstock_api_explorer/models/image_data_list.py), [GetImageListErrorBody](shutterstock_api_explorer/errors/get_image_list_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[ImageDataList](shutterstock/models/image_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[ImageDataList](shutterstock_api_explorer/models/image_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetImageListErrorBody](shutterstock/errors/get_image_list_error.py)</code>
+**On `Failure`**: `error` is <code>[GetImageListErrorBody](shutterstock_api_explorer/errors/get_image_list_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -6208,7 +6208,7 @@ match result:
 | <code>id</code> | <code>list&#91;str&#93;</code> | Image IDs |
 | <code>max_items</code> | <code>int \| None</code> | Maximum number of results returned in the response<br>**Default**: <code>20</code> |
 | <code>safe</code> | <code>bool \| None</code> | Restrict results to safe images<br>**Default**: <code>True</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6218,18 +6218,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[RecommendationDataList](shutterstock/models/recommendation_data_list.py), [GetImageRecommendationsErrorBody](shutterstock/errors/get_image_recommendations_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[RecommendationDataList](shutterstock_api_explorer/models/recommendation_data_list.py), [GetImageRecommendationsErrorBody](shutterstock_api_explorer/errors/get_image_recommendations_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[RecommendationDataList](shutterstock/models/recommendation_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[RecommendationDataList](shutterstock_api_explorer/models/recommendation_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetImageRecommendationsErrorBody](shutterstock/errors/get_image_recommendations_error.py)</code>
+**On `Failure`**: `error` is <code>[GetImageRecommendationsErrorBody](shutterstock_api_explorer/errors/get_image_recommendations_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -6294,7 +6294,7 @@ match result:
 | --- | --- | --- |
 | <code>query</code> | <code>str</code> | Search term for which you want keyword suggestions |
 | <code>limit</code> | <code>int \| None</code> | Limit the number of suggestions<br>**Default**: <code>10</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6304,18 +6304,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[Suggestions](shutterstock/models/suggestions.py), [GetImageSuggestionsErrorBody](shutterstock/errors/get_image_suggestions_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[Suggestions](shutterstock_api_explorer/models/suggestions.py), [GetImageSuggestionsErrorBody](shutterstock_api_explorer/errors/get_image_suggestions_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[Suggestions](shutterstock/models/suggestions.py)</code> -- OK
+**On `Success`**: `payload` is <code>[Suggestions](shutterstock_api_explorer/models/suggestions.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetImageSuggestionsErrorBody](shutterstock/errors/get_image_suggestions_error.py)</code>
+**On `Failure`**: `error` is <code>[GetImageSuggestionsErrorBody](shutterstock_api_explorer/errors/get_image_suggestions_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -6326,7 +6326,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 </details>
 
 <details>
-<summary><code>def get_updated_images(*, type_: list[Type14OrStr] | None = None, start_date: str | None = None, end_date: str | None = None, interval: str | None = "1 HOUR", page: int | None = 1, per_page: int | None = 100, sort: Sort5OrStr | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UpdatedMediaDataList, RawError]</code></summary>
+<summary><code>def get_updated_images(*, type_: list[Type4OrStr] | None = None, start_date: str | None = None, end_date: str | None = None, interval: str | None = "1 HOUR", page: int | None = 1, per_page: int | None = 100, sort: Sort5OrStr | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UpdatedMediaDataList, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -6378,14 +6378,14 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>type_</code> | <code>list&#91;[Type14OrStr](shutterstock/models/enums/type14.py)&#93; \| None</code> | Show images that were added, deleted, or edited; by default, the endpoint returns images that were updated in any of these ways<br>**Default**: <code>None</code> |
+| <code>type_</code> | <code>list&#91;[Type4OrStr](shutterstock_api_explorer/models/enums/type4.py)&#93; \| None</code> | Show images that were added, deleted, or edited; by default, the endpoint returns images that were updated in any of these ways<br>**Default**: <code>None</code> |
 | <code>start_date</code> | <code>str \| None</code> | Show images updated on or after the specified date. The API will default to UTC (00:00:00) if no specific time is provided, ensuring consistency.<br>**Default**: <code>None</code> |
 | <code>end_date</code> | <code>str \| None</code> | Show images updated before the specified date. The API will default to UTC (00:00:00) if no specific time is provided, ensuring consistency. Please note that the end date must be at least 5 minutes after the start date.<br>**Default**: <code>None</code> |
 | <code>interval</code> | <code>str \| None</code> | Show images updated in the specified time period, where the time period is an interval (like SQL INTERVAL) such as 1 DAY, 6 HOUR, or 30 MINUTE; the default is 1 HOUR, which shows images that were updated in the hour preceding the request<br>**Default**: <code>"1 HOUR"</code> |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>100</code> |
-| <code>sort</code> | <code>[Sort5OrStr](shutterstock/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>sort</code> | <code>[Sort5OrStr](shutterstock_api_explorer/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6395,11 +6395,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[UpdatedMediaDataList](shutterstock/models/updated_media_data_list.py), [RawError](shutterstock/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[UpdatedMediaDataList](shutterstock_api_explorer/models/updated_media_data_list.py), [RawError](shutterstock_api_explorer/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UpdatedMediaDataList](shutterstock/models/updated_media_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[UpdatedMediaDataList](shutterstock_api_explorer/models/updated_media_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[RawError](shutterstock/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](shutterstock_api_explorer/core/results.py)</code>
 
 </dd>
 </dl>
@@ -6462,12 +6462,12 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[LicenseImageRequest](shutterstock/models/license_image_request.py) \| [LicenseImageRequestDict](shutterstock/models/license_image_request.py)</code> | List of images to request licenses for and information about each license transaction; these values override the defaults in the query parameters |
+| <code>body</code> | <code>[LicenseImageRequest](shutterstock_api_explorer/models/license_image_request.py) \| [LicenseImageRequestDict](shutterstock_api_explorer/models/license_image_request.py)</code> | List of images to request licenses for and information about each license transaction; these values override the defaults in the query parameters |
 | <code>subscription_id</code> | <code>str \| None</code> | Subscription ID to use to license the image<br>**Default**: <code>None</code> |
-| <code>format</code> | <code>[Format15OrStr](shutterstock/models/enums/format15.py) \| None</code> | (Deprecated) Image format<br>**Default**: <code>None</code> |
-| <code>size</code> | <code>[Size12OrStr](shutterstock/models/enums/size12.py) \| None</code> | Image size<br>**Default**: <code>None</code> |
+| <code>format</code> | <code>[Format15OrStr](shutterstock_api_explorer/models/enums/format15.py) \| None</code> | (Deprecated) Image format<br>**Default**: <code>None</code> |
+| <code>size</code> | <code>[Size12OrStr](shutterstock_api_explorer/models/enums/size12.py) \| None</code> | Image size<br>**Default**: <code>None</code> |
 | <code>search_id</code> | <code>str \| None</code> | Search ID that was provided in the results of an image search<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6477,18 +6477,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[LicenseImageResultDataList](shutterstock/models/license_image_result_data_list.py), [LicenseImagesErrorBody](shutterstock/errors/license_images_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[LicenseImageResultDataList](shutterstock_api_explorer/models/license_image_result_data_list.py), [LicenseImagesErrorBody](shutterstock_api_explorer/errors/license_images_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[LicenseImageResultDataList](shutterstock/models/license_image_result_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[LicenseImageResultDataList](shutterstock_api_explorer/models/license_image_result_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[LicenseImagesErrorBody](shutterstock/errors/license_images_error.py)</code>
+**On `Failure`**: `error` is <code>[LicenseImagesErrorBody](shutterstock_api_explorer/errors/license_images_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -6551,8 +6551,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>language</code> | <code>[LanguageOrStr](shutterstock/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>language</code> | <code>[LanguageOrStr](shutterstock_api_explorer/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6562,18 +6562,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CategoryDataList](shutterstock/models/category_data_list.py), [ListImageCategoriesErrorBody](shutterstock/errors/list_image_categories_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CategoryDataList](shutterstock_api_explorer/models/category_data_list.py), [ListImageCategoriesErrorBody](shutterstock_api_explorer/errors/list_image_categories_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CategoryDataList](shutterstock/models/category_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[CategoryDataList](shutterstock_api_explorer/models/category_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[ListImageCategoriesErrorBody](shutterstock/errors/list_image_categories_error.py)</code>
+**On `Failure`**: `error` is <code>[ListImageCategoriesErrorBody](shutterstock_api_explorer/errors/list_image_categories_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -6637,11 +6637,11 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Image ID |
-| <code>language</code> | <code>[LanguageOrStr](shutterstock/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
+| <code>language</code> | <code>[LanguageOrStr](shutterstock_api_explorer/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
-| <code>view</code> | <code>[View2OrStr](shutterstock/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>view</code> | <code>[View2OrStr](shutterstock_api_explorer/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6651,18 +6651,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[ImageSearchResults](shutterstock/models/image_search_results.py), [ListSimilarImagesErrorBody](shutterstock/errors/list_similar_images_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[ImageSearchResults](shutterstock_api_explorer/models/image_search_results.py), [ListSimilarImagesErrorBody](shutterstock_api_explorer/errors/list_similar_images_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[ImageSearchResults](shutterstock/models/image_search_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[ImageSearchResults](shutterstock_api_explorer/models/image_search_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[ListSimilarImagesErrorBody](shutterstock/errors/list_similar_images_error.py)</code>
+**On `Failure`**: `error` is <code>[ListSimilarImagesErrorBody](shutterstock_api_explorer/errors/list_similar_images_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -6726,8 +6726,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Collection ID |
-| <code>body</code> | <code>[CollectionUpdateRequest](shutterstock/models/collection_update_request.py) \| [CollectionUpdateRequestDict](shutterstock/models/collection_update_request.py)</code> | The new name for the collection |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[CollectionUpdateRequest](shutterstock_api_explorer/models/collection_update_request.py) \| [CollectionUpdateRequestDict](shutterstock_api_explorer/models/collection_update_request.py)</code> | The new name for the collection |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6737,18 +6737,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;None, [RenameImageCollectionErrorBody](shutterstock/errors/rename_image_collection_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;None, [RenameImageCollectionErrorBody](shutterstock_api_explorer/errors/rename_image_collection_error.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[RenameImageCollectionErrorBody](shutterstock/errors/rename_image_collection_error.py)</code>
+**On `Failure`**: `error` is <code>[RenameImageCollectionErrorBody](shutterstock_api_explorer/errors/rename_image_collection_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -6811,7 +6811,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>library</code> | <code>list&#91;[LibraryOrStr](shutterstock/models/enums/library.py)&#93; \| None</code> | Search within different Shutterstock owned libraries<br>**Default**: <code>None</code> |
+| <code>library</code> | <code>list&#91;[LibraryOrStr](shutterstock_api_explorer/models/enums/library.py)&#93; \| None</code> | Search within different Shutterstock owned libraries<br>**Default**: <code>None</code> |
 | <code>added_date</code> | <code>Date \| None</code> | Show images added on the specified date<br>**Default**: <code>None</code> |
 | <code>added_date_start</code> | <code>Date \| None</code> | Show images added on or after the specified date<br>**Default**: <code>None</code> |
 | <code>aspect_ratio_min</code> | <code>float \| None</code> | Show images with the specified aspect ratio or higher, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image<br>**Default**: <code>None</code> |
@@ -6821,34 +6821,34 @@ match result:
 | <code>category</code> | <code>str \| None</code> | Show images with the specified Shutterstock-defined category; specify a category name or ID<br>**Default**: <code>None</code> |
 | <code>color</code> | <code>str \| None</code> | Specify either a hexadecimal color in the format '4F21EA' or 'grayscale'; the API returns images that use similar colors<br>**Default**: <code>None</code> |
 | <code>contributor</code> | <code>list&#91;str&#93; \| None</code> | Show images with the specified contributor names or IDs, allows multiple<br>**Default**: <code>None</code> |
-| <code>contributor_country</code> | <code>[ContributorCountryModel](shutterstock/models/unions/contributor_country_model.py) \| [ContributorCountryModelDict](shutterstock/models/unions/contributor_country_model.py) \| None</code> | Show images from contributors in one or more specified countries, or start with NOT to exclude a country from the search<br>**Default**: <code>None</code> |
+| <code>contributor_country</code> | <code>[ContributorCountryModel](shutterstock_api_explorer/models/unions/contributor_country_model.py) \| [ContributorCountryModelDict](shutterstock_api_explorer/models/unions/contributor_country_model.py) \| None</code> | Show images from contributors in one or more specified countries, or start with NOT to exclude a country from the search<br>**Default**: <code>None</code> |
 | <code>fields</code> | <code>str \| None</code> | Fields to display in the response; see the documentation for the fields parameter in the overview section<br>**Default**: <code>None</code> |
 | <code>height</code> | <code>int \| None</code> | (Deprecated; use height_from and height_to instead) Show images with the specified height<br>**Default**: <code>None</code> |
 | <code>height_from</code> | <code>int \| None</code> | Show images with the specified height or larger, in pixels<br>**Default**: <code>None</code> |
 | <code>height_to</code> | <code>int \| None</code> | Show images with the specified height or smaller, in pixels<br>**Default**: <code>None</code> |
-| <code>image_type</code> | <code>list&#91;[ImageType2OrStr](shutterstock/models/enums/image_type2.py)&#93; \| None</code> | Show images of the specified type<br>**Default**: <code>None</code> |
+| <code>image_type</code> | <code>list&#91;[ImageType2OrStr](shutterstock_api_explorer/models/enums/image_type2.py)&#93; \| None</code> | Show images of the specified type<br>**Default**: <code>None</code> |
 | <code>keyword_safe_search</code> | <code>bool \| None</code> | Hide results with potentially unsafe keywords<br>**Default**: <code>True</code> |
-| <code>language</code> | <code>[LanguageOrStr](shutterstock/models/enums/language.py) \| None</code> | Set query and result language (uses Accept-Language header if not set)<br>**Default**: <code>None</code> |
-| <code>license</code> | <code>list&#91;[LicenseOrStr](shutterstock/models/enums/license.py)&#93; \| None</code> | Show only images with the specified license<br>**Default**: <code>None</code> |
+| <code>language</code> | <code>[LanguageOrStr](shutterstock_api_explorer/models/enums/language.py) \| None</code> | Set query and result language (uses Accept-Language header if not set)<br>**Default**: <code>None</code> |
+| <code>license</code> | <code>list&#91;[LicenseOrStr](shutterstock_api_explorer/models/enums/license.py)&#93; \| None</code> | Show only images with the specified license<br>**Default**: <code>None</code> |
 | <code>model</code> | <code>list&#91;str&#93; \| None</code> | Show image results with the specified model IDs<br>**Default**: <code>None</code> |
-| <code>orientation</code> | <code>[Orientation2OrStr](shutterstock/models/enums/orientation2.py) \| None</code> | Show image results with horizontal or vertical orientation<br>**Default**: <code>None</code> |
+| <code>orientation</code> | <code>[Orientation2OrStr](shutterstock_api_explorer/models/enums/orientation2.py) \| None</code> | Show image results with horizontal or vertical orientation<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
 | <code>people_model_released</code> | <code>bool \| None</code> | Show images of people with a signed model release<br>**Default**: <code>None</code> |
-| <code>people_age</code> | <code>[PeopleAge2OrStr](shutterstock/models/enums/people_age2.py) \| None</code> | Show images that feature people of the specified age category<br>**Default**: <code>None</code> |
-| <code>people_ethnicity</code> | <code>list&#91;[PeopleEthnicity2OrStr](shutterstock/models/enums/people_ethnicity2.py)&#93; \| None</code> | Show images with people of the specified ethnicities, or start with NOT to show images without those ethnicities<br>**Default**: <code>None</code> |
-| <code>people_gender</code> | <code>[PeopleGender2OrStr](shutterstock/models/enums/people_gender2.py) \| None</code> | Show images with people of the specified gender<br>**Default**: <code>None</code> |
+| <code>people_age</code> | <code>[PeopleAge2OrStr](shutterstock_api_explorer/models/enums/people_age2.py) \| None</code> | Show images that feature people of the specified age category<br>**Default**: <code>None</code> |
+| <code>people_ethnicity</code> | <code>list&#91;[PeopleEthnicity2OrStr](shutterstock_api_explorer/models/enums/people_ethnicity2.py)&#93; \| None</code> | Show images with people of the specified ethnicities, or start with NOT to show images without those ethnicities<br>**Default**: <code>None</code> |
+| <code>people_gender</code> | <code>[PeopleGender2OrStr](shutterstock_api_explorer/models/enums/people_gender2.py) \| None</code> | Show images with people of the specified gender<br>**Default**: <code>None</code> |
 | <code>people_number</code> | <code>int \| None</code> | Show images with the specified number of people<br>**Default**: <code>None</code> |
 | <code>query</code> | <code>str \| None</code> | One or more search terms separated by spaces; you can use NOT to filter out images that match a term<br>**Default**: <code>None</code> |
-| <code>region</code> | <code>[RegionModel](shutterstock/models/unions/region_model.py) \| [RegionModelDict](shutterstock/models/unions/region_model.py) \| None</code> | Raise or lower search result rankings based on the result's relevance to a specified region; you can provide a country code or an IP address from which the API infers a country<br>**Default**: <code>None</code> |
+| <code>region</code> | <code>[RegionModel](shutterstock_api_explorer/models/unions/region_model.py) \| [RegionModelDict](shutterstock_api_explorer/models/unions/region_model.py) \| None</code> | Raise or lower search result rankings based on the result's relevance to a specified region; you can provide a country code or an IP address from which the API infers a country<br>**Default**: <code>None</code> |
 | <code>safe</code> | <code>bool \| None</code> | Enable or disable safe search<br>**Default**: <code>True</code> |
-| <code>sort</code> | <code>[Sort2OrStr](shutterstock/models/enums/sort2.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
+| <code>sort</code> | <code>[Sort2OrStr](shutterstock_api_explorer/models/enums/sort2.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
 | <code>spellcheck_query</code> | <code>bool \| None</code> | Spellcheck the search query and return results on suggested spellings<br>**Default**: <code>True</code> |
-| <code>view</code> | <code>[View2OrStr](shutterstock/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
+| <code>view</code> | <code>[View2OrStr](shutterstock_api_explorer/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
 | <code>width</code> | <code>int \| None</code> | (Deprecated; use width_from and width_to instead) Show images with the specified width<br>**Default**: <code>None</code> |
 | <code>width_from</code> | <code>int \| None</code> | Show images with the specified width or larger, in pixels<br>**Default**: <code>None</code> |
 | <code>width_to</code> | <code>int \| None</code> | Show images with the specified width or smaller, in pixels<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6858,18 +6858,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[ImageSearchResults](shutterstock/models/image_search_results.py), [SearchImagesErrorBody](shutterstock/errors/search_images_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[ImageSearchResults](shutterstock_api_explorer/models/image_search_results.py), [SearchImagesErrorBody](shutterstock_api_explorer/errors/search_images_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[ImageSearchResults](shutterstock/models/image_search_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[ImageSearchResults](shutterstock_api_explorer/models/image_search_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[SearchImagesErrorBody](shutterstock/errors/search_images_error.py)</code>
+**On `Failure`**: `error` is <code>[SearchImagesErrorBody](shutterstock_api_explorer/errors/search_images_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -6881,7 +6881,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## Oauth
 
-> Source: [Oauth](shutterstock/apis/oauth.py)
+> Source: [Oauth](shutterstock_api_explorer/apis/oauth.py)
 
 <details>
 <summary><code>def authorize(client_id: str, redirect_uri: str, response_type: ResponseTypeOrStr, state: str, *, realm: Realm2OrStr | None = None, scope: str | None = "user.view", request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, AuthorizeErrorBody]</code></summary>
@@ -6938,11 +6938,11 @@ match result:
 | --- | --- | --- |
 | <code>client_id</code> | <code>str</code> | Client ID (Consumer Key) of your application |
 | <code>redirect_uri</code> | <code>str</code> | The callback URI to send the request to after authorization; must use a host name that is registered with your application |
-| <code>response_type</code> | <code>[ResponseTypeOrStr](shutterstock/models/enums/response_type.py)</code> | Type of temporary authorization code that will be used to generate an access code; the only valid value is 'code' |
+| <code>response_type</code> | <code>[ResponseTypeOrStr](shutterstock_api_explorer/models/enums/response_type.py)</code> | Type of temporary authorization code that will be used to generate an access code; the only valid value is 'code' |
 | <code>state</code> | <code>str</code> | Unique value used by the calling app to verify the request |
-| <code>realm</code> | <code>[Realm2OrStr](shutterstock/models/enums/realm2.py) \| None</code> | User type to be authorized (usually 'customer')<br>**Default**: <code>None</code> |
+| <code>realm</code> | <code>[Realm2OrStr](shutterstock_api_explorer/models/enums/realm2.py) \| None</code> | User type to be authorized (usually 'customer')<br>**Default**: <code>None</code> |
 | <code>scope</code> | <code>str \| None</code> | Space-separated list of scopes to be authorized<br>**Default**: <code>"user.view"</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6952,18 +6952,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;None, [AuthorizeErrorBody](shutterstock/errors/authorize_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;None, [AuthorizeErrorBody](shutterstock_api_explorer/errors/authorize_error.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[AuthorizeErrorBody](shutterstock/errors/authorize_error.py)</code>
+**On `Failure`**: `error` is <code>[AuthorizeErrorBody](shutterstock_api_explorer/errors/authorize_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -7027,13 +7027,13 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>client_id</code> | <code>str</code> | Client ID (Consumer Key) of your application |
-| <code>grant_type</code> | <code>[GrantTypeOrStr](shutterstock/models/enums/grant_type.py)</code> | Grant type: authorization_code generates user tokens, client_credentials generates short-lived client grants |
+| <code>grant_type</code> | <code>[GrantTypeOrStr](shutterstock_api_explorer/models/enums/grant_type.py)</code> | Grant type: authorization_code generates user tokens, client_credentials generates short-lived client grants |
 | <code>client_secret</code> | <code>str \| None</code> | Client Secret (Consumer Secret) of your application<br>**Default**: <code>None</code> |
 | <code>code</code> | <code>str \| None</code> | Response code from the /oauth/authorize flow; required if grant_type=authorization_code<br>**Default**: <code>None</code> |
-| <code>realm</code> | <code>[Realm3OrStr](shutterstock/models/enums/realm3.py) \| None</code> | User type to be authorized (usually 'customer')<br>**Default**: <code>None</code> |
-| <code>expires</code> | <code>[ExpiresOrStr](shutterstock/models/enums/expires.py) \| None</code> | Whether or not the token expires, expiring tokens come with a refresh_token to renew the access_token<br>**Default**: <code>None</code> |
+| <code>realm</code> | <code>[Realm3OrStr](shutterstock_api_explorer/models/enums/realm3.py) \| None</code> | User type to be authorized (usually 'customer')<br>**Default**: <code>None</code> |
+| <code>expires</code> | <code>[ExpiresOrStr](shutterstock_api_explorer/models/enums/expires.py) \| None</code> | Whether or not the token expires, expiring tokens come with a refresh_token to renew the access_token<br>**Default**: <code>None</code> |
 | <code>refresh_token</code> | <code>str \| None</code> | Pass this along with grant_type=refresh_token to get a fresh access token<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7043,18 +7043,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[OauthAccessTokenResponse](shutterstock/models/oauth_access_token_response.py), [CreateAccessTokenErrorBody](shutterstock/errors/create_access_token_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[OauthAccessTokenResponse](shutterstock_api_explorer/models/oauth_access_token_response.py), [CreateAccessTokenErrorBody](shutterstock_api_explorer/errors/create_access_token_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[OauthAccessTokenResponse](shutterstock/models/oauth_access_token_response.py)</code> -- OK
+**On `Success`**: `payload` is <code>[OauthAccessTokenResponse](shutterstock_api_explorer/models/oauth_access_token_response.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[CreateAccessTokenErrorBody](shutterstock/errors/create_access_token_error.py)</code>
+**On `Failure`**: `error` is <code>[CreateAccessTokenErrorBody](shutterstock_api_explorer/errors/create_access_token_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -7066,7 +7066,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## SoundEffects
 
-> Source: [SoundEffects](shutterstock/apis/sound_effects.py)
+> Source: [SoundEffects](shutterstock_api_explorer/apis/sound_effects.py)
 
 <details>
 <summary><code>def download_sfx(id: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[SfxUrl, DownloadSfxErrorBody]</code></summary>
@@ -7122,7 +7122,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | License ID |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7132,18 +7132,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[SfxUrl](shutterstock/models/sfx_url.py), [DownloadSfxErrorBody](shutterstock/errors/download_sfx_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[SfxUrl](shutterstock_api_explorer/models/sfx_url.py), [DownloadSfxErrorBody](shutterstock_api_explorer/errors/download_sfx_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[SfxUrl](shutterstock/models/sfx_url.py)</code> -- OK
+**On `Success`**: `payload` is <code>[SfxUrl](shutterstock_api_explorer/models/sfx_url.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[DownloadSfxErrorBody](shutterstock/errors/download_sfx_error.py)</code>
+**On `Failure`**: `error` is <code>[DownloadSfxErrorBody](shutterstock_api_explorer/errors/download_sfx_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -7207,11 +7207,11 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Audio track ID |
-| <code>language</code> | <code>[LanguageOrStr](shutterstock/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
-| <code>view</code> | <code>[View2OrStr](shutterstock/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
-| <code>library</code> | <code>[Library2OrStr](shutterstock/models/enums/library2.py) \| None</code> | Which library to fetch from<br>**Default**: <code>None</code> |
+| <code>language</code> | <code>[LanguageOrStr](shutterstock_api_explorer/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
+| <code>view</code> | <code>[View2OrStr](shutterstock_api_explorer/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
+| <code>library</code> | <code>[Library2OrStr](shutterstock_api_explorer/models/enums/library2.py) \| None</code> | Which library to fetch from<br>**Default**: <code>None</code> |
 | <code>search_id</code> | <code>str \| None</code> | The ID of the search that is related to this request<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7221,18 +7221,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[Sfx](shutterstock/models/sfx.py), [GetSfxDetailsErrorBody](shutterstock/errors/get_sfx_details_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[Sfx](shutterstock_api_explorer/models/sfx.py), [GetSfxDetailsErrorBody](shutterstock_api_explorer/errors/get_sfx_details_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[Sfx](shutterstock/models/sfx.py)</code> -- OK
+**On `Success`**: `payload` is <code>[Sfx](shutterstock_api_explorer/models/sfx.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetSfxDetailsErrorBody](shutterstock/errors/get_sfx_details_error.py)</code>
+**On `Failure`**: `error` is <code>[GetSfxDetailsErrorBody](shutterstock_api_explorer/errors/get_sfx_details_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 503 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 503 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -7299,14 +7299,14 @@ match result:
 | <code>license</code> | <code>str \| None</code> | Show sound effects that are available with the specified license, such as `standard` or `enhanced`<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
-| <code>sort</code> | <code>[Sort5OrStr](shutterstock/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
+| <code>sort</code> | <code>[Sort5OrStr](shutterstock_api_explorer/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
 | <code>username</code> | <code>str \| None</code> | Filter licenses by username of licensee<br>**Default**: <code>None</code> |
 | <code>start_date</code> | <code>RFC3339DateTime \| None</code> | Show licenses created on or after the specified date<br>**Default**: <code>None</code> |
 | <code>end_date</code> | <code>RFC3339DateTime \| None</code> | Show licenses created before the specified date<br>**Default**: <code>None</code> |
 | <code>license_id</code> | <code>str \| None</code> | Filter by the license ID<br>**Default**: <code>None</code> |
-| <code>download_availability</code> | <code>[DownloadAvailabilityOrStr](shutterstock/models/enums/download_availability.py) \| None</code> | Filter licenses by download availability<br>**Default**: <code>None</code> |
+| <code>download_availability</code> | <code>[DownloadAvailabilityOrStr](shutterstock_api_explorer/models/enums/download_availability.py) \| None</code> | Filter licenses by download availability<br>**Default**: <code>None</code> |
 | <code>team_history</code> | <code>bool \| None</code> | Set to true to see license history for all members of your team.<br>**Default**: <code>False</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7316,18 +7316,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[DownloadHistoryDataList](shutterstock/models/download_history_data_list.py), [GetSfxLicenseListErrorBody](shutterstock/errors/get_sfx_license_list_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[DownloadHistoryDataList](shutterstock_api_explorer/models/download_history_data_list.py), [GetSfxLicenseListErrorBody](shutterstock_api_explorer/errors/get_sfx_license_list_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[DownloadHistoryDataList](shutterstock/models/download_history_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[DownloadHistoryDataList](shutterstock_api_explorer/models/download_history_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetSfxLicenseListErrorBody](shutterstock/errors/get_sfx_license_list_error.py)</code>
+**On `Failure`**: `error` is <code>[GetSfxLicenseListErrorBody](shutterstock_api_explorer/errors/get_sfx_license_list_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -7391,11 +7391,11 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>list&#91;str&#93;</code> | One or more sound effect IDs |
-| <code>view</code> | <code>[View2OrStr](shutterstock/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
-| <code>language</code> | <code>[LanguageOrStr](shutterstock/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
-| <code>library</code> | <code>[Library2OrStr](shutterstock/models/enums/library2.py) \| None</code> | Which library to fetch from<br>**Default**: <code>None</code> |
+| <code>view</code> | <code>[View2OrStr](shutterstock_api_explorer/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
+| <code>language</code> | <code>[LanguageOrStr](shutterstock_api_explorer/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
+| <code>library</code> | <code>[Library2OrStr](shutterstock_api_explorer/models/enums/library2.py) \| None</code> | Which library to fetch from<br>**Default**: <code>None</code> |
 | <code>search_id</code> | <code>str \| None</code> | The ID of the search that is related to this request<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7405,18 +7405,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[SfxdataList](shutterstock/models/sfxdata_list.py), [GetSfxListDetailsErrorBody](shutterstock/errors/get_sfx_list_details_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[SfxdataList](shutterstock_api_explorer/models/sfxdata_list.py), [GetSfxListDetailsErrorBody](shutterstock_api_explorer/errors/get_sfx_list_details_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[SfxdataList](shutterstock/models/sfxdata_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[SfxdataList](shutterstock_api_explorer/models/sfxdata_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetSfxListDetailsErrorBody](shutterstock/errors/get_sfx_list_details_error.py)</code>
+**On `Failure`**: `error` is <code>[GetSfxListDetailsErrorBody](shutterstock_api_explorer/errors/get_sfx_list_details_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -7479,8 +7479,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[LicenseSfxrequest](shutterstock/models/license_sfxrequest.py) \| [LicenseSfxrequestDict](shutterstock/models/license_sfxrequest.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[LicenseSfxrequest](shutterstock_api_explorer/models/license_sfxrequest.py) \| [LicenseSfxrequestDict](shutterstock_api_explorer/models/license_sfxrequest.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7490,18 +7490,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[LicenseSfxresultDataList](shutterstock/models/license_sfxresult_data_list.py), [LicensesSfxErrorBody](shutterstock/errors/licenses_sfx_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[LicenseSfxresultDataList](shutterstock_api_explorer/models/license_sfxresult_data_list.py), [LicensesSfxErrorBody](shutterstock_api_explorer/errors/licenses_sfx_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[LicenseSfxresultDataList](shutterstock/models/license_sfxresult_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[LicenseSfxresultDataList](shutterstock_api_explorer/models/license_sfxresult_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[LicensesSfxErrorBody](shutterstock/errors/licenses_sfx_error.py)</code>
+**On `Failure`**: `error` is <code>[LicensesSfxErrorBody](shutterstock_api_explorer/errors/licenses_sfx_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -7574,10 +7574,10 @@ match result:
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
 | <code>query</code> | <code>str \| None</code> | One or more search terms separated by spaces<br>**Default**: <code>None</code> |
 | <code>safe</code> | <code>bool \| None</code> | Enable or disable safe search<br>**Default**: <code>True</code> |
-| <code>sort</code> | <code>[Sort15OrStr](shutterstock/models/enums/sort15.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
-| <code>view</code> | <code>[View2OrStr](shutterstock/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
-| <code>language</code> | <code>[LanguageOrStr](shutterstock/models/enums/language.py) \| None</code> | Set query and result language (uses Accept-Language header if not set)<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>sort</code> | <code>[Sort15OrStr](shutterstock_api_explorer/models/enums/sort15.py) \| None</code> | Sort by<br>**Default**: <code>None</code> |
+| <code>view</code> | <code>[View2OrStr](shutterstock_api_explorer/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
+| <code>language</code> | <code>[LanguageOrStr](shutterstock_api_explorer/models/enums/language.py) \| None</code> | Set query and result language (uses Accept-Language header if not set)<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7587,18 +7587,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[SfxsearchResults](shutterstock/models/sfxsearch_results.py), [SearchSfxErrorBody](shutterstock/errors/search_sfx_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[SfxsearchResults](shutterstock_api_explorer/models/sfxsearch_results.py), [SearchSfxErrorBody](shutterstock_api_explorer/errors/search_sfx_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[SfxsearchResults](shutterstock/models/sfxsearch_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[SfxsearchResults](shutterstock_api_explorer/models/sfxsearch_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[SearchSfxErrorBody](shutterstock/errors/search_sfx_error.py)</code>
+**On `Failure`**: `error` is <code>[SearchSfxErrorBody](shutterstock_api_explorer/errors/search_sfx_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 503 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 503 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -7610,7 +7610,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## Test
 
-> Source: [Test](shutterstock/apis/test.py)
+> Source: [Test](shutterstock_api_explorer/apis/test.py)
 
 <details>
 <summary><code>def echo(*, text: str | None = "ok", request_options: RequestOptionsOrDict | None = None) -> ApiResult[TestEcho, EchoErrorBody]</code></summary>
@@ -7666,7 +7666,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>text</code> | <code>str \| None</code> | Text to echo<br>**Default**: <code>"ok"</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7676,18 +7676,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[TestEcho](shutterstock/models/test_echo.py), [EchoErrorBody](shutterstock/errors/echo_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[TestEcho](shutterstock_api_explorer/models/test_echo.py), [EchoErrorBody](shutterstock_api_explorer/errors/echo_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TestEcho](shutterstock/models/test_echo.py)</code> -- OK
+**On `Success`**: `payload` is <code>[TestEcho](shutterstock_api_explorer/models/test_echo.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[EchoErrorBody](shutterstock/errors/echo_error.py)</code>
+**On `Failure`**: `error` is <code>[EchoErrorBody](shutterstock_api_explorer/errors/echo_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -7753,7 +7753,7 @@ match result:
 | <code>id</code> | <code>int</code> | Integer ID |
 | <code>tag</code> | <code>list&#91;str&#93; \| None</code> | List of tags<br>**Default**: <code>None</code> |
 | <code>user_agent</code> | <code>str \| None</code> | User agent<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7763,18 +7763,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[TestValidate](shutterstock/models/test_validate.py), [ValidateErrorBody](shutterstock/errors/validate_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[TestValidate](shutterstock_api_explorer/models/test_validate.py), [ValidateErrorBody](shutterstock_api_explorer/errors/validate_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TestValidate](shutterstock/models/test_validate.py)</code> -- OK
+**On `Success`**: `payload` is <code>[TestValidate](shutterstock_api_explorer/models/test_validate.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[ValidateErrorBody](shutterstock/errors/validate_error.py)</code>
+**On `Failure`**: `error` is <code>[ValidateErrorBody](shutterstock_api_explorer/errors/validate_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -7786,7 +7786,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## Users
 
-> Source: [Users](shutterstock/apis/users.py)
+> Source: [Users](shutterstock_api_explorer/apis/users.py)
 
 <details>
 <summary><code>def get_access_token(*, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AccessTokenDetails, GetAccessTokenErrorBody]</code></summary>
@@ -7841,7 +7841,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7851,18 +7851,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[AccessTokenDetails](shutterstock/models/access_token_details.py), [GetAccessTokenErrorBody](shutterstock/errors/get_access_token_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[AccessTokenDetails](shutterstock_api_explorer/models/access_token_details.py), [GetAccessTokenErrorBody](shutterstock_api_explorer/errors/get_access_token_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AccessTokenDetails](shutterstock/models/access_token_details.py)</code> -- OK
+**On `Success`**: `payload` is <code>[AccessTokenDetails](shutterstock_api_explorer/models/access_token_details.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetAccessTokenErrorBody](shutterstock/errors/get_access_token_error.py)</code>
+**On `Failure`**: `error` is <code>[GetAccessTokenErrorBody](shutterstock_api_explorer/errors/get_access_token_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -7925,7 +7925,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7935,18 +7935,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[UserDetails](shutterstock/models/user_details.py), [GetUserErrorBody](shutterstock/errors/get_user_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[UserDetails](shutterstock_api_explorer/models/user_details.py), [GetUserErrorBody](shutterstock_api_explorer/errors/get_user_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UserDetails](shutterstock/models/user_details.py)</code> -- OK
+**On `Success`**: `payload` is <code>[UserDetails](shutterstock_api_explorer/models/user_details.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetUserErrorBody](shutterstock/errors/get_user_error.py)</code>
+**On `Failure`**: `error` is <code>[GetUserErrorBody](shutterstock_api_explorer/errors/get_user_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -8009,7 +8009,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8019,18 +8019,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[SubscriptionDataList](shutterstock/models/subscription_data_list.py), [GetUserSubscriptionListErrorBody](shutterstock/errors/get_user_subscription_list_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[SubscriptionDataList](shutterstock_api_explorer/models/subscription_data_list.py), [GetUserSubscriptionListErrorBody](shutterstock_api_explorer/errors/get_user_subscription_list_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[SubscriptionDataList](shutterstock/models/subscription_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[SubscriptionDataList](shutterstock_api_explorer/models/subscription_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetUserSubscriptionListErrorBody](shutterstock/errors/get_user_subscription_list_error.py)</code>
+**On `Failure`**: `error` is <code>[GetUserSubscriptionListErrorBody](shutterstock_api_explorer/errors/get_user_subscription_list_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -8042,7 +8042,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## Videos
 
-> Source: [Videos](shutterstock/apis/videos.py)
+> Source: [Videos](shutterstock_api_explorer/apis/videos.py)
 
 <details>
 <summary><code>def add_video_collection_items(id: str, body: CollectionItemRequest | CollectionItemRequestDict, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, AddVideoCollectionItemsErrorBody]</code></summary>
@@ -8098,8 +8098,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | The ID of the collection to which items should be added |
-| <code>body</code> | <code>[CollectionItemRequest](shutterstock/models/collection_item_request.py) \| [CollectionItemRequestDict](shutterstock/models/collection_item_request.py)</code> | Array of video IDs to add to the collection |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[CollectionItemRequest](shutterstock_api_explorer/models/collection_item_request.py) \| [CollectionItemRequestDict](shutterstock_api_explorer/models/collection_item_request.py)</code> | Array of video IDs to add to the collection |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8109,18 +8109,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;None, [AddVideoCollectionItemsErrorBody](shutterstock/errors/add_video_collection_items_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;None, [AddVideoCollectionItemsErrorBody](shutterstock_api_explorer/errors/add_video_collection_items_error.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[AddVideoCollectionItemsErrorBody](shutterstock/errors/add_video_collection_items_error.py)</code>
+**On `Failure`**: `error` is <code>[AddVideoCollectionItemsErrorBody](shutterstock_api_explorer/errors/add_video_collection_items_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -8183,8 +8183,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[CollectionCreateRequest](shutterstock/models/collection_create_request.py) \| [CollectionCreateRequestDict](shutterstock/models/collection_create_request.py)</code> | Collection metadata |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[CollectionCreateRequest](shutterstock_api_explorer/models/collection_create_request.py) \| [CollectionCreateRequestDict](shutterstock_api_explorer/models/collection_create_request.py)</code> | Collection metadata |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8194,18 +8194,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CollectionCreateResponse](shutterstock/models/collection_create_response.py), [CreateVideoCollectionErrorBody](shutterstock/errors/create_video_collection_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CollectionCreateResponse](shutterstock_api_explorer/models/collection_create_response.py), [CreateVideoCollectionErrorBody](shutterstock_api_explorer/errors/create_video_collection_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CollectionCreateResponse](shutterstock/models/collection_create_response.py)</code> -- Successfully created video collection
+**On `Success`**: `payload` is <code>[CollectionCreateResponse](shutterstock_api_explorer/models/collection_create_response.py)</code> -- Successfully created video collection
 
-**On `Failure`**: `error` is <code>[CreateVideoCollectionErrorBody](shutterstock/errors/create_video_collection_error.py)</code>
+**On `Failure`**: `error` is <code>[CreateVideoCollectionErrorBody](shutterstock_api_explorer/errors/create_video_collection_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -8269,7 +8269,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | The ID of the collection to delete |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8279,18 +8279,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;None, [DeleteVideoCollectionErrorBody](shutterstock/errors/delete_video_collection_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;None, [DeleteVideoCollectionErrorBody](shutterstock_api_explorer/errors/delete_video_collection_error.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[DeleteVideoCollectionErrorBody](shutterstock/errors/delete_video_collection_error.py)</code>
+**On `Failure`**: `error` is <code>[DeleteVideoCollectionErrorBody](shutterstock_api_explorer/errors/delete_video_collection_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -8355,7 +8355,7 @@ match result:
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | The ID of the Collection from which items will be deleted |
 | <code>item_id</code> | <code>list&#91;str&#93; \| None</code> | One or more video IDs to remove from the collection<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8365,18 +8365,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;None, [DeleteVideoCollectionItemsErrorBody](shutterstock/errors/delete_video_collection_items_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;None, [DeleteVideoCollectionItemsErrorBody](shutterstock_api_explorer/errors/delete_video_collection_items_error.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[DeleteVideoCollectionItemsErrorBody](shutterstock/errors/delete_video_collection_items_error.py)</code>
+**On `Failure`**: `error` is <code>[DeleteVideoCollectionItemsErrorBody](shutterstock_api_explorer/errors/delete_video_collection_items_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -8440,8 +8440,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | The license ID of the item to (re)download. The download links in the response are valid for 8 hours. |
-| <code>body</code> | <code>[RedownloadVideo](shutterstock/models/redownload_video.py) \| [RedownloadVideoDict](shutterstock/models/redownload_video.py)</code> | Information about the videos to redownload |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[RedownloadVideo](shutterstock_api_explorer/models/redownload_video.py) \| [RedownloadVideoDict](shutterstock_api_explorer/models/redownload_video.py)</code> | Information about the videos to redownload |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8451,18 +8451,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[Url](shutterstock/models/url.py), [DownloadVideosErrorBody](shutterstock/errors/download_videos_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[Url](shutterstock_api_explorer/models/url.py), [DownloadVideosErrorBody](shutterstock_api_explorer/errors/download_videos_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[Url](shutterstock/models/url.py)</code> -- OK
+**On `Success`**: `payload` is <code>[Url](shutterstock_api_explorer/models/url.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[DownloadVideosErrorBody](shutterstock/errors/download_videos_error.py)</code>
+**On `Failure`**: `error` is <code>[DownloadVideosErrorBody](shutterstock_api_explorer/errors/download_videos_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -8526,11 +8526,11 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | The ID of a video for which similar videos should be returned |
-| <code>language</code> | <code>[LanguageOrStr](shutterstock/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
+| <code>language</code> | <code>[LanguageOrStr](shutterstock_api_explorer/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
-| <code>view</code> | <code>[View2OrStr](shutterstock/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>view</code> | <code>[View2OrStr](shutterstock_api_explorer/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8540,18 +8540,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[VideoSearchResults](shutterstock/models/video_search_results.py), [FindSimilarVideosErrorBody](shutterstock/errors/find_similar_videos_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[VideoSearchResults](shutterstock_api_explorer/models/video_search_results.py), [FindSimilarVideosErrorBody](shutterstock_api_explorer/errors/find_similar_videos_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[VideoSearchResults](shutterstock/models/video_search_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[VideoSearchResults](shutterstock_api_explorer/models/video_search_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[FindSimilarVideosErrorBody](shutterstock/errors/find_similar_videos_error.py)</code>
+**On `Failure`**: `error` is <code>[FindSimilarVideosErrorBody](shutterstock_api_explorer/errors/find_similar_videos_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -8619,8 +8619,8 @@ match result:
 | <code>interval</code> | <code>str \| None</code> | Show videos updated in the specified time period, where the time period is an interval (like SQL INTERVAL) such as 1 DAY, 6 HOUR, or 30 MINUTE; the default is 1 HOUR, which shows videos that were updated in the hour preceding the request<br>**Default**: <code>"1 HOUR"</code> |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>100</code> |
-| <code>sort</code> | <code>[Sort5OrStr](shutterstock/models/enums/sort5.py) \| None</code> | Sort by oldest or newest videos first<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>sort</code> | <code>[Sort5OrStr](shutterstock_api_explorer/models/enums/sort5.py) \| None</code> | Sort by oldest or newest videos first<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8630,11 +8630,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[UpdatedMediaDataList](shutterstock/models/updated_media_data_list.py), [RawError](shutterstock/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[UpdatedMediaDataList](shutterstock_api_explorer/models/updated_media_data_list.py), [RawError](shutterstock_api_explorer/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UpdatedMediaDataList](shutterstock/models/updated_media_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[UpdatedMediaDataList](shutterstock_api_explorer/models/updated_media_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[RawError](shutterstock/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](shutterstock_api_explorer/core/results.py)</code>
 
 </dd>
 </dl>
@@ -8698,10 +8698,10 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Video ID |
-| <code>language</code> | <code>[LanguageOrStr](shutterstock/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
-| <code>view</code> | <code>[View2OrStr](shutterstock/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
+| <code>language</code> | <code>[LanguageOrStr](shutterstock_api_explorer/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
+| <code>view</code> | <code>[View2OrStr](shutterstock_api_explorer/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
 | <code>search_id</code> | <code>str \| None</code> | The ID of the search that is related to this request<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8711,18 +8711,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[Video](shutterstock/models/video.py), [GetVideoErrorBody](shutterstock/errors/get_video_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[Video](shutterstock_api_explorer/models/video.py), [GetVideoErrorBody](shutterstock_api_explorer/errors/get_video_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[Video](shutterstock/models/video.py)</code> -- OK
+**On `Success`**: `payload` is <code>[Video](shutterstock_api_explorer/models/video.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetVideoErrorBody](shutterstock/errors/get_video_error.py)</code>
+**On `Failure`**: `error` is <code>[GetVideoErrorBody](shutterstock_api_explorer/errors/get_video_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -8786,9 +8786,9 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | The ID of the collection to return |
-| <code>embed</code> | <code>list&#91;[EmbedOrStr](shutterstock/models/enums/embed.py)&#93; \| None</code> | Which sharing information to include in the response, such as a URL to the collection<br>**Default**: <code>None</code> |
+| <code>embed</code> | <code>list&#91;[EmbedOrStr](shutterstock_api_explorer/models/enums/embed.py)&#93; \| None</code> | Which sharing information to include in the response, such as a URL to the collection<br>**Default**: <code>None</code> |
 | <code>share_code</code> | <code>str \| None</code> | Code to retrieve a shared collection<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8798,18 +8798,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[Collection](shutterstock/models/collection.py), [GetVideoCollectionErrorBody](shutterstock/errors/get_video_collection_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[Collection](shutterstock_api_explorer/models/collection.py), [GetVideoCollectionErrorBody](shutterstock_api_explorer/errors/get_video_collection_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[Collection](shutterstock/models/collection.py)</code> -- OK
+**On `Success`**: `payload` is <code>[Collection](shutterstock_api_explorer/models/collection.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetVideoCollectionErrorBody](shutterstock/errors/get_video_collection_error.py)</code>
+**On `Failure`**: `error` is <code>[GetVideoCollectionErrorBody](shutterstock_api_explorer/errors/get_video_collection_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -8876,8 +8876,8 @@ match result:
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>100</code> |
 | <code>share_code</code> | <code>str \| None</code> | Code to retrieve the contents of a shared collection<br>**Default**: <code>None</code> |
-| <code>sort</code> | <code>[Sort5OrStr](shutterstock/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>sort</code> | <code>[Sort5OrStr](shutterstock_api_explorer/models/enums/sort5.py) \| None</code> | Sort order<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8887,18 +8887,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CollectionItemDataList](shutterstock/models/collection_item_data_list.py), [GetVideoCollectionItemsErrorBody](shutterstock/errors/get_video_collection_items_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CollectionItemDataList](shutterstock_api_explorer/models/collection_item_data_list.py), [GetVideoCollectionItemsErrorBody](shutterstock_api_explorer/errors/get_video_collection_items_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CollectionItemDataList](shutterstock/models/collection_item_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[CollectionItemDataList](shutterstock_api_explorer/models/collection_item_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetVideoCollectionItemsErrorBody](shutterstock/errors/get_video_collection_items_error.py)</code>
+**On `Failure`**: `error` is <code>[GetVideoCollectionItemsErrorBody](shutterstock_api_explorer/errors/get_video_collection_items_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -8963,8 +8963,8 @@ match result:
 | --- | --- | --- |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>100</code> |
-| <code>embed</code> | <code>list&#91;[EmbedOrStr](shutterstock/models/enums/embed.py)&#93; \| None</code> | Which sharing information to include in the response, such as a URL to the collection<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>embed</code> | <code>list&#91;[EmbedOrStr](shutterstock_api_explorer/models/enums/embed.py)&#93; \| None</code> | Which sharing information to include in the response, such as a URL to the collection<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8974,18 +8974,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CollectionDataList](shutterstock/models/collection_data_list.py), [GetVideoCollectionListErrorBody](shutterstock/errors/get_video_collection_list_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CollectionDataList](shutterstock_api_explorer/models/collection_data_list.py), [GetVideoCollectionListErrorBody](shutterstock_api_explorer/errors/get_video_collection_list_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CollectionDataList](shutterstock/models/collection_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[CollectionDataList](shutterstock_api_explorer/models/collection_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetVideoCollectionListErrorBody](shutterstock/errors/get_video_collection_list_error.py)</code>
+**On `Failure`**: `error` is <code>[GetVideoCollectionListErrorBody](shutterstock_api_explorer/errors/get_video_collection_list_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -9052,13 +9052,13 @@ match result:
 | <code>license</code> | <code>str \| None</code> | Show videos that are available with the specified license, such as `standard` or `enhanced`<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
-| <code>sort</code> | <code>[Sort5OrStr](shutterstock/models/enums/sort5.py) \| None</code> | Sort by oldest or newest videos first<br>**Default**: <code>None</code> |
+| <code>sort</code> | <code>[Sort5OrStr](shutterstock_api_explorer/models/enums/sort5.py) \| None</code> | Sort by oldest or newest videos first<br>**Default**: <code>None</code> |
 | <code>username</code> | <code>str \| None</code> | Filter licenses by username of licensee<br>**Default**: <code>None</code> |
 | <code>start_date</code> | <code>RFC3339DateTime \| None</code> | Show licenses created on or after the specified date<br>**Default**: <code>None</code> |
 | <code>end_date</code> | <code>RFC3339DateTime \| None</code> | Show licenses created before the specified date<br>**Default**: <code>None</code> |
-| <code>download_availability</code> | <code>[DownloadAvailabilityOrStr](shutterstock/models/enums/download_availability.py) \| None</code> | Filter licenses by download availability<br>**Default**: <code>None</code> |
+| <code>download_availability</code> | <code>[DownloadAvailabilityOrStr](shutterstock_api_explorer/models/enums/download_availability.py) \| None</code> | Filter licenses by download availability<br>**Default**: <code>None</code> |
 | <code>team_history</code> | <code>bool \| None</code> | Set to true to see license history for all members of your team.<br>**Default**: <code>False</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -9068,18 +9068,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[DownloadHistoryDataList](shutterstock/models/download_history_data_list.py), [GetVideoLicenseListErrorBody](shutterstock/errors/get_video_license_list_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[DownloadHistoryDataList](shutterstock_api_explorer/models/download_history_data_list.py), [GetVideoLicenseListErrorBody](shutterstock_api_explorer/errors/get_video_license_list_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[DownloadHistoryDataList](shutterstock/models/download_history_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[DownloadHistoryDataList](shutterstock_api_explorer/models/download_history_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetVideoLicenseListErrorBody](shutterstock/errors/get_video_license_list_error.py)</code>
+**On `Failure`**: `error` is <code>[GetVideoLicenseListErrorBody](shutterstock_api_explorer/errors/get_video_license_list_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -9143,9 +9143,9 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>list&#91;str&#93;</code> | One or more video IDs |
-| <code>view</code> | <code>[View2OrStr](shutterstock/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
+| <code>view</code> | <code>[View2OrStr](shutterstock_api_explorer/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
 | <code>search_id</code> | <code>str \| None</code> | The ID of the search that is related to this request<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -9155,18 +9155,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[VideoDataList](shutterstock/models/video_data_list.py), [GetVideoListErrorBody](shutterstock/errors/get_video_list_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[VideoDataList](shutterstock_api_explorer/models/video_data_list.py), [GetVideoListErrorBody](shutterstock_api_explorer/errors/get_video_list_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[VideoDataList](shutterstock/models/video_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[VideoDataList](shutterstock_api_explorer/models/video_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetVideoListErrorBody](shutterstock/errors/get_video_list_error.py)</code>
+**On `Failure`**: `error` is <code>[GetVideoListErrorBody](shutterstock_api_explorer/errors/get_video_list_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -9231,7 +9231,7 @@ match result:
 | --- | --- | --- |
 | <code>query</code> | <code>str</code> | Search term for which you want keyword suggestions |
 | <code>limit</code> | <code>int \| None</code> | Limit the number of the suggestions<br>**Default**: <code>10</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -9241,18 +9241,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[Suggestions](shutterstock/models/suggestions.py), [GetVideoSuggestionsErrorBody](shutterstock/errors/get_video_suggestions_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[Suggestions](shutterstock_api_explorer/models/suggestions.py), [GetVideoSuggestionsErrorBody](shutterstock_api_explorer/errors/get_video_suggestions_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[Suggestions](shutterstock/models/suggestions.py)</code> -- OK
+**On `Success`**: `payload` is <code>[Suggestions](shutterstock_api_explorer/models/suggestions.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[GetVideoSuggestionsErrorBody](shutterstock/errors/get_video_suggestions_error.py)</code>
+**On `Failure`**: `error` is <code>[GetVideoSuggestionsErrorBody](shutterstock_api_explorer/errors/get_video_suggestions_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -9315,11 +9315,11 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[LicenseVideoRequest](shutterstock/models/license_video_request.py) \| [LicenseVideoRequestDict](shutterstock/models/license_video_request.py)</code> | List of videos to request licenses for and information about each license transaction; these values override the defaults in the query parameters |
+| <code>body</code> | <code>[LicenseVideoRequest](shutterstock_api_explorer/models/license_video_request.py) \| [LicenseVideoRequestDict](shutterstock_api_explorer/models/license_video_request.py)</code> | List of videos to request licenses for and information about each license transaction; these values override the defaults in the query parameters |
 | <code>subscription_id</code> | <code>str \| None</code> | The subscription ID to use for licensing<br>**Default**: <code>None</code> |
-| <code>size</code> | <code>[Size16OrStr](shutterstock/models/enums/size16.py) \| None</code> | The size of the video to license<br>**Default**: <code>None</code> |
+| <code>size</code> | <code>[Size16OrStr](shutterstock_api_explorer/models/enums/size16.py) \| None</code> | The size of the video to license<br>**Default**: <code>None</code> |
 | <code>search_id</code> | <code>str \| None</code> | The Search ID that led to this licensing event<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -9329,18 +9329,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[LicenseVideoResultDataList](shutterstock/models/license_video_result_data_list.py), [LicenseVideosErrorBody](shutterstock/errors/license_videos_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[LicenseVideoResultDataList](shutterstock_api_explorer/models/license_video_result_data_list.py), [LicenseVideosErrorBody](shutterstock_api_explorer/errors/license_videos_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[LicenseVideoResultDataList](shutterstock/models/license_video_result_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[LicenseVideoResultDataList](shutterstock_api_explorer/models/license_video_result_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[LicenseVideosErrorBody](shutterstock/errors/license_videos_error.py)</code>
+**On `Failure`**: `error` is <code>[LicenseVideosErrorBody](shutterstock_api_explorer/errors/license_videos_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -9403,8 +9403,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>language</code> | <code>[LanguageOrStr](shutterstock/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>language</code> | <code>[LanguageOrStr](shutterstock_api_explorer/models/enums/language.py) \| None</code> | Language for the keywords and categories in the response<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -9414,18 +9414,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[CategoryDataList](shutterstock/models/category_data_list.py), [ListVideoCategoriesErrorBody](shutterstock/errors/list_video_categories_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[CategoryDataList](shutterstock_api_explorer/models/category_data_list.py), [ListVideoCategoriesErrorBody](shutterstock_api_explorer/errors/list_video_categories_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CategoryDataList](shutterstock/models/category_data_list.py)</code> -- OK
+**On `Success`**: `payload` is <code>[CategoryDataList](shutterstock_api_explorer/models/category_data_list.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[ListVideoCategoriesErrorBody](shutterstock/errors/list_video_categories_error.py)</code>
+**On `Failure`**: `error` is <code>[ListVideoCategoriesErrorBody](shutterstock_api_explorer/errors/list_video_categories_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -9489,8 +9489,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | The ID of the collection to rename |
-| <code>body</code> | <code>[CollectionUpdateRequest](shutterstock/models/collection_update_request.py) \| [CollectionUpdateRequestDict](shutterstock/models/collection_update_request.py)</code> | The new name for the collection |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[CollectionUpdateRequest](shutterstock_api_explorer/models/collection_update_request.py) \| [CollectionUpdateRequestDict](shutterstock_api_explorer/models/collection_update_request.py)</code> | The new name for the collection |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -9500,18 +9500,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;None, [RenameVideoCollectionErrorBody](shutterstock/errors/rename_video_collection_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;None, [RenameVideoCollectionErrorBody](shutterstock_api_explorer/errors/rename_video_collection_error.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[RenameVideoCollectionErrorBody](shutterstock/errors/rename_video_collection_error.py)</code>
+**On `Failure`**: `error` is <code>[RenameVideoCollectionErrorBody](shutterstock_api_explorer/errors/rename_video_collection_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -9577,7 +9577,7 @@ match result:
 | <code>added_date</code> | <code>Date \| None</code> | Show videos added on the specified date<br>**Default**: <code>None</code> |
 | <code>added_date_start</code> | <code>Date \| None</code> | Show videos added on or after the specified date<br>**Default**: <code>None</code> |
 | <code>added_date_end</code> | <code>Date \| None</code> | Show videos added before the specified date<br>**Default**: <code>None</code> |
-| <code>aspect_ratio</code> | <code>[AspectRatioOrStr](shutterstock/models/enums/aspect_ratio.py) \| None</code> | Show videos with the specified aspect ratio<br>**Default**: <code>None</code> |
+| <code>aspect_ratio</code> | <code>[AspectRatioOrStr](shutterstock_api_explorer/models/enums/aspect_ratio.py) \| None</code> | Show videos with the specified aspect ratio<br>**Default**: <code>None</code> |
 | <code>category</code> | <code>str \| None</code> | Show videos with the specified Shutterstock-defined category; specify a category name or ID<br>**Default**: <code>None</code> |
 | <code>contributor</code> | <code>list&#91;str&#93; \| None</code> | Show videos with the specified artist names or IDs<br>**Default**: <code>None</code> |
 | <code>contributor_country</code> | <code>list&#91;str&#93; \| None</code> | Show videos from contributors in one or more specified countries<br>**Default**: <code>None</code> |
@@ -9588,23 +9588,23 @@ match result:
 | <code>fps_from</code> | <code>float \| None</code> | Show videos with the specified frames per second or more<br>**Default**: <code>None</code> |
 | <code>fps_to</code> | <code>float \| None</code> | Show videos with the specified frames per second or fewer<br>**Default**: <code>None</code> |
 | <code>keyword_safe_search</code> | <code>bool \| None</code> | Hide results with potentially unsafe keywords<br>**Default**: <code>True</code> |
-| <code>language</code> | <code>[LanguageOrStr](shutterstock/models/enums/language.py) \| None</code> | Set query and result language (uses Accept-Language header if not set)<br>**Default**: <code>None</code> |
-| <code>license</code> | <code>list&#91;[License9OrStr](shutterstock/models/enums/license9.py)&#93; \| None</code> | Show only videos with the specified license or licenses<br>**Default**: <code>None</code> |
+| <code>language</code> | <code>[LanguageOrStr](shutterstock_api_explorer/models/enums/language.py) \| None</code> | Set query and result language (uses Accept-Language header if not set)<br>**Default**: <code>None</code> |
+| <code>license</code> | <code>list&#91;[License9OrStr](shutterstock_api_explorer/models/enums/license9.py)&#93; \| None</code> | Show only videos with the specified license or licenses<br>**Default**: <code>None</code> |
 | <code>model</code> | <code>list&#91;str&#93; \| None</code> | Show videos with each of the specified models<br>**Default**: <code>None</code> |
-| <code>orientation</code> | <code>[Orientation2OrStr](shutterstock/models/enums/orientation2.py) \| None</code> | Search for videos in a specific orientation<br>**Default**: <code>None</code> |
+| <code>orientation</code> | <code>[Orientation2OrStr](shutterstock_api_explorer/models/enums/orientation2.py) \| None</code> | Search for videos in a specific orientation<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Page number<br>**Default**: <code>1</code> |
 | <code>per_page</code> | <code>int \| None</code> | Number of results per page<br>**Default**: <code>20</code> |
-| <code>people_age</code> | <code>[PeopleAge2OrStr](shutterstock/models/enums/people_age2.py) \| None</code> | Show videos that feature people of the specified age range<br>**Default**: <code>None</code> |
-| <code>people_ethnicity</code> | <code>list&#91;[PeopleEthnicity5OrStr](shutterstock/models/enums/people_ethnicity5.py)&#93; \| None</code> | Show videos with people of the specified ethnicities<br>**Default**: <code>None</code> |
-| <code>people_gender</code> | <code>[PeopleGender2OrStr](shutterstock/models/enums/people_gender2.py) \| None</code> | Show videos with people with the specified gender<br>**Default**: <code>None</code> |
+| <code>people_age</code> | <code>[PeopleAge2OrStr](shutterstock_api_explorer/models/enums/people_age2.py) \| None</code> | Show videos that feature people of the specified age range<br>**Default**: <code>None</code> |
+| <code>people_ethnicity</code> | <code>list&#91;[PeopleEthnicity5OrStr](shutterstock_api_explorer/models/enums/people_ethnicity5.py)&#93; \| None</code> | Show videos with people of the specified ethnicities<br>**Default**: <code>None</code> |
+| <code>people_gender</code> | <code>[PeopleGender2OrStr](shutterstock_api_explorer/models/enums/people_gender2.py) \| None</code> | Show videos with people with the specified gender<br>**Default**: <code>None</code> |
 | <code>people_number</code> | <code>int \| None</code> | Show videos with the specified number of people<br>**Default**: <code>None</code> |
 | <code>people_model_released</code> | <code>bool \| None</code> | Show only videos of people with a signed model release<br>**Default**: <code>None</code> |
 | <code>query</code> | <code>str \| None</code> | One or more search terms separated by spaces; you can use NOT to filter out videos that match a term<br>**Default**: <code>None</code> |
-| <code>resolution</code> | <code>[ResolutionOrStr](shutterstock/models/enums/resolution.py) \| None</code> | Show videos with the specified resolution<br>**Default**: <code>None</code> |
+| <code>resolution</code> | <code>[ResolutionOrStr](shutterstock_api_explorer/models/enums/resolution.py) \| None</code> | Show videos with the specified resolution<br>**Default**: <code>None</code> |
 | <code>safe</code> | <code>bool \| None</code> | Enable or disable safe search<br>**Default**: <code>True</code> |
-| <code>sort</code> | <code>[Sort2OrStr](shutterstock/models/enums/sort2.py) \| None</code> | Sort by one of these categories<br>**Default**: <code>None</code> |
-| <code>view</code> | <code>[View2OrStr](shutterstock/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>sort</code> | <code>[Sort2OrStr](shutterstock_api_explorer/models/enums/sort2.py) \| None</code> | Sort by one of these categories<br>**Default**: <code>None</code> |
+| <code>view</code> | <code>[View2OrStr](shutterstock_api_explorer/models/enums/view2.py) \| None</code> | Amount of detail to render in the response<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](shutterstock_api_explorer/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -9614,18 +9614,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](shutterstock/core/results.py)&#91;[VideoSearchResults](shutterstock/models/video_search_results.py), [SearchVideosErrorBody](shutterstock/errors/search_videos_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](shutterstock_api_explorer/core/results.py)&#91;[VideoSearchResults](shutterstock_api_explorer/models/video_search_results.py), [SearchVideosErrorBody](shutterstock_api_explorer/errors/search_videos_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[VideoSearchResults](shutterstock/models/video_search_results.py)</code> -- OK
+**On `Success`**: `payload` is <code>[VideoSearchResults](shutterstock_api_explorer/models/video_search_results.py)</code> -- OK
 
-**On `Failure`**: `error` is <code>[SearchVideosErrorBody](shutterstock/errors/search_videos_error.py)</code>
+**On `Failure`**: `error` is <code>[SearchVideosErrorBody](shutterstock_api_explorer/errors/search_videos_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 403, 404 | <code>[RawError](shutterstock/core/results.py)</code> |
-| anything unmapped | <code>[RawError](shutterstock/core/results.py)</code> |
+| 400, 401, 403, 404 | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
+| anything unmapped | <code>[RawError](shutterstock_api_explorer/core/results.py)</code> |
 
 </dd>
 </dl>

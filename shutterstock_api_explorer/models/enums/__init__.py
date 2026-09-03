@@ -58,9 +58,8 @@ from .sort17 import Sort17, Sort17OrStr
 from .sort24 import Sort24, Sort24OrStr
 from .sort_order import SortOrder, SortOrderOrStr
 from .type import Type, TypeOrStr
-from .type1 import Type1, Type1OrStr
-from .type14 import Type14, Type14OrStr
-from .type15 import Type15, Type15OrStr
+from .type4 import Type4, Type4OrStr
+from .type5 import Type5, Type5OrStr
 from .view import View, ViewOrStr
 from .view2 import View2, View2OrStr
 from .visibility import Visibility, VisibilityOrStr
@@ -185,12 +184,10 @@ __all__ = [
     "SortOrder",
     "SortOrderOrStr",
     "Type",
-    "Type1",
-    "Type14",
-    "Type14OrStr",
-    "Type15",
-    "Type15OrStr",
-    "Type1OrStr",
+    "Type4",
+    "Type4OrStr",
+    "Type5",
+    "Type5OrStr",
     "TypeOrStr",
     "View",
     "View2",

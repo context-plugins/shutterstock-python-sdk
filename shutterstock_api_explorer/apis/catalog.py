@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from uuid import UUID, uuid4
+
 from ..auth import AsyncAuthSchemes, AuthSchemes
 from ..core import (
     ApiResult,
@@ -417,6 +419,7 @@ class CatalogWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSchemes])
             http_method="POST",
             url_template=self._server.default("/v2/catalog/collections/{collection_id}/items"),
             path_params=[param[str]("collection_id", collection_id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[CreateCatalogCollectionItems | CreateCatalogCollectionItemsDict](body),
             auth_scheme=self._auth.customer_access_code,
             decoder=json_decoder[CatalogCollection],
@@ -442,6 +445,7 @@ class CatalogWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSchemes])
         return self._client.execute(
             http_method="POST",
             url_template=self._server.default("/v2/catalog/collections"),
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[CreateCatalogCollection | CreateCatalogCollectionDict](body),
             auth_scheme=self._auth.customer_access_code,
             decoder=json_decoder[CatalogCollection],
@@ -464,6 +468,7 @@ class CatalogWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSchemes])
             http_method="DELETE",
             url_template=self._server.default("/v2/catalog/collections/{collection_id}"),
             path_params=[param[str]("collection_id", collection_id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             auth_scheme=self._auth.customer_access_code,
             decoder=empty_response,
             error_mapper=delete_collection_error_mapper,
@@ -491,6 +496,7 @@ class CatalogWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSchemes])
             http_method="DELETE",
             url_template=self._server.default("/v2/catalog/collections/{collection_id}/items"),
             path_params=[param[str]("collection_id", collection_id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[RemoveCatalogCollectionItems | RemoveCatalogCollectionItemsDict](body),
             auth_scheme=self._auth.customer_access_code,
             decoder=json_decoder[CatalogCollection],
@@ -597,6 +603,7 @@ class CatalogWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSchemes])
             http_method="PATCH",
             url_template=self._server.default("/v2/catalog/collections/{collection_id}"),
             path_params=[param[str]("collection_id", collection_id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[UpdateCatalogCollection | UpdateCatalogCollectionDict](body),
             auth_scheme=self._auth.customer_access_code,
             decoder=json_decoder[CatalogCollection],
@@ -627,6 +634,7 @@ class AsyncCatalogWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, Asy
             http_method="POST",
             url_template=self._server.default("/v2/catalog/collections/{collection_id}/items"),
             path_params=[param[str]("collection_id", collection_id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[CreateCatalogCollectionItems | CreateCatalogCollectionItemsDict](body),
             auth_scheme=self._auth.customer_access_code,
             decoder=json_decoder[CatalogCollection],
@@ -652,6 +660,7 @@ class AsyncCatalogWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, Asy
         return await self._client.execute(
             http_method="POST",
             url_template=self._server.default("/v2/catalog/collections"),
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[CreateCatalogCollection | CreateCatalogCollectionDict](body),
             auth_scheme=self._auth.customer_access_code,
             decoder=json_decoder[CatalogCollection],
@@ -674,6 +683,7 @@ class AsyncCatalogWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, Asy
             http_method="DELETE",
             url_template=self._server.default("/v2/catalog/collections/{collection_id}"),
             path_params=[param[str]("collection_id", collection_id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             auth_scheme=self._auth.customer_access_code,
             decoder=empty_response,
             error_mapper=delete_collection_error_mapper,
@@ -701,6 +711,7 @@ class AsyncCatalogWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, Asy
             http_method="DELETE",
             url_template=self._server.default("/v2/catalog/collections/{collection_id}/items"),
             path_params=[param[str]("collection_id", collection_id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[RemoveCatalogCollectionItems | RemoveCatalogCollectionItemsDict](body),
             auth_scheme=self._auth.customer_access_code,
             decoder=json_decoder[CatalogCollection],
@@ -807,6 +818,7 @@ class AsyncCatalogWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, Asy
             http_method="PATCH",
             url_template=self._server.default("/v2/catalog/collections/{collection_id}"),
             path_params=[param[str]("collection_id", collection_id)],
+            headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[UpdateCatalogCollection | UpdateCatalogCollectionDict](body),
             auth_scheme=self._auth.customer_access_code,
             decoder=json_decoder[CatalogCollection],
